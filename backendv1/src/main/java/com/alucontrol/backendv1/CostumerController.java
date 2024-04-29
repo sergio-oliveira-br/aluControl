@@ -10,16 +10,20 @@ public class CostumerController
 {
 
     @PostMapping("/saveClient")
-    public String saveClient(@RequestParam("firstName") String firstName
-                             //@RequestParam("lastName") String lastName,
-                             //@RequestParam("phoneNumber") String phoneNumber,
-                             //@RequestParam("city") String city
+    public String saveClient(@RequestParam("firstName") String firstName,
+                             @RequestParam("lastName") String lastName,
+                             @RequestParam("phoneNumber") String phoneNumber,
+                             @RequestParam("additionalInfo") String additionalInfo,
+                             @RequestParam("city") String city
     )
     {
 
-        System.out.println("Received client data: firstName= " + firstName);
-
-        // Do something with the form data here...
+        System.out.println("\nReceived client data: " +
+                "\n" + firstName +
+                "\n" + lastName +
+                "\n" + phoneNumber +
+                "\n" + additionalInfo +
+                "\n" + city);
 
         return "Client data received";
     }

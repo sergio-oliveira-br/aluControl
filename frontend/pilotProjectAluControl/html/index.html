@@ -22,36 +22,46 @@
 
 
         <!-- Starts the Customer’s Form -->
-        <form id="costumerForm"  action="/saveClient" method="post" enctype="application/json" class="row g-3 needs-validation" novalidate>
+        <form id="customerForm"  action="/saveClient" method="post" enctype="application/json" class="row g-3 needs-validation" novalidate>
             <div class="col-md-4">
-                <label for="validationCustom01" class="form-label">First name</label>
-                <input type="text" class="form-control" id="validationCustom01" name="firstName" value="John">
+                <label for="customerFirstName" class="form-label">First name</label>
+                <input type="text" class="form-control" id="customerFirstName" name="firstName" value="John">
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
 
             <div class="col-md-4">
-                <label for="validationCustom02" class="form-label">Last name</label>
-                <input type="text" class="form-control" id="validationCustom02" value="Otto">
+                <label for="customerLastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" id="customerLastName" name="lastName" value="Otto">
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
 
             <div class="col-md-4">
-                <label for="userPhoneNumber" class="form-label">Phone Number</label>
+                <label for="customerPhoneNumber" class="form-label">Phone Number</label>
                 <div class="input-group has-validation">
-                    <input type="text" class="form-control" id="userPhoneNumber" value="34998055902" aria-describedby="inputGroupPrepend">
-                    <div class="invalid-feedback">
-                        Please choose a username.
+                    <input type="text" class="form-control" id="customerPhoneNumber" name="phoneNumber" value="34998055902" aria-describedby="inputGroupPrepend">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <label for="additionalInformation" class="form-label">Additional Information</label>
+                <div class="input-group has-validation">
+                    <input type="text" class="form-control" id="additionalInformation" name="additionalInfo" value="Irmão do José" aria-describedby="inputGroupPrepend">
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
                 </div>
             </div>
 
             <div class="col-md-3">
-                <label for="validationCustom03" class="form-label">City</label>
-                <select class="form-select" id="validationCustom03">
+                <label for="customerCity" class="form-label">City</label>
+                <select class="form-select" id="customerCity" name="city">
                     <option selected disabled value="">Choose...</option>
                     <option>Capinópolis - MG</option>
                     <option>Uberlândia - MG</option>
