@@ -1,12 +1,9 @@
 package com.alucontrol.backendv1;
 
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-public class CostumerController
+public class CustomerController
 {
 
     @PostMapping("/saveClient")
@@ -14,10 +11,8 @@ public class CostumerController
                              @RequestParam("lastName") String lastName,
                              @RequestParam("phoneNumber") String phoneNumber,
                              @RequestParam("additionalInfo") String additionalInfo,
-                             @RequestParam("city") String city
-    )
+                             @RequestParam("city") String city)
     {
-
         System.out.println("\nReceived client data: " +
                 "\n" + firstName +
                 "\n" + lastName +
