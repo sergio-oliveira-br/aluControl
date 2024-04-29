@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController
 {
 
-    @PostMapping("/saveClient")
-    public String saveClient(@RequestParam("firstName") String firstName,
+    @PostMapping("/saveCustomer")
+    public String saveCustomer(@RequestParam("firstName") String firstName,
                              @RequestParam("lastName") String lastName,
                              @RequestParam("phoneNumber") String phoneNumber,
                              @RequestParam("additionalInfo") String additionalInfo,
