@@ -1,3 +1,11 @@
+/**
+ * This is for the mySQL Data Base - Table Customer
+ *      >> Class Controller <<
+ * Development starting on 30, April 2024
+ * Author: Sergio Oliveira
+ * Version 1.0
+ */
+
 package com.alucontrol.backendv1;
 
 import org.springframework.http.ResponseEntity;
