@@ -11,6 +11,8 @@ package com.alucontrol.backendv1;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class CustomerController
 {
@@ -21,6 +23,7 @@ public class CustomerController
         this.customerRepository = customerRepository;
     }
 
+    /** Endpoint to send customers */
     @PostMapping("/saveCustomer")
     public ResponseEntity<Customer> saveCustomer(@RequestParam("firstName") String firstName,
                                                  @RequestParam("lastName") String lastName,
@@ -51,13 +54,10 @@ public class CustomerController
 
 
 
-    /*
-    @PostMapping("/api/client")
-    public String saveClient(@RequestBody Costumer costumer)
-    {
-        System.out.println("Received client data: " + costumer);
-               return "Client data received";
+    /** Endpoint to get back all customers */
+    @GetMapping("/customers")
+    public ResponseEntity<List<Customer>> getAllCustomers() {
+        List<Customer> customers = customerRepository.findAll();
+        return ResponseEntity.ok(customers);
     }
-
-     */
 }
