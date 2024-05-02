@@ -35,12 +35,27 @@ html, body
 }
 
 
-/* Page: Index -> Card -> Customers */
+/* Page: Index -> Card */
+.card /* Responsive */
+{
+    margin-bottom: 20px;
+    flex: 0 0 calc(33.333% - 20px); /* Display 3 cards per line */
+    /*max-width: calc(33.333% - 20px);*/ /* Display 3 cards per line*/
+}
 
 
-@media (max-width: 992px) {
+/* Page: Index -> Card  */
+@media (max-width: 992px)
+{
     .content {
-        padding-left: 0;
+        margin-left: 0; /* Remove left margin when screen is small */
+        flex-direction: column; /* Align cards in a single column */
+        align-items: center; /* Align the cards in the center */
+    }
+
+    .card {
+        flex: 0 0 calc(100% - 20px); /* Adjust to show 1 card per line */
+        max-width: calc(100% - 20px); /* Adjust to show 1 card per line */
     }
 }
 
