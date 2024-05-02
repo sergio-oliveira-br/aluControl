@@ -7,10 +7,8 @@
  */
 
 
-package controller;
+package com.alucontrol.backendv1;
 
-import repository.ProductRepository;
-import data.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;

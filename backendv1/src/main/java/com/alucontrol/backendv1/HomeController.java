@@ -1,4 +1,4 @@
-package controller;
+package com.alucontrol.backendv1;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

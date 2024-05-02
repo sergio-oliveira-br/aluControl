@@ -5,7 +5,7 @@
  * Version 1.0
  */
 
-package data;
+package com.alucontrol.backendv1;
 
 import jakarta.persistence.*;
 
