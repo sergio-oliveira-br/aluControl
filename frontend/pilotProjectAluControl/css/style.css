@@ -1,12 +1,32 @@
 
 
+/* Page: Customers -> Form */
+#customerForm
+{
+    position: absolute;
+    width: 70%;
+    top: 10%;
+    right: 16px;
+    font-size: 18px;
+}
 
-
-
-
+/* Page: Customers -> Table */
+.table-title
+{
+    position: absolute;
+    top: 45%;
+    left: 30%;
+}
 
 /* Page: Customers -> Table */
 #customerTable
 {
     display: block;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    height: 50%;        /* Define the the size of the table */
+    overflow-y: scroll; /* add the Scroll */
 }
+
+
