@@ -8,20 +8,32 @@ function displayTestMessage() {
 
 
 
-
-//Method to get the Customer's Info, when the page is logged
+/**
+     Page: All
+     Objective: When the page is loaded,
+        all information will be displayed
+ */
 $(document).ready(function()
 {
-    loadCustomers();
+    //Page: Index
+    loadNumberCustomers(); //this is responsible to display the number of records I have on DB
+
+    //Page: Customer
+    loadCustomers(); //this is the table of all my customers
+
 });
 
-//Method to get the Customer's Info via AJAX
+
+
+/**
+    Page: Customers
+    Item: Table
+    Method: Create a table with
+        all customers created via AJAX
+*/
 function loadCustomers()
 {
-    $.ajax({
-        url: "/customers",
-        type: "GET",
-        success: function(data)
+    $.ajax({url: "/customers", type: "GET", success: function(data)
         {
             //first clean
             $('#customerList').empty();
@@ -42,6 +54,29 @@ function loadCustomers()
             console.error(error);
         }
     });
+}
+
+
+/**
+     Page: Index
+     Item: Card
+     Method: Get a number of Customers exits
+        on database (test)
+ */
+function loadNumberCustomers()
+{
+    $.ajax({url: "/qtyCustomers", type: "GET", success: function(data)
+        {
+            //clean???
+
+            $('#loadNumberCustomers').text('Number of customers: ' + data);
+
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    })
 }
 
 
