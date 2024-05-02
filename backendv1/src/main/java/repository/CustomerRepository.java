@@ -1,5 +1,6 @@
-package com.alucontrol.backendv1;
+package repository;
 
+import data.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {

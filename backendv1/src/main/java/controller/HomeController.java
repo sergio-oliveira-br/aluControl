@@ -1,7 +1,6 @@
-package com.alucontrol.backendv1;
+package controller;
 
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 public class HomeController
