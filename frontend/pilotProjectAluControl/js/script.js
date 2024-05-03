@@ -113,4 +113,71 @@ function loadRent()
     });
 }
 
+/**
+     Page: Rent
+     Item: Form -> Days = (End - Start)
+     Method: Simple math to calculate the days
+*/
+//Making the Math
+function mathDays(start, end)
+{
+    var start_Date = new Date(start);
+    var end_Date = new Date(end);
+    var diffTime = Math.abs(end_Date - start_Date);
+    var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+}
+//Using the Method
+function loadRentDays()
+{
+    //Variables
+    var newStart = document.getElementById('rentStarts').value;
+    var newEnd = document.getElementById('rentEnds').value;
 
+    //Call the method
+    var rentTotalDays = mathDays(newEnd, newStart);
+
+    //Write in the field
+    document.getElementById('rentTotalDays').value = rentTotalDays;
+}
+//Update everytime that one of these two field is changed
+document.getElementById('rentStarts').addEventListener('change',loadRentDays);
+document.getElementById('rentEnds').addEventListener('change',loadRentDays);
+
+
+/**
+    Page: Rent
+    Item: Form -> Total Price = (Days * Qty * UnitPrice)
+    Method: Simple math to calculate the total price
+*/
+//Making the Math
+function mathPrice(days, qty ,price)
+{
+    let totalDays = days;
+    let totalQty =  qty;
+    let unitPrice = price;
+
+    var finalPrice = Math.ceil(totalQty * unitPrice * totalDays);
+    return finalPrice;
+}
+
+//Using the Method
+function loadTotalPrice()
+{
+    //Variable
+    let newTotalDays =parseInt(document.getElementById('rentTotalDays').value);
+    let newTotalQty = parseInt(document.getElementById('rentQtyItem').value);
+    let newUnitPrice = parseInt(document.getElementById('rentPrice').value);
+
+    //Call the Method
+    let newRentTotalPrice = Math.ceil(newTotalDays * newTotalQty * newUnitPrice);
+
+    //Write the field
+    document.getElementById('rentTotalPrice').value = newRentTotalPrice;
+}
+//Update everytime that one of these three field is changed
+document.getElementById('rentTotalDays').addEventListener("change", loadTotalPrice)
+document.getElementById('rentQtyItem').addEventListener("change", loadTotalPrice)
+document.getElementById('rentPrice').addEventListener("change", loadTotalPrice)
+document.getElementById('rentStarts').addEventListener('change',loadTotalPrice);
+document.getElementById('rentEnds').addEventListener('change',loadTotalPrice);
