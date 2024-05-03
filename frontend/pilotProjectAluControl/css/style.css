@@ -75,7 +75,7 @@ html, body
 }
 
 
-
+/* Page: Products -> Form */
 #itemForm
 {
     position: absolute;
@@ -84,7 +84,7 @@ html, body
     right: 16px;
     font-size: 18px;
 }
-
+/* Page: Products -> Table */
 #contentProductTable
 {
     display: block;
@@ -143,3 +143,53 @@ html, body
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page: Rent -> Main Content */
+.contentRent
+{
+    padding-left: 300px;
+    padding-top: 20px;
+}
+
+
+/* Page: Rent -> Form */
+#rentForm
+{
+    position: absolute;
+    width: 70%;
+    top: 10%;
+
+    font-size: 18px;
+}
+
+/* Page: Customers -> Table */
+.table-title-rent
+{
+    position: absolute;
+    top: 60%;
+    left: 20%;
+}
+
+/* Page: Rent -> Table */
+#contentRentTable
+{
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    height: 50%;        /* Define the the size of the table */
+    overflow-y: scroll; /* add the Scroll */
+}
