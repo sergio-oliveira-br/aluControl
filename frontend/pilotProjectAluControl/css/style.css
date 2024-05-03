@@ -67,6 +67,39 @@ html, body
 
 
 
+/* Page: Products -> Main Content */
+.contentProduct
+{
+    padding-left: 300px;
+    padding-top: 20px;
+}
+
+
+
+#itemForm
+{
+    position: absolute;
+    width: 70%;
+    top: 30%;
+    right: 16px;
+    font-size: 18px;
+}
+
+#contentProductTable
+{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    height: 50%;        /* Define the the size of the table */
+    overflow-y: scroll; /* add the Scroll */
+}
+
+
+
+
+
+
 
 
 
