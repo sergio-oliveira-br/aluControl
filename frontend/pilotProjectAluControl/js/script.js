@@ -121,21 +121,21 @@ function loadRent()
 //Making the Math
 function mathDays(start, end)
 {
-    var start_Date = new Date(start);
-    var end_Date = new Date(end);
-    var diffTime = Math.abs(end_Date - start_Date);
-    var diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    let start_Date = new Date(start);
+    let end_Date = new Date(end);
+    let diffTime = Math.abs(end_Date - start_Date);
+    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     return diffDays;
 }
 //Using the Method
 function loadRentDays()
 {
     //Variables
-    var newStart = document.getElementById('rentStarts').value;
-    var newEnd = document.getElementById('rentEnds').value;
+    let newStart = document.getElementById('rentStarts').value;
+    let newEnd = document.getElementById('rentEnds').value;
 
     //Call the method
-    var rentTotalDays = mathDays(newEnd, newStart);
+    let rentTotalDays = mathDays(newEnd, newStart);
 
     //Write in the field
     document.getElementById('rentTotalDays').value = rentTotalDays;
@@ -150,18 +150,7 @@ document.getElementById('rentEnds').addEventListener('change',loadRentDays);
     Item: Form -> Total Price = (Days * Qty * UnitPrice)
     Method: Simple math to calculate the total price
 */
-//Making the Math
-function mathPrice(days, qty ,price)
-{
-    let totalDays = days;
-    let totalQty =  qty;
-    let unitPrice = price;
-
-    var finalPrice = Math.ceil(totalQty * unitPrice * totalDays);
-    return finalPrice;
-}
-
-//Using the Method
+//Method to calculate
 function loadTotalPrice()
 {
     //Variable
