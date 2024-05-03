@@ -193,3 +193,8 @@ html, body
     height: 50%;        /* Define the the size of the table */
     overflow-y: scroll; /* add the Scroll */
 }
+
+#rentList
+{
+    background-color: #0a3622;
+}

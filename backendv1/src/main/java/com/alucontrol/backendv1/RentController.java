@@ -10,9 +10,12 @@
 package com.alucontrol.backendv1;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class RentController
@@ -35,6 +38,17 @@ public class RentController
 
         Rent savedRent = rentRepository.save(rent);
         return ResponseEntity.ok(savedRent);
+    }
+
+
+
+
+    /** Endpoint to get back all rent */
+    @GetMapping("/rent")
+    public ResponseEntity<List<Rent>> getAllRent()
+    {
+        List<Rent> rent = rentRepository.findAll();
+        return ResponseEntity.ok(rent);
     }
 
 

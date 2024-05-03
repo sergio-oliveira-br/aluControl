@@ -21,6 +21,9 @@ $(document).ready(function()
     //Page: Customer
     loadCustomers(); //this is the table of all my customers
 
+    //Page: Rent
+    loadRent();
+
 });
 
 
@@ -29,7 +32,7 @@ $(document).ready(function()
     Page: Customers
     Item: Table
     Method: Create a table with
-        all customers created via AJAX
+        all customers via AJAX
 */
 function loadCustomers()
 {
@@ -77,6 +80,37 @@ function loadNumberCustomers()
             console.error(error);
         }
     })
+}
+
+
+
+
+/**
+     Page: Rent
+     Item: Table
+     Method: Create a table with
+     all customers via AJAX
+ */
+function loadRent()
+{
+    $.ajax({url: "/rent", type: "GET", success: function(data)
+        {
+            //first clean
+            $('#rentList').empty();
+
+            //Iteration
+            data.forEach(function(rent)
+            {
+                $('#rentList').append('<tr>' +
+                '<td>' + rent.id + '</td>' +
+                '<td>' + rent.rentFirstName + '<td>');
+            });
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    });
 }
 
 
