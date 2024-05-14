@@ -104,6 +104,7 @@ function loadRent()
                 $('#rentList').append('<tr>' +
                     '<td>' + rent.id + '</td>' +
                     '<td>' + rent.rentFirstName + '</td>' +
+                    '<td>' + rent.rentLastName + '</td>' +
                     '<td>' + rent.rentAddress + '</td>' +
                     '<td>' + rent.rentItem + '</td>' +
                     '<td>' + rent.rentPrice + '</td>' +
