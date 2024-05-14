@@ -103,12 +103,12 @@ function loadRent()
             {
                 $('#rentList').append('<tr>' +
                     '<td>' + rent.id + '</td>' +
-                    '<td>' + rent.rentFirstName + '<td>' +
-                    '<td>' + rent.address + '</td>' +
-                    '<td>' + rent.item + '</td>' +
+                    '<td>' + rent.rentFirstName + '</td>' +
+                    '<td>' + rent.rentAddress + '</td>' +
+                    '<td>' + rent.rentItem + '</td>' +
                     '<td>' + rent.rentPrice + '</td>' +
-                    '<td>' + rent.start + '</td>' +
-                    '<td>' + rent.end + '</td>' +
+                    '<td>' + rent.rentStarts + '</td>' +
+                    '<td>' + rent.rentEnds + '</td>' +
                     '<td>' + rent.rentTotalPrice + '</td>'
                 );
             });

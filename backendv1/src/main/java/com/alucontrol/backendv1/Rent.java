@@ -10,8 +10,6 @@ package com.alucontrol.backendv1;
 
 import jakarta.persistence.*;
 
-import javax.xml.crypto.Data;
-
 @Entity
 @Table(name = "rent")
 public class Rent
@@ -39,10 +37,10 @@ public class Rent
     private int rentQtyItem;
 
     @Column(nullable = true)
-    private int rentStarts;
+    private String rentStarts;
 
     @Column(nullable = true)
-    private int rentEnds;
+    private String rentEnds;
 
     @Column(nullable = true)
     private int rentTotalDays;
@@ -112,19 +110,19 @@ public class Rent
         this.rentQtyItem = rentQtyItem;
     }
 
-    public int getRentStarts() {
+    public String getRentStarts() {
         return rentStarts;
     }
 
-    public void setRentStarts(int rentStarts) {
+    public void setRentStarts(String rentStarts) {
         this.rentStarts = rentStarts;
     }
 
-    public int getRentEnds() {
+    public String getRentEnds() {
         return rentEnds;
     }
 
-    public void setRentEnds(int rentEnds) {
+    public void setRentEnds(String rentEnds) {
         this.rentEnds = rentEnds;
     }
 
