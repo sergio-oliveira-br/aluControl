@@ -10,9 +10,12 @@
 package com.alucontrol.backendv1;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class ProductController
@@ -22,8 +25,9 @@ public class ProductController
     public ProductController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-    //Need to include thr Repository
+    //Need to include the Repository
 
+    /** Endpoint to send Products */
     @PostMapping("/saveProduct")
     public ResponseEntity<Product> saveProduct(@RequestParam("itemDescription") String itemDescription,
                                                @RequestParam("itemQuantity") int itemQuantity)
@@ -38,6 +42,15 @@ public class ProductController
         System.out.println("Received:" + "\n" + itemDescription);
 
         return ResponseEntity.ok(savedProduct);
+    }
+
+
+    /** Endpoint to get back all products */
+    @GetMapping("/product")
+    public ResponseEntity<List<Product>> getAllProduct()
+    {
+        List<Product> products = productRepository.findAll();
+        return ResponseEntity.ok(products);
     }
 
 }

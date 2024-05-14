@@ -24,6 +24,9 @@ $(document).ready(function()
     //Page: Rent
     loadRent();
 
+    //Page: Product
+    loadProduct();
+
 });
 
 
@@ -178,6 +181,41 @@ document.getElementById('rentQtyItem').addEventListener("change", loadTotalPrice
 document.getElementById('rentPrice').addEventListener("change", loadTotalPrice)
 document.getElementById('rentStarts').addEventListener('change',loadTotalPrice);
 document.getElementById('rentEnds').addEventListener('change',loadTotalPrice);
+
+
+
+/**
+ Page: Products
+ Item: Table
+ Method: Create a table with
+ all products via AJAX
+*/
+function loadProduct()
+{
+    $.ajax({url: "/product", type: "GET", success: function(data)
+        {
+            //first clean
+            $('#productList').empty();
+
+            //Iteration
+            data.forEach(function(product)
+            {
+                $('#productList').append('<tr>' +
+                        '<td>' + product.id + '</td>' +
+                        '<td>' + product.itemDescription + '</td>' +
+                        '<td>'+ product.itemQuantity+'</td>'
+                );
+            });
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    });
+}
+
+
+
 
 
 
