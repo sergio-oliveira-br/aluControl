@@ -30,17 +30,34 @@ public class RentController
     /** Endpoint to send rent */
     @PostMapping("/saveRent")
     public ResponseEntity<Rent> saveRent(@RequestParam("rentFirstName")String rentFirstName,
-                                         @RequestParam("rentLastName")String rentLastName)
+                                         @RequestParam("rentLastName")String rentLastName,
+                                         @RequestParam("rentAddress")String rentAddress,
+                                         @RequestParam("rentItem")String rentItem,
+                                         @RequestParam("rentPrice") int rentPrice,
+                                         @RequestParam("rentQtyItem")int rentQtyItem,
+                                         @RequestParam("rentStarts")int rentStarts,
+                                         @RequestParam("rentEnds")int rentEnds,
+                                         @RequestParam("rentTotalDays")int rentTotalDays,
+                                         @RequestParam("rentTotalPrice") int rentTotalPrice,
+                                         @RequestParam("rentDetails") String rentDetails)
+
     {
         Rent rent = new Rent();
         rent.setRentFirstName(rentFirstName);
         rent.setRentLastName(rentLastName);
+        rent.setRentAddress(rentAddress);
+        rent.setRentItem(rentItem);
+        rent.setRentPrice(rentPrice);
+        rent.setRentQtyItem(rentQtyItem);
+        rent.setRentStarts(rentStarts);
+        rent.setRentEnds(rentEnds);
+        rent.setRentTotalDays(rentTotalDays);
+        rent.setRentTotalPrice(rentTotalPrice);
+        rent.setRentDetails(rentDetails);
 
         Rent savedRent = rentRepository.save(rent);
         return ResponseEntity.ok(savedRent);
     }
-
-
 
 
     /** Endpoint to get back all rent */
@@ -50,7 +67,4 @@ public class RentController
         List<Rent> rent = rentRepository.findAll();
         return ResponseEntity.ok(rent);
     }
-
-
-
 }

@@ -102,8 +102,15 @@ function loadRent()
             data.forEach(function(rent)
             {
                 $('#rentList').append('<tr>' +
-                '<td>' + rent.id + '</td>' +
-                '<td>' + rent.rentFirstName + '<td>');
+                    '<td>' + rent.id + '</td>' +
+                    '<td>' + rent.rentFirstName + '<td>' +
+                    '<td>' + rent.address + '</td>' +
+                    '<td>' + rent.item + '</td>' +
+                    '<td>' + rent.rentPrice + '</td>' +
+                    '<td>' + rent.start + '</td>' +
+                    '<td>' + rent.end + '</td>' +
+                    '<td>' + rent.rentTotalPrice + '</td>'
+                );
             });
         },
         error: function(xhr, status, error)
