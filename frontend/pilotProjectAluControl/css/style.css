@@ -10,12 +10,12 @@ html, body
 /* Page: All -> Menu  */
 .sidebar
 {
-    width: 280px;
-    height: 100vh;
     position: fixed;
-    top: 0;
+    width: 280px;
+    height: 100%;
+    top: 0; /*overlap the span menu*/
     left: 0;
-    background-color: #f8f9fa;
+
 }
 
 
@@ -46,20 +46,75 @@ html, body
 
 
 /* Page: All  */
+/*The styles defined within the @media (max-width: 'X' px)
+* rule will only be applied when the viewport
+* width is 1200 pixels or less.
+* This is a common technique used in responsive web design
+* to apply different styles depending on the device or screen size.*/
 @media (max-width: 992px)
 {
-    .content {
-        margin-left: 0; /* Remove left margin when screen is small */
+    /*Index*/
+    .content
+    {
+        margin-left: 10%; /* Remove left margin when screen is small */
         flex-direction: column; /* Align cards in a single column */
         align-items: center; /* Align the cards in the center */
     }
 
-    .card {
+    .card
+    {
         flex: 0 0 calc(100% - 20px); /* Adjust to show 1 card per line */
         max-width: calc(100% - 20px); /* Adjust to show 1 card per line */
     }
+
+    /*This is a test to understand the how the media works */
+    body
+    {
+        background-color: red;
+    }
+
+    .sidebar
+    {
+        display: none; /*hides the side menu */
+        overflow-y: scroll;
+        width: 30%;
+    }
+
+    .contentRent !important;
+    {
+        padding-left: 20px; /* this is the space from the side bar */
+        padding-top: 1%; /* this make the space from top */
+    }
+
 }
 
+@media (min-width: 991px)
+{
+    /* Page: Rent -> Main Content */
+    .contentRent
+    {
+        padding-left: 300px; /* this is the space from the side bar */
+        padding-top: 1%; /* this make the space from top */
+    }
+
+
+    /* Page: Rent -> Table */
+    #contentRentTable
+    {
+
+        width: 50%; /* Define the the width of the table */
+
+        display: block;     /* Display in block make possible set a size for a table */
+        height: 10%;    /* Define the the size of the table */
+        overflow-y: scroll; /* add the Scroll */
+
+
+
+    }
+
+
+
+}
 
 
 
@@ -149,23 +204,31 @@ html, body
 
 
 
+/* Page: Rent -> Table */
 
-
-
-
-
-
-
-
-
-
-
-/* Page: Rent -> Main Content */
-.contentRent
+#contentRentTable
 {
-    padding-left: 300px;
-    padding-top: 20px;
+
+
+
+    background-color: yellow;
+    width: 99%;         /* Define the the width of the table */
+    display: block;     /* Display in block make possible set a size for a table */
+    height: 50%;        /* Define the the size of the table */
+    overflow-y: scroll; /* add the Scroll */
+    box-sizing: border-box;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Page: Rent -> Form */
@@ -177,30 +240,9 @@ html, body
     font-size: 18px;
 }
 
-/* Page: Customers -> Table */
-.table-title-rent
-{
-    position: absolute;
-    top: 60%;
-    left: 20%;
-}
 
-/* Page: Rent -> Table */
-#contentRentTable
-{
-    display: block;
-    width: 70%;
-    position: absolute;
-    top: 60%;
-    left: 30%;
-    height: 50%;        /* Define the the size of the table */
-    overflow-y: scroll; /* add the Scroll */
-}
 
-#rentList
-{
-    background-color: #0a3622;
-}
+
 
 
 
