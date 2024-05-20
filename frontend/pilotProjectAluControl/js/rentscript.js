@@ -31,7 +31,8 @@ function loadRent()
                     '<td>' + rent.rentPrice + '</td>' +
                     '<td>' + rent.rentStarts + '</td>' +
                     '<td>' + rent.rentEnds + '</td>' +
-                    '<td>' + rent.rentTotalPrice + '</td>'
+                    '<td>' + rent.rentTotalPrice + '</td>' +
+                    '<td><button class="btn btn-primary">Details</button></td>'
                 );
             });
         },
