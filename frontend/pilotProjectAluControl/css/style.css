@@ -15,27 +15,8 @@ html, body
     height: 100%;
     top: 0; /*overlap the span menu*/
     left: 0;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* Page: Index -> Main Content */
-.content {
-    padding-left: 300px;
-    padding-top: 20px;
-}
-
-
+/* --------------------------------------------- */
 /* Page: Index -> Card */
 .card /* Responsive */
 {
@@ -43,6 +24,48 @@ html, body
     flex: 0 0 calc(33.333% - 20px); /* Display 3 cards per line */
     /*max-width: calc(33.333% - 20px);*/ /* Display 3 cards per line*/
 }
+
+/* --------------------------------------------- */
+/* Page: Rent -> Table */
+
+contentRentTable
+{
+
+    background-color: yellow;
+    /* width: 99%;         /* Define the the width of the table */
+    /* display: block;     /* Display in block make possible set a size for a table */
+    /*height: 50%;        /* Define the the size of the table */
+    /*overflow-y: scroll; /* add the Scroll */
+
+    box-sizing: border-box;
+}
+
+/* Page: Rent -> Form */
+rentForm
+{
+    position: absolute;
+    width: 70%;
+    top: 10%;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------- */
+
+/* Page: Index -> Main Content */
+
+
+
+
 
 
 /* Page: All  */
@@ -67,23 +90,11 @@ html, body
         max-width: calc(100% - 20px); /* Adjust to show 1 card per line */
     }
 
-    /*This is a test to understand the how the media works */
-    body
-    {
-        background-color: red;
-    }
-
     .sidebar
     {
         display: none; /*hides the side menu */
         overflow-y: scroll;
         width: 30%;
-    }
-
-    .contentRent !important;
-    {
-        padding-left: 20px; /* this is the space from the side bar */
-        padding-top: 1%; /* this make the space from top */
     }
 
 }
@@ -99,19 +110,6 @@ html, body
 
 
     /* Page: Rent -> Table */
-    #contentRentTable
-    {
-
-        width: 50%; /* Define the the width of the table */
-
-        display: block;     /* Display in block make possible set a size for a table */
-        height: 10%;    /* Define the the size of the table */
-        overflow-y: scroll; /* add the Scroll */
-
-
-
-    }
-
 
 
 }
@@ -124,33 +122,13 @@ html, body
 
 
 /* Page: Products -> Main Content */
-.contentProduct
-{
-    padding-left: 300px;
-    padding-top: 20px;
-}
 
 
 /* Page: Products -> Form */
-#itemForm
-{
-    position: absolute;
-    width: 70%;
-    top: 30%;
-    right: 16px;
-    font-size: 18px;
-}
+
+
 /* Page: Products -> Table */
-#contentProductTable
-{
-    display: block;
-    width: 20%;
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    height: 50%;        /* Define the the size of the table */
-    overflow-y: scroll; /* add the Scroll */
-}
+
 
 
 
@@ -163,61 +141,15 @@ html, body
 
 
 /* Page: Customers -> Form */
-.contentCustomers
-{
-    padding-left: 300px;
-    padding-top: 20px;
-}
 
 
 
-#customerForm
-{
-    position: absolute;
-    width: 70%;
-    top: 10%;
-    right: 16px;
-    font-size: 18px;
-}
+
 
 /* Page: Customers -> Table */
-.table-title
-{
-    position: absolute;
-    top: 45%;
-    left: 30%;
-}
+
 
 /* Page: Customers -> Table */
-#customerTable
-{
-    display: block;
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    left: 30%;
-    height: 50%;        /* Define the the size of the table */
-    overflow-y: scroll; /* add the Scroll */
-}
-
-
-
-
-
-/* Page: Rent -> Table */
-
-#contentRentTable
-{
-
-
-
-    background-color: yellow;
-    width: 99%;         /* Define the the width of the table */
-    display: block;     /* Display in block make possible set a size for a table */
-    height: 50%;        /* Define the the size of the table */
-    overflow-y: scroll; /* add the Scroll */
-    box-sizing: border-box;
-}
 
 
 
@@ -231,14 +163,9 @@ html, body
 
 
 
-/* Page: Rent -> Form */
-#rentForm
-{
-    position: absolute;
-    width: 70%;
-    top: 10%;
-    font-size: 18px;
-}
+
+
+
 
 
 
