@@ -1,4 +1,8 @@
-/* Page: All  */
+/*
+ * Page: All
+ * Topic:
+ * Details:
+ */
 html, body
 {
     height: 50%;
@@ -7,47 +11,42 @@ html, body
 }
 
 
-/* Page: All -> Menu  */
+/*
+ * Page: All
+ * Topic: Menu
+ * Details: This set the position of the sidebar
+ */
 .sidebar
 {
     position: fixed;
     width: 280px;
     height: 100%;
-    top: 0; /*overlap the span menu*/
     left: 0;
+    top: 0; /*Overlap the Menu button*/
 }
-/* --------------------------------------------- */
-/* Page: Index -> Card */
-.card /* Responsive */
+
+
+/* ---------------------------------------------
+ * Page: Index
+ * Topic: Card
+ * Details: Set the responsive
+*/
+.card
 {
     margin-bottom: 20px;
     flex: 0 0 calc(33.333% - 20px); /* Display 3 cards per line */
     /*max-width: calc(33.333% - 20px);*/ /* Display 3 cards per line*/
 }
 
-/* --------------------------------------------- */
-/* Page: Rent -> Table */
+/* ---------------------------------------------
+ * Page: Rent
+ * Topic: Table
+ * Details:
+*/
 
-contentRentTable
-{
 
-    background-color: yellow;
-    /* width: 99%;         /* Define the the width of the table */
-    /* display: block;     /* Display in block make possible set a size for a table */
-    /*height: 50%;        /* Define the the size of the table */
-    /*overflow-y: scroll; /* add the Scroll */
 
-    box-sizing: border-box;
-}
 
-/* Page: Rent -> Form */
-rentForm
-{
-    position: absolute;
-    width: 70%;
-    top: 10%;
-    font-size: 18px;
-}
 
 
 

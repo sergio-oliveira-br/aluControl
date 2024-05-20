@@ -6,10 +6,6 @@
     background-color: blue;
 }
 
-.sidebar
-{
-    background-color: pink;
-}
 
 .content
 {
@@ -28,13 +24,7 @@
     background-color: #3dd5f3;
 }
 
-.sidebar
-{
-    position: fixed;
-    width: 280px;
-    height: 100%;
-    left: 0;
-}
+
 
 @media (max-width: 1200px)
 {
