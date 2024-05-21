@@ -36,8 +36,13 @@ html, body
 {
     margin-bottom: 20px;
     flex: 0 0 calc(33.333% - 20px); /* Display 3 cards per line */
-    /*max-width: calc(33.333% - 20px);*/ /* Display 3 cards per line*/
 }
+
+.content
+{
+    margin-left: 300px;
+}
+
 
 /* ---------------------------------------------
  * Page: Rent
