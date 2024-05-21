@@ -31,7 +31,7 @@ public class Rent
     private String rentItem;
 
     @Column(nullable = true)
-    private int rentPrice;
+    private double rentPrice;
 
     @Column(nullable = true)
     private int rentQtyItem;
@@ -46,7 +46,7 @@ public class Rent
     private int rentTotalDays;
 
     @Column(nullable = true)
-    private int rentTotalPrice;
+    private double rentTotalPrice;
 
     @Column(nullable = true)
     private String rentDetails;
@@ -56,7 +56,6 @@ public class Rent
 
 
     // Getters and setters
-
     public long getId() {
         return id;
     }
@@ -97,11 +96,11 @@ public class Rent
         this.rentItem = rentItem;
     }
 
-    public int getRentPrice() {
+    public double getRentPrice() {
         return rentPrice;
     }
 
-    public void setRentPrice(int rentPrice) {
+    public void setRentPrice(double rentPrice) {
         this.rentPrice = rentPrice;
     }
 
@@ -137,11 +136,11 @@ public class Rent
         this.rentTotalDays = rentTotalDays;
     }
 
-    public int getRentTotalPrice() {
+    public double getRentTotalPrice() {
         return rentTotalPrice;
     }
 
-    public void setRentTotalPrice(int rentTotalPrice) {
+    public void setRentTotalPrice(double rentTotalPrice) {
         this.rentTotalPrice = rentTotalPrice;
     }
 

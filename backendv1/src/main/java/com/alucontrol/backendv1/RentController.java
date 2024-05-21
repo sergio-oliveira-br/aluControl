@@ -36,12 +36,12 @@ public class RentController
                                          @RequestParam("rentLastName")String rentLastName,
                                          @RequestParam("rentAddress")String rentAddress,
                                          @RequestParam("rentItem")String rentItem,
-                                         @RequestParam("rentPrice")Integer rentPrice,
+                                         @RequestParam("rentPrice")double rentPrice, //they must always have a value
                                          @RequestParam("rentQtyItem")Integer rentQtyItem,
                                          @RequestParam("rentStarts")String rentStarts,
                                          @RequestParam("rentEnds")String rentEnds,
                                          @RequestParam("rentTotalDays")Integer rentTotalDays,
-                                         @RequestParam("rentTotalPrice") Integer rentTotalPrice,
+                                         @RequestParam("rentTotalPrice")double rentTotalPrice,
                                          @RequestParam("rentDetails") String rentDetails,
                                          @RequestParam("rentPaymentStatus") String rentPaymentStatus)
 

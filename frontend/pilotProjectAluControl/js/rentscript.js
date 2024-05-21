@@ -9,6 +9,16 @@
 $(document).ready(function()
 {
     loadRent();
+
+    //Update total price when price or quantity change
+    $('#editRentPrice, #editRentQtyItem').on('input', function() {
+        console.log('Price or Quantity input changed');
+        updateTotalPrice();
+    });
+    $('#editRentStarts, #editRentEnds').on('change', function() {
+        console.log('Start or End date changed');
+        loadRentDays();
+    });
 })
 
 
@@ -28,10 +38,10 @@ function loadRent()
                     '<td>' + rent.rentLastName + '</td>' +
                     '<td>' + rent.rentAddress + '</td>' +
                     '<td>' + rent.rentItem + '</td>' +
-                    '<td>' + rent.rentPrice + '</td>' +
+                    '<td>' + rent.rentPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
                     '<td>' + rent.rentStarts + '</td>' +
                     '<td>' + rent.rentEnds + '</td>' +
-                    '<td>' + rent.rentTotalPrice + '</td>' +
+                    '<td>' + rent.rentTotalPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
                     '<td>' + rent.rentPaymentStatus + '</td>' +
                     '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
                 );
@@ -70,7 +80,17 @@ function loadRentDays()
 
     //Write in the field
     document.getElementById('rentTotalDays').value = rentTotalDays;
+    updateTotalPrice();
 }
+
+//Calculates the total price
+function updateTotalPrice() {
+    let rentPrice = parseFloat($('#editRentPrice').val().replace(',', '.')) || 0;
+    let rentQtyItem = parseInt($('#editRentQtyItem').val()) || 0;
+    let rentTotalPrice = rentPrice * rentQtyItem;
+    $('#editRentTotalPrice').val(rentTotalPrice.toFixed(2));
+}
+
 //Update everytime that one of these two field is changed
 document.getElementById('rentStarts').addEventListener('change',loadRentDays);
 document.getElementById('rentEnds').addEventListener('change',loadRentDays);
@@ -95,13 +115,16 @@ function openEditModal(rentId) {
             $('#editRentStarts').val(rent.rentStarts);
             $('#editRentEnds').val(rent.rentEnds);
             $('#editRentTotalDays').val(rent.rentTotalDays);
-            $('#editRentTotalPrice').val(rent.rentTotalPrice);
+            $('#editRentTotalPrice').val(rent.rentTotalPrice.toFixed(2));
             $('#editRentPaymentStatus').val(rent.rentPaymentStatus);
             $('#editRentDetails').val(rent.rentDetails);
 
-            // Abrir o modal
+            //Open the modal
             var editModal = new bootstrap.Modal(document.getElementById('editModal'));
             editModal.show();
+
+            //Update the total price when opening the modal
+            updateTotalPrice();
         },
         error: function(xhr, status, error) {
             console.error(error);
@@ -122,15 +145,17 @@ $(document).ready(function() {
             rentLastName: $('#editRentLastName').val(),
             rentAddress: $('#editRentAddress').val(),
             rentItem: $('#editRentItem').val(),
-            rentQtyItem: $('#editRentQtyItem').val(),
-            rentPrice: $('#editRentPrice').val(),
+            rentQtyItem: parseInt($('#editRentQtyItem').val()) || 0,
+            rentPrice: parseFloat($('#editRentPrice').val()) || 0,
             rentStarts: $('#editRentStarts').val(),
             rentEnds: $('#editRentEnds').val(),
-            rentTotalDays: $('#editRentTotalDays').val(),
-            rentTotalPrice: $('#editRentTotalPrice').val(),
+            rentTotalDays: parseInt($('#editRentTotalDays').val()) || 0,
+            rentTotalPrice: parseFloat($('#editRentTotalPrice').val()) || 0,
             rentPaymentStatus: $('#editRentPaymentStatus').val(),
             rentDetails: $('#editRentDetails').val()
         };
+
+        console.log('Submitting data:', rentData);
 
         $.ajax({
             url: '/rent/' + rentData.id,
