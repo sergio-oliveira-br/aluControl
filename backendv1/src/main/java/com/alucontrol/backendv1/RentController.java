@@ -42,7 +42,8 @@ public class RentController
                                          @RequestParam("rentEnds")String rentEnds,
                                          @RequestParam("rentTotalDays")Integer rentTotalDays,
                                          @RequestParam("rentTotalPrice") Integer rentTotalPrice,
-                                         @RequestParam("rentDetails") String rentDetails)
+                                         @RequestParam("rentDetails") String rentDetails,
+                                         @RequestParam("rentPaymentStatus") String rentPaymentStatus)
 
     {
         Rent rent = new Rent();
@@ -57,6 +58,7 @@ public class RentController
         rent.setRentTotalDays(rentTotalDays);
         rent.setRentTotalPrice(rentTotalPrice);
         rent.setRentDetails(rentDetails);
+        rent.setRentPaymentStatus(rentPaymentStatus);
 
         Rent savedRent = rentRepository.save(rent);
         return ResponseEntity.ok(savedRent);

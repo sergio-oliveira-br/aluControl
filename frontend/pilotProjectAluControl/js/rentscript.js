@@ -32,7 +32,7 @@ function loadRent()
                     '<td>' + rent.rentStarts + '</td>' +
                     '<td>' + rent.rentEnds + '</td>' +
                     '<td>' + rent.rentTotalPrice + '</td>' +
-                    '<td>' +  + '</td>' +
+                    '<td>' + rent.rentPaymentStatus + '</td>' +
                     '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
                 );
             });
@@ -96,6 +96,7 @@ function openEditModal(rentId) {
             $('#editRentEnds').val(rent.rentEnds);
             $('#editRentTotalDays').val(rent.rentTotalDays);
             $('#editRentTotalPrice').val(rent.rentTotalPrice);
+            $('#editRentPaymentStatus').val(rent.rentPaymentStatus);
             $('#editRentDetails').val(rent.rentDetails);
 
             // Abrir o modal
@@ -110,7 +111,7 @@ function openEditModal(rentId) {
 
 
 
-
+//Submission event of the editing form
 $(document).ready(function() {
     $('#editRentForm').on('submit', function(e) {
         e.preventDefault();
@@ -127,16 +128,17 @@ $(document).ready(function() {
             rentEnds: $('#editRentEnds').val(),
             rentTotalDays: $('#editRentTotalDays').val(),
             rentTotalPrice: $('#editRentTotalPrice').val(),
+            rentPaymentStatus: $('#editRentPaymentStatus').val(),
             rentDetails: $('#editRentDetails').val()
         };
 
         $.ajax({
             url: '/rent/' + rentData.id,
-            type: 'PUT',
+            type: 'PUT', //The HTTP PUT method is used to send data to a server with the intention of updating or creating a specific resource.
             data: JSON.stringify(rentData),
             contentType: 'application/json',
             success: function(result) {
-                // Atualize a tabela e feche o modal
+                //Refresh the table and close the modal
                 loadRent();
                 var editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
                 editModal.hide();

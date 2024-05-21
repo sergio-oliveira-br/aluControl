@@ -51,6 +51,9 @@ public class Rent
     @Column(nullable = true)
     private String rentDetails;
 
+    @Column(nullable = true)
+    private String rentPaymentStatus;
+
 
     // Getters and setters
 
@@ -148,5 +151,13 @@ public class Rent
 
     public void setRentDetails(String rentDetails) {
         this.rentDetails = rentDetails;
+    }
+
+    public String getRentPaymentStatus() {
+        return rentPaymentStatus;
+    }
+
+    public void setRentPaymentStatus(String paymentStatus) {
+        this.rentPaymentStatus = paymentStatus;
     }
 }
