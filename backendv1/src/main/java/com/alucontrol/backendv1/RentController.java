@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class RentController
@@ -66,5 +69,17 @@ public class RentController
     {
         List<Rent> rent = rentRepository.findAll();
         return ResponseEntity.ok(rent);
+    }
+
+
+    /** Endpoint to get a specific rent by ID */
+    @GetMapping("/rent/{id}")
+    public ResponseEntity<Rent> getRentById(@PathVariable Long id) {
+        Optional<Rent> rentOptional = rentRepository.findById(id);
+        if (rentOptional.isPresent()) {
+            return ResponseEntity.ok(rentOptional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

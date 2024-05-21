@@ -32,8 +32,8 @@ function loadRent()
                     '<td>' + rent.rentStarts + '</td>' +
                     '<td>' + rent.rentEnds + '</td>' +
                     '<td>' + rent.rentTotalPrice + '</td>' +
-                    '<td><button class="btn btn-primary">Paid</button></td>' +
-                    '<td><button class="btn btn-primary">Details</button></td>'
+                    '<td>' +  + '</td>' +
+                    '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
                 );
             });
         },
@@ -74,3 +74,76 @@ function loadRentDays()
 //Update everytime that one of these two field is changed
 document.getElementById('rentStarts').addEventListener('change',loadRentDays);
 document.getElementById('rentEnds').addEventListener('change',loadRentDays);
+
+
+
+
+function openEditModal(rentId) {
+    // Obter os dados da linha correspondente
+    $.ajax({
+        url: '/rent/' + rentId,
+        type: 'GET',
+        success: function(rent) {
+            // Preencher os campos do formulário no modal
+            $('#editRentId').val(rent.id);
+            $('#editRentFirstName').val(rent.rentFirstName);
+            $('#editRentLastName').val(rent.rentLastName);
+            $('#editRentAddress').val(rent.rentAddress);
+            $('#editRentItem').val(rent.rentItem);
+            $('#editRentQtyItem').val(rent.rentQtyItem);
+            $('#editRentPrice').val(rent.rentPrice);
+            $('#editRentStarts').val(rent.rentStarts);
+            $('#editRentEnds').val(rent.rentEnds);
+            $('#editRentTotalDays').val(rent.rentTotalDays);
+            $('#editRentTotalPrice').val(rent.rentTotalPrice);
+            $('#editRentDetails').val(rent.rentDetails);
+
+            // Abrir o modal
+            var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+            editModal.show();
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+
+
+
+
+$(document).ready(function() {
+    $('#editRentForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var rentData = {
+            id: $('#editRentId').val(),
+            rentFirstName: $('#editRentFirstName').val(),
+            rentLastName: $('#editRentLastName').val(),
+            rentAddress: $('#editRentAddress').val(),
+            rentItem: $('#editRentItem').val(),
+            rentQtyItem: $('#editRentQtyItem').val(),
+            rentPrice: $('#editRentPrice').val(),
+            rentStarts: $('#editRentStarts').val(),
+            rentEnds: $('#editRentEnds').val(),
+            rentTotalDays: $('#editRentTotalDays').val(),
+            rentTotalPrice: $('#editRentTotalPrice').val(),
+            rentDetails: $('#editRentDetails').val()
+        };
+
+        $.ajax({
+            url: '/rent/' + rentData.id,
+            type: 'PUT',
+            data: JSON.stringify(rentData),
+            contentType: 'application/json',
+            success: function(result) {
+                // Atualize a tabela e feche o modal
+                loadRent();
+                var editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                editModal.hide();
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});

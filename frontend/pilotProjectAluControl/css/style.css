@@ -40,9 +40,14 @@ html, body
 
 /* ---------------------------------------------
  * Page: Rent
- * Topic: Table
+ * Topic: Table / Button
  * Details:
 */
+.btn-primary
+{
+
+
+}
 
 
 
