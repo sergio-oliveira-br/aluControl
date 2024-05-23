@@ -1,10 +1,7 @@
 // script.js
 
 
-//Testing the JS connection
-function displayTestMessage() {
-    alert("O arquivo JavaScript foi carregado com sucesso!");
-}
+
 
 
 
@@ -15,8 +12,7 @@ function displayTestMessage() {
  */
 $(document).ready(function()
 {
-    //Page: Index
-    loadNumberCustomers(); //this is responsible to display the number of records I have on DB
+     //this is responsible to display the number of records I have on DB
 
     //Page: Customer
     loadCustomers(); //this is the table of all my customers
@@ -58,31 +54,6 @@ function loadCustomers()
         }
     });
 }
-
-
-/**
-     Page: Index
-     Item: Card
-     Method: Get a number of Customers exits
-        on database (test)
- */
-function loadNumberCustomers()
-{
-    $.ajax({url: "/qtyCustomers", type: "GET", success: function(data)
-        {
-            //clean???
-
-            $('#loadNumberCustomers').text('Number of customers: ' + data);
-
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-        }
-    })
-}
-
-
 
 
 
