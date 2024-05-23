@@ -86,32 +86,6 @@ function loadNumberCustomers()
 
 
 
-/**
-    Page: Rent
-    Item: Form -> Total Price = (Days * Qty * UnitPrice)
-    Method: Simple math to calculate the total price
-*/
-//Method to calculate
-function loadTotalPrice()
-{
-    //Variable
-    let newTotalDays =parseInt(document.getElementById('rentTotalDays').value);
-    let newTotalQty = parseInt(document.getElementById('rentQtyItem').value);
-    let newUnitPrice = parseInt(document.getElementById('rentPrice').value);
-
-    //Call the Method
-    let newRentTotalPrice = Math.ceil(newTotalDays * newTotalQty * newUnitPrice);
-
-    //Write the field
-    document.getElementById('rentTotalPrice').value = newRentTotalPrice;
-}
-//Update everytime that one of these three field is changed
-document.getElementById('rentTotalDays').addEventListener("change", loadTotalPrice)
-document.getElementById('rentQtyItem').addEventListener("change", loadTotalPrice)
-document.getElementById('rentPrice').addEventListener("change", loadTotalPrice)
-document.getElementById('rentStarts').addEventListener('change',loadTotalPrice);
-document.getElementById('rentEnds').addEventListener('change',loadTotalPrice);
-
 
 
 /**

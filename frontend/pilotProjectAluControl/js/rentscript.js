@@ -10,6 +10,9 @@ $(document).ready(function()
 {
     loadRent();
 
+    loadRentDays();
+
+
     //Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('input', function() {
         console.log('Price or Quantity input changed');
@@ -60,14 +63,18 @@ function loadRent()
  Method: Simple math to calculate the days
  */
 //Making the Math
-function mathDays(start, end)
+function mathDays(end, start)
 {
     let start_Date = new Date(start);
     let end_Date = new Date(end);
     let diffTime = Math.abs(end_Date - start_Date);
     let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
     return diffDays;
 }
+
+
+
 //Using the Method
 function loadRentDays()
 {
@@ -80,20 +87,75 @@ function loadRentDays()
 
     //Write in the field
     document.getElementById('rentTotalDays').value = rentTotalDays;
-    updateTotalPrice();
+    console.log("The days has been calculated", rentTotalDays);
 }
 
+
+/**
+ Page: Rent
+ Item: Form -> Total Price = (Days * Qty * UnitPrice)
+ Method: Simple math to calculate the total price and update
+*/
+function loadTotalPrice()
+{
+    //Variable
+    let newTotalDays = parseInt(document.getElementById('rentTotalDays').value);
+    let newTotalQty = parseInt(document.getElementById('rentQtyItem').value);
+    let newUnitPrice = parseFloat(document.getElementById('rentPrice').value); //this is a float number
+
+    //Math
+    let newRentTotalPrice = newTotalDays * newTotalQty * newUnitPrice;
+
+    // Formatting the result with two decimal places is necessary.
+    let formattedTotalPrice = (Math.floor(newRentTotalPrice * 100) / 100).toFixed(2);
+
+    //Write the field
+    document.getElementById('rentTotalPrice').value = formattedTotalPrice;
+    console.log("The Rent Total Price was calculated by loadTotalPrice(). Result: " + formattedTotalPrice);
+}
+
+
+//Update everytime that one of these three field is changed
+document.getElementById('rentTotalDays').addEventListener('change', loadTotalPrice)
+document.getElementById('rentQtyItem').addEventListener('change', loadTotalPrice)
+document.getElementById('rentPrice').addEventListener('change', loadTotalPrice)
+document.getElementById('rentStarts').addEventListener('change',loadRentDays);
+document.getElementById('rentEnds').addEventListener('change',loadRentDays);
+
+
+
+
+
+
+/*
 //Calculates the total price
-function updateTotalPrice() {
+function updateTotalPrice()
+{
     let rentPrice = parseFloat($('#editRentPrice').val().replace(',', '.')) || 0;
     let rentQtyItem = parseInt($('#editRentQtyItem').val()) || 0;
+
+
+    let newRentTotalPrice = Math.ceil(rentPrice * rentQtyItem);
+
+    //Write the field
+    document.getElementById('rentTotalPrice').value = newRentTotalPrice;
+
     let rentTotalPrice = rentPrice * rentQtyItem;
     $('#editRentTotalPrice').val(rentTotalPrice.toFixed(2));
 }
 
-//Update everytime that one of these two field is changed
-document.getElementById('rentStarts').addEventListener('change',loadRentDays);
-document.getElementById('rentEnds').addEventListener('change',loadRentDays);
+ */
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,3 +236,9 @@ $(document).ready(function() {
         });
     });
 });
+
+//Update everytime that one of these two field is changed
+document.getElementById('rentStarts').addEventListener('change',loadRentDays);
+document.getElementById('rentEnds').addEventListener('change',loadRentDays);
+
+
