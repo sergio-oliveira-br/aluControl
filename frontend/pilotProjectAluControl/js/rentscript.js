@@ -105,15 +105,12 @@ function loadTotalPrice()
     let newTotalQty = parseInt(document.getElementById('rentQtyItem').value);
     let newUnitPrice = parseFloat(document.getElementById('rentPrice').value); //this is a float number
 
-    //Math
-    let newRentTotalPrice = newTotalDays * newTotalQty * newUnitPrice;
-
-    // Formatting the result with two decimal places is necessary.
-    let formattedTotalPrice = (Math.floor(newRentTotalPrice * 100) / 100).toFixed(2);
+    //Calculating
+    let newRentTotalPrice = (newTotalDays * newTotalQty * newUnitPrice);
 
     //Write the field
-    document.getElementById('rentTotalPrice').value = formattedTotalPrice;
-    console.log("The Rent Total Price was calculated by loadTotalPrice(). Result: " + formattedTotalPrice);
+    document.getElementById('rentTotalPrice').value = newRentTotalPrice.toFixed(2);
+    console.log("The Rent Total Price was calculated by loadTotalPrice(). Result: " + newRentTotalPrice.toFixed(2));
 }
 
 
