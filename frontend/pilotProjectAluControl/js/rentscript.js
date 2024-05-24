@@ -188,12 +188,12 @@ $(document).ready(function()
             rentLastName: $('#editRentLastName').val(),
             rentAddress: $('#editRentAddress').val(),
             rentItem: $('#editRentItem').val(),
-            rentQtyItem: parseInt($('#editRentQtyItem').val()) || 0,
-            rentPrice: parseFloat($('#editRentPrice').val()) || 0,
+            rentQtyItem: parseInt($('#editRentQtyItem').val()),
+            rentPrice: parseFloat($('#editRentPrice').val().toFixed(2)),
             rentStarts: $('#editRentStarts').val(),
             rentEnds: $('#editRentEnds').val(),
-            rentTotalDays: parseInt($('#editRentTotalDays').val()) || 0,
-            rentTotalPrice: parseFloat($('#editRentTotalPrice').val()) || 0,
+            rentTotalDays: parseInt($('#editRentTotalDays').val()),
+            rentTotalPrice: parseFloat($('#editRentTotalPrice').val()),
             rentPaymentStatus: $('#editRentPaymentStatus').val(),
             rentDetails: $('#editRentDetails').val()
         };
