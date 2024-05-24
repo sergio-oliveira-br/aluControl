@@ -10,11 +10,14 @@ package com.alucontrol.backendv1;
 
 import jakarta.persistence.*;
 
+//Indicates that this class is a JPA entity and will be mapped to a table in the database
 @Entity
+
+//Specifies the name of the table in the database to which the entity will be mapped
 @Table(name = "rent")
 public class Rent
 {
-    @Id
+    @Id //Primary Key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
