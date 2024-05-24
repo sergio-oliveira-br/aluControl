@@ -10,11 +10,7 @@
 package com.alucontrol.backendv1;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -74,7 +70,8 @@ public class RentController
     }
 
 
-    /** Endpoint to get a specific rent by ID */
+
+    /** Endpoint to get a specific rent by ID (by clicking on Edit into the table)*/
     @GetMapping("/rent/{id}")
     public ResponseEntity<Rent> getRentById(@PathVariable Long id) {
         Optional<Rent> rentOptional = rentRepository.findById(id);
@@ -84,4 +81,32 @@ public class RentController
             return ResponseEntity.notFound().build();
         }
     }
+
+
+    /** Endpoint to update a specific rent by ID */
+    @PutMapping("/rent/{id}")
+    public ResponseEntity<Rent> updateRent(@PathVariable Long id, @RequestBody Rent updatedRent) {
+        Optional<Rent> rentOptional = rentRepository.findById(id);
+        if (rentOptional.isPresent()) {
+            Rent rent = rentOptional.get();
+            rent.setRentFirstName(updatedRent.getRentFirstName());
+            rent.setRentLastName(updatedRent.getRentLastName());
+            rent.setRentAddress(updatedRent.getRentAddress());
+            rent.setRentItem(updatedRent.getRentItem());
+            rent.setRentPrice(updatedRent.getRentPrice());
+            rent.setRentQtyItem(updatedRent.getRentQtyItem());
+            rent.setRentStarts(updatedRent.getRentStarts());
+            rent.setRentEnds(updatedRent.getRentEnds());
+            rent.setRentTotalDays(updatedRent.getRentTotalDays());
+            rent.setRentTotalPrice(updatedRent.getRentTotalPrice());
+            rent.setRentDetails(updatedRent.getRentDetails());
+            rent.setRentPaymentStatus(updatedRent.getRentPaymentStatus());
+
+            Rent savedRent = rentRepository.save(rent);
+            return ResponseEntity.ok(savedRent);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

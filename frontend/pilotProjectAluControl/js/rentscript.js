@@ -17,12 +17,18 @@ $(document).ready(function()
     $('#editRentPrice, #editRentQtyItem').on('input', function() {
         console.log('Price or Quantity input changed');
         updateTotalPrice();
-
     });
+
+    //Update total price when dates change
     $('#editRentStarts, #editRentEnds').on('change', function() {
         console.log('Start or End date changed');
         //loadRentDays();
         updateRentDays();
+    });
+
+    $('#editRentForm').on('submit', function(e) {
+        e.preventDefault();
+        submitEditForm();
     });
 })
 
@@ -189,7 +195,7 @@ $(document).ready(function()
             rentAddress: $('#editRentAddress').val(),
             rentItem: $('#editRentItem').val(),
             rentQtyItem: parseInt($('#editRentQtyItem').val()),
-            rentPrice: parseFloat($('#editRentPrice').val().toFixed(2)),
+            rentPrice: parseFloat($('#editRentPrice').val()),
             rentStarts: $('#editRentStarts').val(),
             rentEnds: $('#editRentEnds').val(),
             rentTotalDays: parseInt($('#editRentTotalDays').val()),
@@ -205,7 +211,8 @@ $(document).ready(function()
             type: 'PUT', //The HTTP PUT method is used to send data to a server with the intention of updating or creating a specific resource.
             data: JSON.stringify(rentData),
             contentType: 'application/json',
-            success: function(result) {
+            success: function(result)
+            {
                 //Refresh the table and close the modal
                 loadRent(); //This is the table
                 let editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
@@ -252,8 +259,8 @@ document.getElementById('editRentEnds').addEventListener('change',updateRentDays
 function updateTotalPrice()
 {
     //Get the variables
-    let newRentPriceModal = parseFloat($('#editRentPrice').val().replace(',', '.')) || 0;
-    let newRentQtyItemModal = parseInt($('#editRentQtyItem').val()) || 0;
+    let newRentPriceModal = parseFloat($('#editRentPrice').val().replace(',', '.'));
+    let newRentQtyItemModal = parseInt($('#editRentQtyItem').val());
     let newRentTotalDaysModal = parseInt($('#editRentTotalDays').val());
 
     //Calculating
@@ -263,13 +270,36 @@ function updateTotalPrice()
     $('#editRentTotalPrice').val(newRentTotalPriceModal.toFixed(2));
 }
 
+function submitEditForm() {
+    let rentData = {
+        id: $('#editRentId').val(),
+        rentFirstName: $('#editRentFirstName').val(),
+        rentLastName: $('#editRentLastName').val(),
+        rentAddress: $('#editRentAddress').val(),
+        rentItem: $('#editRentItem').val(),
+        rentQtyItem: parseInt($('#editRentQtyItem').val()),
+        rentPrice: parseFloat($('#editRentPrice').val()),
+        rentStarts: $('#editRentStarts').val(),
+        rentEnds: $('#editRentEnds').val(),
+        rentTotalDays: parseInt($('#editRentTotalDays').val()),
+        rentTotalPrice: parseFloat($('#editRentTotalPrice').val()),
+        rentPaymentStatus: $('#editRentPaymentStatus').val(),
+        rentDetails: $('#editRentDetails').val()
+    };
 
-
-
-
-
-
-
-
-
-
+    $.ajax({
+        url: '/rent/' + rentData.id,
+        type: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify(rentData),
+        success: function(response) {
+            alert('Rent updated successfully');
+            $('#editModal').modal('hide');
+            loadRent();
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+            alert('Oops, something went wrong!');
+        }
+    });
+}
