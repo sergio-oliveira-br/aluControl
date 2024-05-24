@@ -17,14 +17,16 @@ $(document).ready(function()
     $('#editRentPrice, #editRentQtyItem').on('input', function() {
         console.log('Price or Quantity input changed');
         updateTotalPrice();
+
     });
     $('#editRentStarts, #editRentEnds').on('change', function() {
         console.log('Start or End date changed');
-        loadRentDays();
+        //loadRentDays();
+        updateRentDays();
     });
 })
 
-
+//This is the Table
 function loadRent()
 {
     $.ajax({url: "/rent", type: "GET", success: function(data)
@@ -123,50 +125,21 @@ document.getElementById('rentStarts').addEventListener('change',loadRentDays);
 document.getElementById('rentEnds').addEventListener('change',loadRentDays);
 
 
-
-
-
-
-/*
-//Calculates the total price
-function updateTotalPrice()
-{
-    let rentPrice = parseFloat($('#editRentPrice').val().replace(',', '.')) || 0;
-    let rentQtyItem = parseInt($('#editRentQtyItem').val()) || 0;
-
-
-    let newRentTotalPrice = Math.ceil(rentPrice * rentQtyItem);
-
-    //Write the field
-    document.getElementById('rentTotalPrice').value = newRentTotalPrice;
-
-    let rentTotalPrice = rentPrice * rentQtyItem;
-    $('#editRentTotalPrice').val(rentTotalPrice.toFixed(2));
-}
-
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ Page: Rent
+ Item: Form (modal)
+ Method: This is a jQuery method that allows
+ the user to make asynchronous requests to the server
+ to send or receive data without having to reload the page.
+*/
 
 function openEditModal(rentId) {
-    // Obter os dados da linha correspondente
     $.ajax({
         url: '/rent/' + rentId,
         type: 'GET',
-        success: function(rent) {
-            // Preencher os campos do formulário no modal
+        success: function(rent)
+        {
+            //Fill in the form fields in the modal using Selectors $() to select HTML elements based on their IDs.
             $('#editRentId').val(rent.id);
             $('#editRentFirstName').val(rent.rentFirstName);
             $('#editRentLastName').val(rent.rentLastName);
@@ -182,26 +155,37 @@ function openEditModal(rentId) {
             $('#editRentDetails').val(rent.rentDetails);
 
             //Open the modal
-            var editModal = new bootstrap.Modal(document.getElementById('editModal'));
+            let editModal = new bootstrap.Modal(document.getElementById('editModal'));
             editModal.show();
 
             //Update the total price when opening the modal
-            updateTotalPrice();
+            //loadTotalPrice()
+            //updateTotalPrice();
+            console.log("updated the total price");
         },
-        error: function(xhr, status, error) {
+        error: function(xhr, status, error)
+        {
             console.error(error);
+            console.status = error;
+            console.log(status);
         }
     });
 }
 
 
-
+/**
+ Page: Rent
+ Item: Form (modal)
+ Method:
+*/
 //Submission event of the editing form
-$(document).ready(function() {
-    $('#editRentForm').on('submit', function(e) {
+$(document).ready(function()
+{
+    $('#editRentForm').on('submit', function(e)
+    {
         e.preventDefault();
 
-        var rentData = {
+        let rentData = {
             id: $('#editRentId').val(),
             rentFirstName: $('#editRentFirstName').val(),
             rentLastName: $('#editRentLastName').val(),
@@ -226,19 +210,69 @@ $(document).ready(function() {
             contentType: 'application/json',
             success: function(result) {
                 //Refresh the table and close the modal
-                loadRent();
-                var editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+                loadRent(); //This is the table
+                let editModal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
                 editModal.hide();
             },
             error: function(xhr, status, error) {
                 console.error(error);
+                console.log(status);
             }
         });
     });
 });
 
+/**
+ Page: Rent
+ Item: Form (modal)
+ Method: Calculates the difference of the days
+*/
+
+function updateRentDays()
+{
+    //Get the variables from the modal
+    let newStart = $('#editRentStarts').val();
+    let newEnd = $('#editRentEnds').val();
+
+    //Call the method mathDays()
+    let newRentTotalDays = mathDays(newStart, newEnd);
+    console.log("New Total Days has been calculated: " + newRentTotalDays);
+
+    //Write in the field
+    $('#editRentTotalDays').val(newRentTotalDays);
+
+}
 //Update everytime that one of these two field is changed
-document.getElementById('rentStarts').addEventListener('change',loadRentDays);
-document.getElementById('rentEnds').addEventListener('change',loadRentDays);
+document.getElementById('editRentStarts').addEventListener('change',updateRentDays);
+document.getElementById('editRentEnds').addEventListener('change',updateRentDays);
+
+
+/**
+ Page: Rent
+ Item: Form (modal)
+ Method: Calculates the total price on Modal
+*/
+function updateTotalPrice()
+{
+    //Get the variables
+    let newRentPriceModal = parseFloat($('#editRentPrice').val().replace(',', '.')) || 0;
+    let newRentQtyItemModal = parseInt($('#editRentQtyItem').val()) || 0;
+    let newRentTotalDaysModal = parseInt($('#editRentTotalDays').val());
+
+    //Calculating
+    let newRentTotalPriceModal = (newRentPriceModal * newRentQtyItemModal * newRentTotalDaysModal);
+
+    //Writing
+    $('#editRentTotalPrice').val(newRentTotalPriceModal.toFixed(2));
+}
+
+
+
+
+
+
+
+
+
 
 
