@@ -12,28 +12,28 @@ $(document).ready(function()
 
 });
 
+
 /**
- Page: Customers
+ Page: Products
  Item: Table
  Method: Create a table with
- all customers via AJAX
+ all products via AJAX
  */
-function loadCustomers()
+function loadProduct()
 {
-    $.ajax({url: "/customers", type: "GET", success: function(data)
+    $.ajax({url: "/product", type: "GET", success: function(data)
         {
             //first clean
-            $('#customerList').empty();
+            $('#productList').empty();
 
-            //Iterate over clients and add them to the list
-            data.forEach(function(customer)
+            //Iteration
+            data.forEach(function(product)
             {
-                $('#customerList').append('<tr>' +
-                    '<td>' + customer.id + '</td>' +
-                    '<td>' + customer.firstName + '<td>'+
-                    '<td>' + customer.lastName + '<td>' +
-                    '<td>' + customer.city + '<td>' +
-                    '</tr>');
+                $('#productList').append('<tr>' +
+                    '<td>' + product.id + '</td>' +
+                    '<td>' + product.itemDescription + '</td>' +
+                    '<td>'+ product.itemQuantity+'</td>'
+                );
             });
         },
         error: function(xhr, status, error)

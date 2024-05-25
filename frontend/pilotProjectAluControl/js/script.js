@@ -24,27 +24,31 @@ $(document).ready(function()
 
 
 
+
+
+
 /**
- Page: Products
+ Page: Customers
  Item: Table
  Method: Create a table with
- all products via AJAX
-*/
-function loadProduct()
+ all customers via AJAX
+ */
+function loadCustomers()
 {
-    $.ajax({url: "/product", type: "GET", success: function(data)
+    $.ajax({url: "/customers", type: "GET", success: function(data)
         {
             //first clean
-            $('#productList').empty();
+            $('#customerList').empty();
 
-            //Iteration
-            data.forEach(function(product)
+            //Iterate over clients and add them to the list
+            data.forEach(function(customer)
             {
-                $('#productList').append('<tr>' +
-                        '<td>' + product.id + '</td>' +
-                        '<td>' + product.itemDescription + '</td>' +
-                        '<td>'+ product.itemQuantity+'</td>'
-                );
+                $('#customerList').append('<tr>' +
+                    '<td>' + customer.id + '</td>' +
+                    '<td>' + customer.firstName + '<td>'+
+                    '<td>' + customer.lastName + '<td>' +
+                    '<td>' + customer.city + '<td>' +
+                    '</tr>');
             });
         },
         error: function(xhr, status, error)
@@ -53,8 +57,6 @@ function loadProduct()
         }
     });
 }
-
-
 
 
 
