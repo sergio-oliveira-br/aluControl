@@ -16,10 +16,7 @@ $(document).ready(function()
 
     //Page: Customer
     loadCustomers(); //this is the table of all my customers
-
-    //Page: Product
-    loadProduct();
-
+    
 });
 
 
