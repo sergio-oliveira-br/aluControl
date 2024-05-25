@@ -12,6 +12,9 @@ $(document).ready(function()
 
     loadRentDays();
 
+    //The script will load the available items in the rental form when the page loads
+    loadItemsForRentForm();
+
 
     //Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('change', function() {
@@ -32,7 +35,31 @@ $(document).ready(function()
     });
 })
 
-//This is the Table
+
+//The script will load the available items in the rental form when the page loads
+function loadItemsForRentForm() {
+    $.ajax({
+        url: "/product",
+        type: "GET",
+        success: function(data) {
+            var rentItemSelect = $('#rentItem');
+            rentItemSelect.empty();
+            data.forEach(function(product) {
+                rentItemSelect.append('<option value="' + product.id + '">' + product.itemDescription + '</option>');
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading items for rent form: ", error);
+        }
+    });
+}
+
+
+/**
+ Page: Rent
+ Item: Table
+ Method: The script will load all items in a table
+*/
 function loadRent()
 {
     $.ajax({url: "/rent", type: "GET", success: function(data)
