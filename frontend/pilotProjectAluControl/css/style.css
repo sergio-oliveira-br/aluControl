@@ -26,6 +26,17 @@ html, body
     top: 0; /*Overlap the Menu button*/
 }
 
+/*
+ * Page: All
+ * Topic: Content
+ * Details: All pages will be display ate the same point
+ */
+.content
+{
+    margin-left: 250px;
+}
+
+
 
 /* ---------------------------------------------
  * Page: Index
@@ -38,10 +49,6 @@ html, body
     flex: 0 0 calc(33.333% - 20px); /* Display 3 cards per line */
 }
 
-.content
-{
-    margin-left: 300px;
-}
 
 
 /* ---------------------------------------------
@@ -63,6 +70,12 @@ html, body
 }
 
 
+/* ---------------------------------------------
+ * Page: Product
+ * Topic: Main Content
+ * Details:
+*/
+
 
 
 
@@ -81,7 +94,7 @@ html, body
 
 /* --------------------------------------------- */
 
-/* Page: Index -> Main Content */
+
 
 
 
@@ -144,7 +157,7 @@ html, body
 /* Page: Products -> Main Content */
 
 
-/* Page: Products -> Form */
+
 
 
 /* Page: Products -> Table */
