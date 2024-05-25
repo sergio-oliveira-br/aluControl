@@ -11,10 +11,12 @@ public class HomeController
 {
 
     private final CustomerRepository customerRepository;
+    private final RentRepository rentRepository;
 
-    public HomeController (CustomerRepository customerRepository)
+    public HomeController (CustomerRepository customerRepository, RentRepository rentRepository)
     {
         this.customerRepository = customerRepository;
+        this.rentRepository = rentRepository;
     }
 
     @GetMapping("/")
@@ -31,6 +33,14 @@ public class HomeController
     {
         Long qtyCustomers = customerRepository.count();
         return ResponseEntity.ok(qtyCustomers);
+    }
+
+    /** Endpoint to get back the number of customers from DB */
+    @GetMapping("/qtyRentUnpaid")
+    public ResponseEntity<Long> getQtyRentUnpaid()
+    {
+        Long qtyRentUnpaid = rentRepository.count();
+        return ResponseEntity.ok(qtyRentUnpaid);
     }
 
 

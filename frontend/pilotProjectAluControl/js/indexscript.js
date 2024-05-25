@@ -17,6 +17,9 @@ $(document).ready(function ()
 {
     //this is responsible to display the number
     loadNumberCustomers();
+
+    //This card display the num of rent is Unpaid
+    loadNumRentUnpaid();
 })
 
 
@@ -27,7 +30,24 @@ function loadNumberCustomers()
             //clean???
 
             $('#loadNumberCustomers').text('Number of customers: ' + data);
+            console.log(data);
 
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+            console.log(status)
+        }
+    })
+}
+
+
+function loadNumRentUnpaid ()
+{
+    $.ajax({url: "/qtyRentUnpaid", type: "GET", success: function(data)
+        {
+            $('#loadRentUnpaid').text('Number of rents: ' + data);
+            console.log("The number of rents is: ...")
         },
         error: function(xhr, status, error)
         {

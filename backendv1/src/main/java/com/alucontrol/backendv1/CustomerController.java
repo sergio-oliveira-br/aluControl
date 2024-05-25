@@ -53,8 +53,9 @@ public class CustomerController
     }
 
 
-
-    /** Endpoint to get back all customers */
+    /**
+     * Endpoint to get back the Number of Unpaid Rents
+     */
     @GetMapping("/customers")
     public ResponseEntity<List<Customer>> getAllCustomers() {
         List<Customer> customers = customerRepository.findAll();
