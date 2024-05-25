@@ -103,7 +103,7 @@ function loadRentDays()
  Page: Rent
  Item: Form -> Total Price = (Days * Qty * UnitPrice)
  Method: Simple math to calculate the total price and update
-*/
+ */
 function loadTotalPrice()
 {
     //Variable
@@ -134,7 +134,7 @@ document.getElementById('rentEnds').addEventListener('change',loadRentDays);
  Method: This is a jQuery method that allows
  the user to make asynchronous requests to the server
  to send or receive data without having to reload the page.
-*/
+ */
 
 function openEditModal(rentId) {
     $.ajax({
@@ -180,7 +180,7 @@ function openEditModal(rentId) {
  Page: Rent
  Item: Form (modal)
  Method: Calculates the difference of the days
-*/
+ */
 function updateRentDays()
 {
     //Get the variables from the modal
@@ -204,7 +204,7 @@ document.getElementById('editRentEnds').addEventListener('change',updateRentDays
  Page: Rent
  Item: Form (modal)
  Method: Calculates the total price on Modal
-*/
+ */
 function updateTotalPrice()
 {
     //Get the variables
@@ -223,7 +223,7 @@ function updateTotalPrice()
  Page: Rent
  Item: Form (modal)
  Method: Send the data to update my database
-*/
+ */
 
 
 function submitEditForm() {
