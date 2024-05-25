@@ -1,6 +1,7 @@
 package com.alucontrol.backendv1;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,14 +36,13 @@ public class HomeController
         return ResponseEntity.ok(qtyCustomers);
     }
 
+
     /** Endpoint to get back the number of customers from DB */
     @GetMapping("/qtyRentUnpaid")
     public ResponseEntity<Long> getQtyRentUnpaid()
     {
-        Long qtyRentUnpaid = rentRepository.count();
+        Long qtyRentUnpaid = rentRepository.countUnpaidRents();
         return ResponseEntity.ok(qtyRentUnpaid);
     }
-
-
 
 }

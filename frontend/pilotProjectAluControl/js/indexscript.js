@@ -47,7 +47,7 @@ function loadNumRentUnpaid ()
     $.ajax({url: "/qtyRentUnpaid", type: "GET", success: function(data)
         {
             $('#loadRentUnpaid').text('Number of rents: ' + data);
-            console.log("The number of rents is: ...")
+            console.log("The number of rents Unpaid is: ...")
         },
         error: function(xhr, status, error)
         {
