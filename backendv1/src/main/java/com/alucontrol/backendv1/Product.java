@@ -9,10 +9,13 @@ package com.alucontrol.backendv1;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 public class Product
 {
+    /** Here is the original data from the Product */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -48,4 +51,12 @@ public class Product
     public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
+
+    /** These are data from Rent where it will be connected with THIS TABLE "PRODUCT" */
+    @OneToMany //One Product to Many Rent
+    private List<Rent> rent;
+
+
+
+
 }
