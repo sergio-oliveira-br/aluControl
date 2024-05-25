@@ -32,7 +32,10 @@ function loadProduct()
                 $('#productList').append('<tr>' +
                     '<td>' + product.id + '</td>' +
                     '<td>' + product.itemDescription + '</td>' +
-                    '<td>'+ product.itemQuantity+'</td>'
+                    '<td>' + product.itemQuantity +'</td>' +
+                    '<td>' + + '</td>' +
+                    '<td><button class="btn btn-primary" onclick="">New Rent</button></td>' +
+                    '<td><button class="btn btn-primary" onclick="">Edit</button></td>'
                 );
             });
         },
