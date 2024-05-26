@@ -29,7 +29,7 @@ public class RentController
     /** Endpoint to send rent */
     @PostMapping("/saveRent")
     public ResponseEntity<Rent> saveRent(@RequestParam("rentFirstName")String rentFirstName,
-                                         @RequestParam("rentLastName")String rentLastName,
+                                         //@RequestParam("rentLastName")String rentLastName,
                                          @RequestParam("rentAddress")String rentAddress,
                                          @RequestParam("rentItem")String rentItem,
                                          @RequestParam("rentPrice")double rentPrice, //they must always have a value
@@ -44,7 +44,7 @@ public class RentController
     {
         Rent rent = new Rent();
         rent.setRentFirstName(rentFirstName);
-        rent.setRentLastName(rentLastName);
+        //rent.setRentLastName(rentLastName);
         rent.setRentAddress(rentAddress);
         rent.setRentItem(rentItem);
         rent.setRentPrice(rentPrice);
@@ -90,7 +90,7 @@ public class RentController
         if (rentOptional.isPresent()) {
             Rent rent = rentOptional.get();
             rent.setRentFirstName(updatedRent.getRentFirstName());
-            rent.setRentLastName(updatedRent.getRentLastName());
+            //rent.setRentLastName(updatedRent.getRentLastName());
             rent.setRentAddress(updatedRent.getRentAddress());
             rent.setRentItem(updatedRent.getRentItem());
             rent.setRentPrice(updatedRent.getRentPrice());

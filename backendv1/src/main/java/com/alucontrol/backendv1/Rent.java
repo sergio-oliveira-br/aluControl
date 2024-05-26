@@ -38,7 +38,7 @@ public class Rent
     @Column(nullable = false)
     private String rentFirstName;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String rentLastName;
 
     @Column(nullable = true)

@@ -51,7 +51,7 @@ function loadCustomerForRentForm() {
             rentCustomerSelect.empty();
 
             data.forEach(function(customer) {
-                rentCustomerSelect.append('<option value="' + customer.id + '">' +
+                rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
                     customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
             });
             console.log("customers has been load to the form");
@@ -73,7 +73,7 @@ function loadItemsForRentForm() {
             var rentItemSelect = $('#rentItem');
             rentItemSelect.empty();
             data.forEach(function(product) {
-                rentItemSelect.append('<option value="' + product.id + '">' + product.itemDescription + '</option>');
+                rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
             });
         },
         error: function(xhr, status, error) {
@@ -101,7 +101,7 @@ function loadRent()
                 $('#rentList').append('<tr>' +
                     '<td>' + rent.id + '</td>' +
                     '<td>' + rent.rentFirstName + '</td>' +
-                    '<td>' + rent.rentLastName + '</td>' +
+                    /** '<td>' + rent.rentLastName + '</td>' + */
                     '<td>' + rent.rentAddress + '</td>' +
                     '<td>' + rent.rentItem + '</td>' +
                     '<td>' + rent.rentPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
