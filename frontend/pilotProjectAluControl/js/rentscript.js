@@ -12,6 +12,9 @@ $(document).ready(function()
 
     loadRentDays();
 
+    //The script will load the available customers in the rental form when the page loads
+    loadCustomerForRentForm(); //!Important (this additional features)
+
     //The script will load the available items in the rental form when the page loads
     loadItemsForRentForm();
 
@@ -34,6 +37,31 @@ $(document).ready(function()
         submitEditForm();
     });
 })
+
+
+//!Important (this additional features)
+//The script will load the available customers in the rental form when the page loads
+function loadCustomerForRentForm() {
+    $.ajax({
+        url: "/customers",
+        type: "GET",
+        success: function(data) {
+            var rentCustomerSelect = $('#rentFirstName');
+
+            rentCustomerSelect.empty();
+
+            data.forEach(function(customer) {
+                rentCustomerSelect.append('<option value="' + customer.id + '">' +
+                    customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
+            });
+            console.log("customers has been load to the form");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading items for rent form: ", error);
+        }
+    });
+}
+
 
 
 //The script will load the available items in the rental form when the page loads

@@ -7,6 +7,7 @@ $(document).ready(function()
 {
     //Create a table with all customers via AJAX
     loadCustomers();
+
 });
 
 
