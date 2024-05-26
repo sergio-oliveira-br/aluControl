@@ -19,19 +19,24 @@ $(document).ready(function()
     loadItemsForRentForm();
 
 
-    //Update total price when price or quantity change
+    //(Modal)The script will load the available items in the rental form when the page loads
+    updateLoadCustomerForRentForm();
+
+
+    //(Modal)Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('change', function() {
         console.log('Price or Quantity input changed');
         updateTotalPrice();
     });
 
-    //Update total price when dates change
+    //(Modal)Update total price when dates change
     $('#editRentStarts, #editRentEnds').on('change', function() {
         console.log('Start or End date changed');
         //loadRentDays();
         updateRentDays();
     });
 
+    //(Modal)
     $('#editRentForm').on('submit', function(e) {
         e.preventDefault();
         submitEditForm();
@@ -226,6 +231,34 @@ function openEditModal(rentId) {
             console.error(error);
             console.status = error;
             console.log(status);
+        }
+    });
+}
+
+
+
+/**
+ Page: Rent
+ Item: Form (modal) - > Field Customer
+ Method: The script will load the available customers in the rental form when the page loads
+ */
+function updateLoadCustomerForRentForm() {
+    $.ajax({
+        url: "/customers",
+        type: "GET",
+        success: function(data) {
+            var rentCustomerSelect = $('#editRentFirstName');
+
+            rentCustomerSelect.empty();
+
+            data.forEach(function(customer) {
+                rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
+                    customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
+            });
+            console.log("customers has been load to the form on (modal)");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading items for rent form: ", error);
         }
     });
 }
