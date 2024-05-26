@@ -34,7 +34,6 @@ function loadProduct()
                     '<td>' + product.itemDescription + '</td>' +
                     '<td>' + product.itemQuantity +'</td>' +
                     '<td>' + + '</td>' +
-                    '<td><button class="btn btn-primary" onclick="">New Rent</button></td>' +
                     '<td><button class="btn btn-primary" onclick="">Edit</button></td>'
                 );
             });
