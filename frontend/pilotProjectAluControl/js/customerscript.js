@@ -29,9 +29,9 @@ function loadCustomers()
             {
                 $('#customerList').append('<tr>' +
                     '<td>' + customer.id + '</td>' +
-                    '<td>' + customer.firstName + '<td>'+
-                    '<td>' + customer.lastName + '<td>' +
-                    '<td>' + customer.city + '<td>' +
+                    '<td>' + customer.firstName + '</td>'+
+                    '<td>' + customer.lastName + '</td>' +
+                    '<td>' + customer.city + '</td>' +
                     '</tr>');
             });
         },
