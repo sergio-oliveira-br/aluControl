@@ -12,9 +12,11 @@ import com.alucontrol.backendv1.Model.Rent.Rent;
 import com.alucontrol.backendv1.Repository.Rent.RentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 /** This controller is dedicated to endpoints that read data */
 public class RentReadController
 {
