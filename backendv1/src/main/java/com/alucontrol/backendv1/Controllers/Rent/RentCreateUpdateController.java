@@ -14,16 +14,17 @@ import com.alucontrol.backendv1.Repository.Rent.RentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-
-import java.util.List;
 import java.util.Optional;
 
+/**This controller is dedicated to endpoints that create and update records*/
 @RestController
-public class RentController
+public class RentCreateUpdateController
 {
+    //Repository for access to product data
     private final RentRepository rentRepository;
 
-    public RentController(RentRepository rentRepository)
+    //Constructor responsible for injecting the repository
+    public RentCreateUpdateController(RentRepository rentRepository)
     {
         this.rentRepository = rentRepository;
     }
@@ -63,16 +64,6 @@ public class RentController
     }
 
 
-    /** Endpoint to get back all rent */
-    @GetMapping("/rent")
-    public ResponseEntity<List<Rent>> getAllRent()
-    {
-        List<Rent> rent = rentRepository.findAll();
-        return ResponseEntity.ok(rent);
-    }
-
-
-
     /** Endpoint to get a specific rent by ID (by clicking on Edit into the table)*/
     @GetMapping("/rent/{id}")
     public ResponseEntity<Rent> getRentById(@PathVariable Long id) {
@@ -109,14 +100,5 @@ public class RentController
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
-
-    /** Endpoint to get back the number of Scaffolds was Rented from DB
-      * Pointing to productScript.js and product.html */
-    @GetMapping("/sumScaffoldsRented")
-    public ResponseEntity<Long> getItemScaffoldsRented()
-    {
-        Long totalScaffoldsRented = rentRepository.sumScaffoldsRented();
-        return ResponseEntity.ok(totalScaffoldsRented);
     }
 }

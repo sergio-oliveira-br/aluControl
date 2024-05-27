@@ -11,9 +11,11 @@ import com.alucontrol.backendv1.Model.Customer.Customer;
 import com.alucontrol.backendv1.Repository.Customer.CustomerRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
 /** This controller contains specific methods for custom operations */
 public class CustomerStatisticsController
 {
