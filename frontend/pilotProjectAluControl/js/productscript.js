@@ -10,6 +10,9 @@ $(document).ready(function()
     //Load the table
     loadProduct();
 
+    //Load in the card the sum of Scaffolds
+    loadSumScaffolds();
+
 });
 
 
@@ -44,4 +47,24 @@ function loadProduct()
         }
     });
 }
+
+
+/**
+ Page: Products
+ Item: Table
+ Method: Display the sum of the item "Scaffolds" from ProductController
+ */
+function loadSumScaffolds() {
+    $.ajax({url: "/sumScaffolds", type: "GET", success: function(data)
+        {
+            $('#sumScaffolds').text('Total Items ' + data); //this will display the sum
+            console.log("Data loaded - This is the sum of all Scaffolds")
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    })
+}
+
 

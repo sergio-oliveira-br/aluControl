@@ -53,4 +53,12 @@ public class ProductController
         return ResponseEntity.ok(products);
     }
 
+    /** Endpoint to get back the sum of Scaffolds from DB */
+    @GetMapping("/sumScaffolds")
+    public ResponseEntity<Long> getSumScaffolds()
+    {
+        Long sumScaffolds = productRepository.getSumScaffolds();
+        return ResponseEntity.ok(sumScaffolds);
+    }
+
 }

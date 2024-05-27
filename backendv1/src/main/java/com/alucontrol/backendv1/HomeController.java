@@ -37,7 +37,7 @@ public class HomeController
     }
 
 
-    /** Endpoint to get back the number of customers from DB */
+    /** Endpoint to get back the number of customers from DB -> Pointing to indexScript.js*/
     @GetMapping("/qtyRentUnpaid")
     public ResponseEntity<Long> getQtyRentUnpaid()
     {

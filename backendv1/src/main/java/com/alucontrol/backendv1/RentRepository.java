@@ -11,9 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface RentRepository extends JpaRepository<Rent, Long>
 {
-    //Method for counting unpaid records
+    //Method for counting unpaid records -> Display on Index Page via HomeController
     @Query(value = "SELECT COUNT(*) FROM AluControlV1.rent\n WHERE rent_payment_status = 'UnPaid'", nativeQuery = true)
-
     Long countUnpaidRents();
 }
 
