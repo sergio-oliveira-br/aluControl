@@ -16,6 +16,9 @@ $(document).ready(function()
     //Display the sum of the item "Scaffolds" from ProductController
     loadSumScaffoldsRented();
 
+    //Display the QTY AVAILABLE of "Scaffolds" from RentStatisticsController
+    loadQtyScaffoldsAvailable();
+
 });
 
 
@@ -55,7 +58,7 @@ function loadProduct()
 /**
  Page: Products
  Item: Card
- Method: Display the sum of the item "Scaffolds" from ProductController
+ Method: Display the sum of ALL item "Scaffolds" from ProductController
  */
 function loadSumScaffolds() {
     $.ajax({url: "/sumScaffolds", type: "GET", success: function(data)
@@ -73,13 +76,31 @@ function loadSumScaffolds() {
 /**
  Page: Products
  Item: Card
- Method: Display the sum of the item RENTED "Scaffolds" from RentController
+ Method: Display the sum of the item RENTED "Scaffolds" from RentStatisticsController
  */
 function loadSumScaffoldsRented() {
     $.ajax({url: "/sumScaffoldsRented", type: "GET", success: function(data)
         {
            $('#sumScaffoldsRented').text('Total Items Rented ' + data);
            console.log("Data loaded - This is the sum of all Scaffolds RENTED")
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    })
+}
+
+/**
+ Page: Products
+ Item: Card
+ Method: Display the QTY AVAILABLE of "Scaffolds" from RentStatisticsController
+ */
+function loadQtyScaffoldsAvailable() {
+    $.ajax({url: "/qtyScaffoldsAvailable", type: "GET", success: function(data)
+        {
+            $('#qtyScaffoldsAvailable').text('Total Items Available ' + data);
+            console.log("Data loaded - This is the sum of all Scaffolds AVAILABLE")
         },
         error: function(xhr, status, error)
         {
