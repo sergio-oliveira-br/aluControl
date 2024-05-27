@@ -62,10 +62,6 @@ public class ProductController
     }
 
 
-    //@GetMapping("/itemAvailable")
-    //public ResponseEntity<Long> getTotalItemAvailable()
-    //{
-        //Long totalScaffoldsAvailable = productRepository.
-    //}
+
 
 }

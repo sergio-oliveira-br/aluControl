@@ -108,4 +108,13 @@ public class RentController
             return ResponseEntity.notFound().build();
         }
     }
+
+    /** Endpoint to get back the number of Scaffolds was Rented from DB
+      * Pointing to productScript.js and product.html */
+    @GetMapping("/sumScaffoldsRented")
+    public ResponseEntity<Long> getItemScaffoldsRented()
+    {
+        Long totalScaffoldsRented = rentRepository.sumScaffoldsRented();
+        return ResponseEntity.ok(totalScaffoldsRented);
+    }
 }

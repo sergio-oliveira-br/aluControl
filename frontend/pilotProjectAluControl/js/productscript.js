@@ -13,6 +13,9 @@ $(document).ready(function()
     //Load in the card the sum of Scaffolds
     loadSumScaffolds();
 
+    //Display the sum of the item "Scaffolds" from ProductController
+    loadSumScaffoldsRented();
+
 });
 
 
@@ -51,7 +54,7 @@ function loadProduct()
 
 /**
  Page: Products
- Item: Table
+ Item: Card
  Method: Display the sum of the item "Scaffolds" from ProductController
  */
 function loadSumScaffolds() {
@@ -59,6 +62,24 @@ function loadSumScaffolds() {
         {
             $('#sumScaffolds').text('Total Items ' + data); //this will display the sum
             console.log("Data loaded - This is the sum of all Scaffolds")
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    })
+}
+
+/**
+ Page: Products
+ Item: Card
+ Method: Display the sum of the item RENTED "Scaffolds" from RentController
+ */
+function loadSumScaffoldsRented() {
+    $.ajax({url: "/sumScaffoldsRented", type: "GET", success: function(data)
+        {
+           $('#sumScaffoldsRented').text('Total Items Rented ' + data);
+           console.log("Data loaded - This is the sum of all Scaffolds RENTED")
         },
         error: function(xhr, status, error)
         {
