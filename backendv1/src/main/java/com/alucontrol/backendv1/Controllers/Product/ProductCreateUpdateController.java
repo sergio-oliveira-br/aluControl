@@ -19,17 +19,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**This controller is dedicated to endpoints that create and update records*/
 @RestController
-public class ProductController
+public class ProductCreateUpdateController
 {
+    //Repository for access to product data
     private final ProductRepository productRepository;
 
-    public ProductController(ProductRepository productRepository) {
+    //Constructor responsible for injecting the repository
+    public ProductCreateUpdateController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-    //Need to include the Repository
 
-    /** Endpoint to send Products */
+    /** Endpoint to send Products to my DB*/
     @PostMapping("/saveProduct")
     public ResponseEntity<Product> saveProduct(@RequestParam("itemDescription") String itemDescription,
                                                @RequestParam("itemQuantity") int itemQuantity)
@@ -45,25 +47,4 @@ public class ProductController
 
         return ResponseEntity.ok(savedProduct);
     }
-
-
-    /** Endpoint to get back all products */
-    @GetMapping("/product")
-    public ResponseEntity<List<Product>> getAllProduct()
-    {
-        List<Product> products = productRepository.findAll();
-        return ResponseEntity.ok(products);
-    }
-
-    /** Endpoint to get back the sum of Scaffolds from DB */
-    @GetMapping("/sumScaffolds")
-    public ResponseEntity<Long> getSumScaffolds()
-    {
-        Long sumScaffolds = productRepository.getSumScaffolds();
-        return ResponseEntity.ok(sumScaffolds);
-    }
-
-
-
-
 }
