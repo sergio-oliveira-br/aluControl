@@ -61,4 +61,11 @@ public class ProductController
         return ResponseEntity.ok(sumScaffolds);
     }
 
+
+    //@GetMapping("/itemAvailable")
+    //public ResponseEntity<Long> getTotalItemAvailable()
+    //{
+        //Long totalScaffoldsAvailable = productRepository.
+    //}
+
 }
