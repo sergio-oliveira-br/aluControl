@@ -13,15 +13,15 @@ import com.alucontrol.backendv1.Model.Customer.Customer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+/**This controller is dedicated to endpoints that create and update records*/
 @RestController
-public class CustomerController
+public class CustomerCreateUpdateController
 {
-
+    //Repository for access to product data
     private final CustomerRepository customerRepository;
 
-    public CustomerController(CustomerRepository customerRepository) {
+    //Constructor responsible for injecting the repository
+    public CustomerCreateUpdateController(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
@@ -52,15 +52,5 @@ public class CustomerController
                 "\n" + city);
 
         return ResponseEntity.ok(savedCustomer);
-    }
-
-
-    /**
-     * Endpoint to get back the Number of Unpaid Rents
-     */
-    @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAllCustomers() {
-        List<Customer> customers = customerRepository.findAll();
-        return ResponseEntity.ok(customers);
     }
 }
