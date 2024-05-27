@@ -1,7 +1,8 @@
-package com.alucontrol.backendv1;
+package com.alucontrol.backendv1.Controllers.Index;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alucontrol.backendv1.Repository.Rent.RentRepository;
+import com.alucontrol.backendv1.Repository.Customer.CustomerRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -7,8 +7,10 @@
  */
 
 
-package com.alucontrol.backendv1;
+package com.alucontrol.backendv1.Controllers.Rent;
 
+import com.alucontrol.backendv1.Model.Rent.Rent;
+import com.alucontrol.backendv1.Repository.Rent.RentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

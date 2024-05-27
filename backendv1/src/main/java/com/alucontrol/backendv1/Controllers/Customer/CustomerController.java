@@ -6,8 +6,10 @@
  * Version 1.0
  */
 
-package com.alucontrol.backendv1;
+package com.alucontrol.backendv1.Controllers.Customer;
 
+import com.alucontrol.backendv1.Repository.Customer.CustomerRepository;
+import com.alucontrol.backendv1.Model.Customer.Customer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

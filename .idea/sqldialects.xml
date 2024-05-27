@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/backendv1/src/main/java/com/alucontrol/backendv1/ProductRepository.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/backendv1/src/main/java/com/alucontrol/backendv1/RentRepository.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/backendv1/src/main/java/com/alucontrol/backendv1/Repository/Product/ProductRepository.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/backendv1/src/main/java/com/alucontrol/backendv1/Repository/Rent/RentRepository.java" dialect="GenericSQL" />
   </component>
 </project>

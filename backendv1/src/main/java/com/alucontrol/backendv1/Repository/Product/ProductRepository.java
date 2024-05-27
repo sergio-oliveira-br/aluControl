@@ -1,5 +1,6 @@
-package com.alucontrol.backendv1;
+package com.alucontrol.backendv1.Repository.Product;
 
+import com.alucontrol.backendv1.Model.Product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
