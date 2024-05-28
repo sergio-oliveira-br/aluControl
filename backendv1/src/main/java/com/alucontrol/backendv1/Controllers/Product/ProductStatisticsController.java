@@ -12,6 +12,7 @@ import com.alucontrol.backendv1.Model.Product.Product;
 import com.alucontrol.backendv1.Repository.Product.ProductRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -33,7 +34,7 @@ public class ProductStatisticsController
     @GetMapping("/product")
     public ResponseEntity<List<Product>> getAllProduct()
     {
-        List<Product> products = productRepository.findAll();
+        List<Product> products = productRepository.findAll(); //findAll() is method inherited from CrudRepository
         return ResponseEntity.ok(products);
     }
 
@@ -44,4 +45,10 @@ public class ProductStatisticsController
         Long sumScaffolds = productRepository.getSumScaffolds();
         return ResponseEntity.ok(sumScaffolds);
     }
+
+
+
+
+
+
 }
