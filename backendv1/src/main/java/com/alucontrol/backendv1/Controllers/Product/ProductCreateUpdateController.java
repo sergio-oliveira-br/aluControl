@@ -12,12 +12,10 @@ package com.alucontrol.backendv1.Controllers.Product;
 import com.alucontrol.backendv1.Model.Product.Product;
 import com.alucontrol.backendv1.Repository.Product.ProductRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 /**This controller is dedicated to endpoints that create and update records*/
 @RestController
@@ -46,5 +44,42 @@ public class ProductCreateUpdateController
         System.out.println("Received:" + "\n" + itemDescription);
 
         return ResponseEntity.ok(savedProduct);
+    }
+
+    /** Endpoint to get a specific rent by ID (by clicking on Edit into the table)*/
+    @GetMapping("/product/{id}")
+    public ResponseEntity<Product> getProductByID(@PathVariable Long id)
+    {
+        Optional<Product> productOptional = productRepository.findById(id);
+        if(productOptional.isPresent())
+        {
+            return ResponseEntity.ok(productOptional.get());
+        }
+
+        else
+        {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    /** Endpoint to update a specific rent by ID */
+    @PutMapping("/product/{id}")
+    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product updatedProduct)
+    {
+        Optional<Product> productOptional = productRepository.findById(id);
+        if(productOptional.isPresent())
+        {
+            Product product = productOptional.get();
+
+            product.setItemDescription(updatedProduct.getItemDescription());
+            product.setItemQuantity(updatedProduct.getItemQuantity());
+
+            Product savedProduct = productRepository.save(product);
+            return ResponseEntity.ok(savedProduct);
+        }
+        else
+        {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

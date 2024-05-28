@@ -30,13 +30,6 @@ public class ProductStatisticsController
         this.productRepository = productRepository;
     }
 
-    /** Endpoint to get back all products */
-    @GetMapping("/product")
-    public ResponseEntity<List<Product>> getAllProduct()
-    {
-        List<Product> products = productRepository.findAll(); //findAll() is method inherited from CrudRepository
-        return ResponseEntity.ok(products);
-    }
 
     /** Endpoint to get back the sum of Scaffolds from DB */
     @GetMapping("/sumScaffolds")

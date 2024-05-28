@@ -156,17 +156,20 @@
 
         <!-- Body -->
         <div class="modal-body">
-          <form>
+          <form id="editProductForm">
+            <!-- ID (HIDDEN) -->
+            <input type="hidden" id="editProductId" name="id">
+
             <!-- Description -->
             <div class="mb-3">
-              <label for="editItemDescription" class="form-label">Edit Item Description</label>
+              <label for="editItemDescription" class="form-label">Item Description</label>
               <input type="text" class="form-control" id="editItemDescription">
             </div>
 
             <!-- Quantity -->
             <div class="mb-3">
-              <label for="editItemQty" class="form-label">Edit Item Quantity</label>
-              <input class="form-control" id="editItemQty" readonly>
+              <label for="editItemQty" class="form-label">Item Quantity</label>
+              <input class="form-control" id="editItemQty" >
             </div>
 
             <!-- Button -->

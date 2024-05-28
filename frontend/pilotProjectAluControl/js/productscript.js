@@ -19,6 +19,16 @@ $(document).ready(function()
     //Display the QTY AVAILABLE of "Scaffolds" from RentStatisticsController
     loadQtyScaffoldsAvailable();
 
+    //(Modal)The script will load the available items in the Product form when the page loads
+    updateLoadProductForm();
+
+    //Modal
+    $('#editModal').on('submit', function(e)
+    {
+        e.preventDefault();
+        submitEditForm();
+    })
+
 });
 
 
@@ -30,7 +40,9 @@ $(document).ready(function()
  */
 function loadProduct()
 {
-    $.ajax({url: "/product", type: "GET", success: function(data)
+    $.ajax({url: "/product",
+        type: "GET",
+        success: function(data)
         {
             //first clean
             $('#productList').empty();
@@ -111,7 +123,7 @@ function loadQtyScaffoldsAvailable() {
 
 /**
  Page: Products
- Item: Form (modal)
+ Item: Form (modal) -> OpenEditModal() -> SubmitEditForm()
  Method: This is a jQuery method that allows
     the user to make asynchronous requests to the server
     to send or receive data without having to reload the page
@@ -119,13 +131,50 @@ function loadQtyScaffoldsAvailable() {
 */
 function openEditModal(productId)
 {
+    //Remember: GET -> Request data from a specified resource on the server.
+    $.ajax({url: "/product/" + productId,
+        type: "GET",
+        success: function(product)
+        {
+            $('#editProductId').val(productId);
+            $('#editItemDescription').val(product.itemDescription);
+            $('#editItemQty').val(product.itemQuantity);
 
+            //Open the modal
+            let editModal = new bootstrap.Modal(document.getElementById('editModal'));
+            editModal.show();
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    });
+}
 
-    //Open the modal
-    let editModal = new bootstrap.Modal(document.getElementById('editModal'));
-    editModal.show();
-
-
+function submitEditForm()
+{
+    let itemData = {
+        id: $('#editProductId').val(),
+        itemDescription: $('#editItemDescription').val(),
+        itemQuantity: $('#editItemQty').val()
+    };
+    //Remember: PUT -> Send data to the server to update an existing resource
+    $.ajax({url: "/product/" + itemData.id,
+        type: "PUT",
+        contentType: 'application/json',
+        data: JSON.stringify(itemData),
+        success: function(response)
+        {
+            alert('Item updated successfully');
+            $('#editModal').modal('hide');
+            loadProduct(); // Reload the product list after update
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+            alert('Oops, something went wrong!');
+        }
+    })
 }
 
 //Confirmation msg
@@ -139,5 +188,28 @@ document.getElementById('editModal').addEventListener('submit', function(event) 
         console.log('User cancel the operation')
     }
 });
+
+//Update
+function updateLoadProductForm()
+{
+    $.ajax({url: "/product",
+        type: "GET",
+        success: function(data)
+        {
+            var productSelect = $('#editItemQty');
+
+            productSelect.empty();
+
+            data.forEach(function(product)
+            {
+                productSelect.append('<option value="' + product.id + '">' + product.name + '</option>');
+            });
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    })
+}
 
 
