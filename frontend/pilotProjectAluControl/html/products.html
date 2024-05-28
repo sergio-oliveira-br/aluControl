@@ -145,6 +145,38 @@
   </div> <!-- Container -->
 
   <!-- Edit Modal -->
+  <div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Rent</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Body -->
+        <div class="modal-body">
+          <form>
+            <!-- Description -->
+            <div class="mb-3">
+              <label for="editItemDescription" class="form-label">Edit Item Description</label>
+              <input type="text" class="form-control" id="editItemDescription">
+            </div>
+
+            <!-- Quantity -->
+            <div class="mb-3">
+              <label for="editItemQty" class="form-label">Edit Item Quantity</label>
+              <input class="form-control" id="editItemQty" readonly>
+            </div>
+
+            <!-- Button -->
+            <button type="submit" class="btn btn-primary" id="saveEditProductForm">Save changes</button>
+          </form>
+        </div>
+
+      </div> <!-- modal-content -->
+    </div> <!-- modal-dialog -->
+  </div> <!-- modal -->
 
 
 

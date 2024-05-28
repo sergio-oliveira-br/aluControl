@@ -42,7 +42,7 @@ function loadProduct()
                     '<td>' + product.id + '</td>' +
                     '<td>' + product.itemDescription + '</td>' +
                     '<td>' + product.itemQuantity +'</td>' +
-                    '<td><button class="btn btn-primary" onclick="">Edit</button></td>'
+                    '<td><button class="btn btn-primary" onclick="openEditModal(' + product.id + ')">Edit</button></td>'
                 );
             });
         },
@@ -107,5 +107,37 @@ function loadQtyScaffoldsAvailable() {
         }
     })
 }
+
+
+/**
+ Page: Products
+ Item: Form (modal)
+ Method: This is a jQuery method that allows
+    the user to make asynchronous requests to the server
+    to send or receive data without having to reload the page
+    (There is a confirmation msg method as well)
+*/
+function openEditModal(productId)
+{
+
+
+    //Open the modal
+    let editModal = new bootstrap.Modal(document.getElementById('editModal'));
+    editModal.show();
+
+
+}
+
+//Confirmation msg
+document.getElementById('editModal').addEventListener('submit', function(event) {
+    //Displays the confirmation msg
+    let confirmation = confirm('Are you sure you want to save the modifications?');
+
+    //If the user cancels, do not send the form!
+    if (!confirmation) {
+        event.preventDefault();
+        console.log('User cancel the operation')
+    }
+});
 
 
