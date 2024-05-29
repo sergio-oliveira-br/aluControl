@@ -10,7 +10,7 @@ window.onload = function () {
         type: 'line',
         data: {
             labels:['Monday', 'Sunday', 'Tuesday', 'Wednesday', 'Thursday'],
-            dataset: [{
+            datasets: [{
                 data: [111, 222, 333, 444],
                 backgroundColor: 'red',
                 lineTension: 0,
