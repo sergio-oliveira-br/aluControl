@@ -33,7 +33,7 @@ public class DashboardController
     @GetMapping("/allRentedItems")
     public List<Rent> getAllRentedItems()
     {
-        List<Rent> allRentedItems = rentRepository.findAll();
+        List<Rent> allRentedItems = rentRepository.findAllRentItems();
         return allRentedItems;
     }
 

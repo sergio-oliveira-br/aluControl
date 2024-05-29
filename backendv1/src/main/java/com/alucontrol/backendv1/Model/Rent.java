@@ -17,19 +17,6 @@ import jakarta.persistence.*;
 @Table(name = "rent")
 public class Rent
 {
-
-    /** These are data from Product where it will be connected with THIS TABLE "RENT"*/
-    @ManyToOne //Many Rent to One Product
-    private Product product;
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
     /** Here is the original data from the Rent */
     @Id //Primary Key
     @GeneratedValue(strategy = GenerationType.IDENTITY)

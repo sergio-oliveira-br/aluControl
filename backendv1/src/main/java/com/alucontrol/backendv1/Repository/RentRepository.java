@@ -26,6 +26,13 @@ public interface RentRepository extends JpaRepository<Rent, Long>
     @Query(value = "SELECT SUM(rent_qty_item) FROM AluControlV1.rent WHERE rent_item = 'Scaffolds'", nativeQuery = true)
     Long sumScaffoldsRented();
 
+    /**
+     * Display on Dashboard.html
+     */
+    //...via DashboardController
+    @Query(value = "SELECT rent_item, rent_total_price FROM AluControlV1.rent", nativeQuery = true)
+    List<Rent> findAllRentItems();
+
 
     /** NO Display */
     //(SCAFFOLDS): Method for SUM ALL item Scaffolds

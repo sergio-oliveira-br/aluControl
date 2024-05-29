@@ -51,12 +51,4 @@ public class Product
     public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
-
-    /** These are data from Rent where it will be connected with THIS TABLE "PRODUCT" */
-    @OneToMany //One Product to Many Rent
-    private List<Rent> rent;
-
-
-
-
 }
