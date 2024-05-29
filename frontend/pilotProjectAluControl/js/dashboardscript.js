@@ -1,35 +1,45 @@
 /**
  Page: Dashboard
  Item: Chart
- Method: Create the Chart
+ Method: Display Chart
 */
-window.onload = function () {
-    // Graphs
-    const ctx = document.getElementById('myChart')
-    const myChart = new Chart(ctx,{
-        type: 'line',
-        data: {
-            labels:['Monday', 'Sunday', 'Tuesday', 'Wednesday', 'Thursday'],
-            datasets: [{
-                data: [111, 222, 333, 444],
-                backgroundColor: 'red',
-                lineTension: 0,
-                borderColor: '#007bff',
-                borderWidth: 4,
-                pointBackgroundColor: '#007bff'
-            }],
-        },
-        options:{
-            plugins:{
-                legend:{
-                    display: true,
+$(document).ready(function ()
+{
+    $.ajax({url: '/allRentedItems',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data)
+        {
+            //variables
+            var items = data.map(function(rent){return rent.rentItem});
+            var price = data.map(function(rent){return rent.rentTotalPrice})
+
+            // Graphs
+            const ctx = document.getElementById('myChart')
+            const myChart = new Chart(ctx,{
+                type: 'bar',
+                data: {
+                    labels: items,
+                    datasets: [{
+                        data: price,
+                        lineTension: 0,
+                        borderWidth: 4,
+                        pointBackgroundColor: '#007bff'
+                    }],
                 },
-                tooltip:{
-                    boxPadding: '5px',
-                },
-            }
+                options:{
+                    plugins:{
+                        legend:{
+                            display: false,
+                        },
+                        tooltip:{
+                            boxPadding: '5px',
+                        },
+                    }
+                }
+            });
         }
-    });
-}
+    })
+})
 
 
