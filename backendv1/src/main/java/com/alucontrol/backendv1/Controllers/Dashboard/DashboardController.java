@@ -8,7 +8,11 @@
 package com.alucontrol.backendv1.Controllers.Dashboard;
 
 import com.alucontrol.backendv1.Model.Rent;
+import com.alucontrol.backendv1.Projection.ItemsAndTotalPriceProjection;
+import com.alucontrol.backendv1.Repository.DashboardRepository;
 import com.alucontrol.backendv1.Repository.RentRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,23 +22,27 @@ import java.util.List;
 @RestController
 public class DashboardController
 {
-    //Repository for access to Rent data
-    private final RentRepository rentRepository;
+    //Repository for access to Dash data
+    private final DashboardRepository dashboardRepository;
+
+    //Repository for access to Projection data
 
     //Constructor responsible for injecting the repository
-    public DashboardController(RentRepository rentRepository)
+    public DashboardController(DashboardRepository dashboardRepository)
     {
-       this.rentRepository = rentRepository;
+        this.dashboardRepository = dashboardRepository;
     }
+
 
     /**
      * Endpoint to get back the items Rented from DB
      */
     @GetMapping("/allRentedItems")
-    public List<Rent> getAllRentedItems()
+    public ResponseEntity<List<Rent>> getAllRentedItems()
     {
-        List<Rent> allRentedItems = rentRepository.findAllRentItems();
-        return allRentedItems;
+        List<Rent> myList = dashboardRepository.findAll();
+        return ResponseEntity.ok(myList);
     }
+
 
 }
