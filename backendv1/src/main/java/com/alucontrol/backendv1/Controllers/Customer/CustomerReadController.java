@@ -8,7 +8,6 @@
 
 package com.alucontrol.backendv1.Controllers.Customer;
 
-import com.alucontrol.backendv1.Repository.Customer.CustomerRepository;
 import org.springframework.web.bind.annotation.RestController;
 
 /** This controller is dedicated to endpoints that read data */

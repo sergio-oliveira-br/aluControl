@@ -5,9 +5,8 @@
  * Version 1.0
  */
 
-package com.alucontrol.backendv1.Model.Product;
+package com.alucontrol.backendv1.Model;
 
-import com.alucontrol.backendv1.Model.Rent.Rent;
 import jakarta.persistence.*;
 
 import java.util.List;

@@ -6,9 +6,8 @@
  */
 
 
-package com.alucontrol.backendv1.Model.Rent;
+package com.alucontrol.backendv1.Model;
 
-import com.alucontrol.backendv1.Model.Product.Product;
 import jakarta.persistence.*;
 
 //Indicates that this class is a JPA entity and will be mapped to a table in the database

@@ -7,8 +7,8 @@
  */
 package com.alucontrol.backendv1.Controllers.Customer;
 
-import com.alucontrol.backendv1.Model.Customer.Customer;
-import com.alucontrol.backendv1.Repository.Customer.CustomerRepository;
+import com.alucontrol.backendv1.Model.Customer;
+import com.alucontrol.backendv1.Repository.CustomerRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
