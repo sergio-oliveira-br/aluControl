@@ -42,10 +42,17 @@ public class DashboardController
         return ResponseEntity.ok(myList);
     }
 
-    /** Endpoint to get items and total prices*/
+    /** Endpoint to get items and SUM of total prices */
     @GetMapping("/findItemsTotalPrice")
     public List<ItemsTPriceProjection> getItemsTPriceProjection()
     {
         return dashboardRepository.findItemsTotalPrice();
+    }
+
+    /** Endpoint to get items and total price individually */
+    @GetMapping("/findRentItems")
+    public List<ItemsTPriceProjection> getRentItems()
+    {
+        return dashboardRepository.findRentItems();
     }
 }
