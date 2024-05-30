@@ -23,6 +23,7 @@ $(document).ready(function ()
                     labels: items,
                     datasets: [{
                         data: price,
+                        label: 'Total Price',
                         lineTension: 0,
                         borderWidth: 4,
                         pointBackgroundColor: '#007bff'
@@ -37,7 +38,14 @@ $(document).ready(function ()
                             boxPadding: '5px',
                         },
                     }
-                }
+                },
+                options:{
+                    plugins:{
+                        datalabels:{
+                            enabled: true,
+                        }
+                    }
+                },
             });
         }
     });
