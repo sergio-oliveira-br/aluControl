@@ -8,10 +8,8 @@
 package com.alucontrol.backendv1.Controllers.Dashboard;
 
 import com.alucontrol.backendv1.Model.Rent;
-import com.alucontrol.backendv1.Projection.ItemsAndTotalPriceProjection;
+import com.alucontrol.backendv1.Projection.ItemsTPriceProjection;
 import com.alucontrol.backendv1.Repository.DashboardRepository;
-import com.alucontrol.backendv1.Repository.RentRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,5 +42,10 @@ public class DashboardController
         return ResponseEntity.ok(myList);
     }
 
-
+    /** Endpoint to get items and total prices*/
+    @GetMapping("/findItemsTotalPrice")
+    public List<ItemsTPriceProjection> getItemsTPriceProjection()
+    {
+        return dashboardRepository.findItemsTotalPrice();
+    }
 }

@@ -5,7 +5,7 @@
 */
 $(document).ready(function ()
 {
-    $.ajax({url: '/allRentedItems',
+    $.ajax({url: '/findItemsTotalPrice',
         method: 'GET',
         dataType: 'json',
         success: function (data)
