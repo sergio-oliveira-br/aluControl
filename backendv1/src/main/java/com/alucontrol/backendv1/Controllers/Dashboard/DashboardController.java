@@ -9,6 +9,7 @@ package com.alucontrol.backendv1.Controllers.Dashboard;
 
 import com.alucontrol.backendv1.Model.Rent;
 import com.alucontrol.backendv1.Projection.ItemsTPriceProjection;
+import com.alucontrol.backendv1.Projection.TotalRentProjection;
 import com.alucontrol.backendv1.Repository.DashboardRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,4 +56,12 @@ public class DashboardController
     {
         return dashboardRepository.findRentItems();
     }
+
+    /** Endpoint to get all rent separated by status */
+    @GetMapping("/findRentPaymentStatus")
+    public List<TotalRentProjection> getRentPayment()
+    {
+        return dashboardRepository.findRentPaymentStatus();
+    }
+
 }
