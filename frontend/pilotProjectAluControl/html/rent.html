@@ -187,6 +187,16 @@
                   </select>
                 </div>
 
+                <div class="col-md-3">
+                  <label for="rentStatus" class="">Rent Status</label>
+                  <select class="form-select" id="rentStatus" name="rentStatus" required>
+                    <option selected disabled value="" ></option>
+                    <option>New</option>
+                    <option>In Progress</option>
+                    <option>Finished</option>
+                  </select>
+                </div>
+
                 <!-- Buttons -->
                 <div class="col-12">
                   <button  id="submitButton" class="btn btn-primary" type="submit">Submit Rent Form</button>
@@ -209,7 +219,8 @@
                   <th scope="col">Starts</th>
                   <th scope="col">Ends</th>
                   <th scope="col">Total Price</th>
-                  <th scope="col">Status</th>
+                  <th scope="col">Rent Status</th>
+                  <th scope="col">Payment Status</th>
                   <th scope="col"></th>
                 </tr>
                 </thead>
@@ -242,8 +253,8 @@
               <div class="modal-body">
                 <form id="editRentForm">
                   <input type="hidden" id="editRentId" name="id">
-                  <div class="mb-3">
 
+                  <div class="mb-3">
                     <label for="editRentFirstName" class="form-label">First Name</label>
                     <select class="form-control" id="editRentFirstName" name="rentFirstName" required></select>
                   </div>
@@ -305,6 +316,16 @@
                       <option>Unpaid</option>
                     </select>
                   </div>
+
+                  <div class="col-md-3">
+                    <label for="editRentStatus" class="">Rent Status</label>
+                    <select class="form-select" id="editRentStatus" name="editRentStatus" required>
+                      <option selected disabled value="" ></option>
+                      <option>New</option>
+                      <option>In Progress</option>
+                      <option>Finished</option>
+                    </select>
+                  </div><br>
 
                   <button type="submit" class="btn btn-primary">Save changes</button>
                 </form>

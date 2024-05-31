@@ -58,6 +58,9 @@ public class Rent
     @Column(nullable = true)
     private String rentPaymentStatus;
 
+    @Column(nullable = true)
+    private String rentStatus;
+
 
     // Getters and setters
     public long getId() {
@@ -163,4 +166,8 @@ public class Rent
     public void setRentPaymentStatus(String paymentStatus) {
         this.rentPaymentStatus = paymentStatus;
     }
+
+    public String getRentStatus() {return rentStatus;}
+
+    public void setRentStatus(String rentStatus) {this.rentStatus = rentStatus;}
 }

@@ -114,6 +114,7 @@ function loadRent()
                     '<td>' + rent.rentEnds + '</td>' +
                     '<td>' + rent.rentTotalPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
                     '<td>' + rent.rentPaymentStatus + '</td>' +
+                    '<td>' + rent.rentStatus+ '</td>' +
                     '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
                 );
             });
@@ -216,6 +217,7 @@ function openEditModal(rentId) {
             $('#editRentTotalPrice').val(rent.rentTotalPrice.toFixed(2));
             $('#editRentPaymentStatus').val(rent.rentPaymentStatus);
             $('#editRentDetails').val(rent.rentDetails);
+            $('#editRentStatus').val(rent.rentStatus);
 
             //Open the modal
             let editModal = new bootstrap.Modal(document.getElementById('editModal'));
@@ -328,7 +330,8 @@ function submitEditForm() {
         rentTotalDays: parseInt($('#editRentTotalDays').val()),
         rentTotalPrice: parseFloat($('#editRentTotalPrice').val()),
         rentPaymentStatus: $('#editRentPaymentStatus').val(),
-        rentDetails: $('#editRentDetails').val()
+        rentDetails: $('#editRentDetails').val(),
+        rentStatus: $('#editRentStatus').val()
     };
 
     $.ajax({
