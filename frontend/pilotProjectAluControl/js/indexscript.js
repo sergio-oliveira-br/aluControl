@@ -1,19 +1,18 @@
-/**
- Page: Index
- Item: Card
- Method: Obtain a list of outputs created by clients in the database
- */
-
 $(document).ready(function ()
 {
     //This card display the num of rent is Unpaid
     loadNumRentUnpaid();
 
+    //This card display the num of rent is witch Status is new
     loadNumRentStatusNew();
 })
 
 
-
+/**
+ Page: Index
+ Item: Card (UNPAID)
+ Method: Obtain the number of rent witch the status is UNPAID
+ */
 function loadNumRentUnpaid ()
 {
     $.ajax({url: "/qtyRentUnpaid", type: "GET", success: function(data)
@@ -28,6 +27,12 @@ function loadNumRentUnpaid ()
     })
 }
 
+
+/**
+ Page: Index
+ Item: Card (RENT STATUS NEW)
+ Method: Obtain the number of rent witch the status is NEW
+ */
 function loadNumRentStatusNew()
 {
     $.ajax({

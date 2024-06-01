@@ -33,7 +33,7 @@ public class HomeController
         Long qtyRentUnpaid = rentRepository.countUnpaidRents();
         return ResponseEntity.ok(qtyRentUnpaid);
     }
-    
+
 
     /** Endpoint to get the number of rent witch has the status "NEW"
      *  Pointing to indexScript.js */
