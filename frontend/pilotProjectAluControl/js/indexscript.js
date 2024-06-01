@@ -10,6 +10,12 @@ $(document).ready(function ()
     loadRentStatusInProgress();
 })
 
+/** Function: Handle errors, showing the error message to the user */
+function handleError(errorMessage)
+{
+    alert(errorMessage);
+}
+
 
 /**
  Page: Index
@@ -28,7 +34,8 @@ function loadNumRentUnpaid ()
         },
         error: function(xhr, status, error)
         {
-            console.error(error);
+            let errorMessage = xhr.responseText;
+            alert("From the Server: " + errorMessage);
         }
     })
 }

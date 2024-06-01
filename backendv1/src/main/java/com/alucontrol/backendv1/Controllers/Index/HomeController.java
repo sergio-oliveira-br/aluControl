@@ -8,6 +8,7 @@
 package com.alucontrol.backendv1.Controllers.Index;
 
 
+import com.alucontrol.backendv1.Controllers.Expections.ResourceNotFoundException;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,7 +40,19 @@ public class HomeController
     @GetMapping("/qtyRentUnpaid")
     public ResponseEntity<Long> getQtyRentUnpaid()
     {
+        //call the repository method, witch has the info about the RENT
         Long qtyRentUnpaid = rentRepository.countUnpaidRents();
+
+        //exception handling
+        if (qtyRentUnpaid == null)
+        {
+            throw new ResourceNotFoundException("Oops! There are no Rents in the database");
+        }
+        else if (qtyRentUnpaid == 0)
+        {
+            throw new ResourceNotFoundException("This is Good! All rents have been paid");
+        }
+
         return ResponseEntity.ok(qtyRentUnpaid);
     }
 
