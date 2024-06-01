@@ -1,8 +1,14 @@
+/**
+ * This is for the mySQL Data Base - Table Rent
+ *      >> Class Controller <<
+ * Development starting on 30, April 2024
+ * Author: Sergio Oliveira
+ * Version 1.0
+ */
 package com.alucontrol.backendv1.Controllers.Index;
 
 
 import com.alucontrol.backendv1.Repository.RentRepository;
-import com.alucontrol.backendv1.Repository.CustomerRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,13 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController
 {
+    //Repository for access to Rent data
     private final RentRepository rentRepository;
 
+    //Constructor responsible for injecting the repository
     public HomeController (RentRepository rentRepository)
     {
         this.rentRepository = rentRepository;
     }
 
+    /** Main endpoint for the home page, indicating that the endpoint is active  */
     @GetMapping("/")
     public String home()
     {
@@ -25,7 +34,7 @@ public class HomeController
     }
 
 
-    /** Endpoint to get back the number of customers from DB
+    /** Endpoint to get back the number of rent UNPAID from DB
      *  Pointing to indexScript.js*/
     @GetMapping("/qtyRentUnpaid")
     public ResponseEntity<Long> getQtyRentUnpaid()
