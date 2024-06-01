@@ -6,33 +6,12 @@
 
 $(document).ready(function ()
 {
-    //this is responsible to display the number
-    loadNumberCustomers();
-
     //This card display the num of rent is Unpaid
     loadNumRentUnpaid();
 
     loadNumRentStatusNew();
 })
 
-
-function loadNumberCustomers()
-{
-    $.ajax({url: "/qtyCustomers", type: "GET", success: function(data)
-        {
-            //clean???
-
-            $('#loadNumberCustomers').text('Number of customers: ' + data);
-            console.log(data);
-
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-            console.log(status)
-        }
-    })
-}
 
 
 function loadNumRentUnpaid ()

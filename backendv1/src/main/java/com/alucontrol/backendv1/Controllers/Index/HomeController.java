@@ -29,15 +29,6 @@ public class HomeController
 
 
 
-    /** Endpoint to get back the number of customers on DB */
-    @GetMapping("/qtyCustomers")
-    public ResponseEntity<Long> getQtyCustomers()
-    {
-        Long qtyCustomers = customerRepository.count();
-        return ResponseEntity.ok(qtyCustomers);
-    }
-
-
     /** Endpoint to get back the number of customers from DB
      *  Pointing to indexScript.js*/
     @GetMapping("/qtyRentUnpaid")
