@@ -38,12 +38,22 @@ public class HomeController
     }
 
 
-    /** Endpoint to get back the number of customers from DB -> Pointing to indexScript.js*/
+    /** Endpoint to get back the number of customers from DB
+     *  Pointing to indexScript.js*/
     @GetMapping("/qtyRentUnpaid")
     public ResponseEntity<Long> getQtyRentUnpaid()
     {
         Long qtyRentUnpaid = rentRepository.countUnpaidRents();
         return ResponseEntity.ok(qtyRentUnpaid);
+    }
+
+    /** Endpoint to get the number of rent witch has the status "NEW"
+     *  Pointing to indexScript.js */
+    @GetMapping("/qtyRentStatusNew")
+    public ResponseEntity<Long> getQtyRentStatusNew()
+    {
+        Long qtyRentStatusInProgress = rentRepository.countRentStatusNew();
+        return ResponseEntity.ok(qtyRentStatusInProgress);
     }
 
 }

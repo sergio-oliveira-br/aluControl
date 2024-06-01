@@ -10,27 +10,52 @@ import java.util.List;
 /** This is responsible for managing the persistence of Rent data
  *  in the database, providing a simplified interface for CRUD operations
  */
-
 @Repository
 public interface RentRepository extends JpaRepository<Rent, Long>
 {
-    /** Display on Index.html */
-    //...via HomeController
-    //(UNPAID RENT)Method for counting unpaid records
-    @Query(value = "SELECT COUNT(*) FROM AluControlV1.rent WHERE rent_payment_status = 'UnPaid'", nativeQuery = true)
+    /** Display: on Index.html via HomeController
+     *  Item: UNPAID RENT
+     *  Method: Counting of unpaid rented records
+     * */
+    @Query(value = "SELECT COUNT(*) " +
+            "FROM AluControlV1.rent " +
+            "WHERE rent_payment_status = 'UnPaid'",
+            nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
     Long countUnpaidRents();
 
-    /** Display on Product.html */
-    //...via ProductStatisticsController
-    //(SCAFFOLDS): Method for display the qty of item Scaffolds SUM RENTED
-    @Query(value = "SELECT SUM(rent_qty_item) FROM AluControlV1.rent WHERE rent_item = 'Scaffolds'", nativeQuery = true)
+
+
+    /** Display: on Index.html via HomeController
+     *  Item: NEW
+     *  Method: Rental count with status of: "NEW"
+     * */
+    @Query(value = "SELECT COUNT(rent_status) " +
+            "FROM AluControlV1.rent " +
+            "WHERE rent_status = 'new'",
+            nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
+    Long countRentStatusNew();
+
+
+
+    /** Display: on Product.html via ProductStatisticsController
+     *  Item: SCAFFOLDS
+     *  Method: Counting of Scaffolds that was rented
+     * */
+    @Query(value = "SELECT SUM(rent_qty_item) " +
+            "FROM AluControlV1.rent " +
+            "WHERE rent_item = 'Scaffolds'",
+            nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
     Long sumScaffoldsRented();
 
 
-    /** NO Display */
-    //(SCAFFOLDS): Method for SUM ALL item Scaffolds
-    //This will not display in anywhere, but it will use to calculating the items available
-    @Query(value = "SELECT SUM(item_quantity) FROM AluControlV1.products WHERE item_description = 'Scaffolds';", nativeQuery = true)
+    /** Display: NO Display
+     * Item: SCAFFOLDS
+     * Method: Calculating the items available
+     * */
+    @Query(value = "SELECT SUM(item_quantity) " +
+            "FROM AluControlV1.products " +
+            "WHERE item_description = 'Scaffolds'",
+            nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
     Long getSumScaffolds();
 }
 
