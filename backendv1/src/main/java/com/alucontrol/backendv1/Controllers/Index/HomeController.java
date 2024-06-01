@@ -62,7 +62,15 @@ public class HomeController
     @GetMapping("/qtyRentStatusNew")
     public ResponseEntity<Long> getQtyRentStatusNew()
     {
+        //call the repository method, witch has the info about the RENT
         Long qtyRentStatusInProgress = rentRepository.countRentStatusNew();
+
+        //exception handling
+        if (qtyRentStatusInProgress == null)
+        {
+            throw new ResourceNotFoundException("Oops! There are no Rents in the database");
+        }
+
         return ResponseEntity.ok(qtyRentStatusInProgress);
     }
 
