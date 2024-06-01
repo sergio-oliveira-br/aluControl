@@ -11,13 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController
 {
-
-    private final CustomerRepository customerRepository;
     private final RentRepository rentRepository;
 
-    public HomeController (CustomerRepository customerRepository, RentRepository rentRepository)
+    public HomeController (RentRepository rentRepository)
     {
-        this.customerRepository = customerRepository;
         this.rentRepository = rentRepository;
     }
 
@@ -28,7 +25,6 @@ public class HomeController
     }
 
 
-
     /** Endpoint to get back the number of customers from DB
      *  Pointing to indexScript.js*/
     @GetMapping("/qtyRentUnpaid")
@@ -37,6 +33,7 @@ public class HomeController
         Long qtyRentUnpaid = rentRepository.countUnpaidRents();
         return ResponseEntity.ok(qtyRentUnpaid);
     }
+    
 
     /** Endpoint to get the number of rent witch has the status "NEW"
      *  Pointing to indexScript.js */
