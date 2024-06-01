@@ -18,7 +18,10 @@ $(document).ready(function ()
  */
 function loadNumRentUnpaid ()
 {
-    $.ajax({url: "/qtyRentUnpaid", type: "GET", success: function(data)
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/qtyRentUnpaid", //indicates the endpoint
+        type: "GET", //HTTP request methods used to retrieve data from the server (backend), indicating by the endpoint specified by the URL
+        success: function(data)
         {
             $('#loadRentUnpaid').text('Number of rents Unpaid is: ' + data);
             console.log("The number of rents Unpaid is: ...")
@@ -38,9 +41,9 @@ function loadNumRentUnpaid ()
  */
 function loadNumRentStatusNew()
 {
-    $.ajax({
-        url: "/qtyRentStatusNew",
-        type: "GET",
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/qtyRentStatusNew", //indicates the endpoint
+        type: "GET", //HTTP request methods used to retrieve data from the server (backend)
         success: function(data)
         {
             $('#loadRentStatusNew').text('You have ' + data + ' New Rents')
@@ -59,9 +62,9 @@ function loadNumRentStatusNew()
  */
 function loadRentStatusInProgress()
 {
-    $.ajax({
-        url: "/qtyRentStatusInProgress",
-        type: "GET",
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/qtyRentStatusInProgress", //indicates the endpoint
+        type: "GET", //HTTP request methods used to retrieve data from the server (backend)
         success: function(data)
         {
             $('#loadRentStatusInProgress').text('You have ' + data + ' Rents In Progress');
