@@ -34,6 +34,9 @@ function loadNumRentUnpaid ()
         },
         error: function(xhr, status, error)
         {
+            console.log(error)
+
+            //Msg from BackEnd Exception
             let errorMessage = xhr.responseText;
             alert("From the Server: " + errorMessage);
         }
@@ -58,6 +61,10 @@ function loadNumRentStatusNew()
         error: function(xhr, status, error)
         {
             console.error(error);
+
+            //Msg from BackEnd Exception
+            let errorMessage = xhr.responseText;
+            alert("From the Server: " + errorMessage);
         }
     })
 }
@@ -79,6 +86,10 @@ function loadRentStatusInProgress()
         error: function(xhr, status, error)
         {
             console.error(error);
+
+            //Msg from BackEnd Exception
+            let errorMessage = xhr.responseText;
+            alert("From the Server: " + errorMessage);
         }
     })
 }
