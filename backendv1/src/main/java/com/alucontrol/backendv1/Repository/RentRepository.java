@@ -36,6 +36,16 @@ public interface RentRepository extends JpaRepository<Rent, Long>
     Long countRentStatusNew();
 
 
+    /** Display: on Index.html via HomeController
+     *  Item: NEW
+     *  Method: Rental count with status of: "In Progress"
+     * */
+    @Query(value = "SELECT COUNT(rent_status) " +
+            "FROM AluControlV1.rent " +
+            "WHERE rent_status = 'In Progress'",
+            nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
+    Long countRentStatusInProgress();
+
 
     /** Display: on Product.html via ProductStatisticsController
      *  Item: SCAFFOLDS

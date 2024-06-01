@@ -1,10 +1,13 @@
 $(document).ready(function ()
 {
-    //This card display the num of rent is Unpaid
+    //This card display the num of rent is "Unpaid"
     loadNumRentUnpaid();
 
-    //This card display the num of rent is witch Status is new
+    //This card display the num of rent is witch Status is "New"
     loadNumRentStatusNew();
+
+    //This card display the num of rent is witch Status is "In Progress"
+    loadRentStatusInProgress();
 })
 
 
@@ -41,6 +44,27 @@ function loadNumRentStatusNew()
         success: function(data)
         {
             $('#loadRentStatusNew').text('You have ' + data + ' New Rents')
+        },
+        error: function(xhr, status, error)
+        {
+            console.error(error);
+        }
+    })
+}
+
+/**
+ Page: Index
+ Item: Card (Rent Status: IN PROGRESS)
+ Method: Obtain the number of rent witch the status is "In Progress"
+ */
+function loadRentStatusInProgress()
+{
+    $.ajax({
+        url: "/qtyRentStatusInProgress",
+        type: "GET",
+        success: function(data)
+        {
+            $('#loadRentStatusInProgress').text('You have ' + data + ' Rents In Progress');
         },
         error: function(xhr, status, error)
         {

@@ -44,4 +44,13 @@ public class HomeController
         return ResponseEntity.ok(qtyRentStatusInProgress);
     }
 
+    /** Endpoint to get the number of rent witch has the status "IN PROGRESS"
+     *  Pointing to indexScript.js */
+    @GetMapping("/qtyRentStatusInProgress")
+    public ResponseEntity<Long> getQtyRentStatusInProgress()
+    {
+        Long qtyRentStatusInProgress = rentRepository.countRentStatusInProgress();
+        return ResponseEntity.ok(qtyRentStatusInProgress);
+    }
+
 }
