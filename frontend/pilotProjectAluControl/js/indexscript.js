@@ -30,7 +30,6 @@ function loadNumRentUnpaid ()
         success: function(data)
         {
             $('#loadRentUnpaid').text('Number of rents Unpaid is: ' + data);
-            console.log("The number of rents Unpaid is: ...")
         },
         error: function(xhr, status, error)
         {
