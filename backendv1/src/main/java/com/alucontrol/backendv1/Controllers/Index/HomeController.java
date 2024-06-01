@@ -63,15 +63,15 @@ public class HomeController
     public ResponseEntity<Long> getQtyRentStatusNew()
     {
         //call the repository method, witch has the info about the RENT
-        Long qtyRentStatusInProgress = rentRepository.countRentStatusNew();
+        Long qtyRentStatusNew = rentRepository.countRentStatusNew();
 
         //exception handling
-        if (qtyRentStatusInProgress == null)
+        if (qtyRentStatusNew == null)
         {
             throw new ResourceNotFoundException("Oops! There are no Rents in the database");
         }
 
-        return ResponseEntity.ok(qtyRentStatusInProgress);
+        return ResponseEntity.ok(qtyRentStatusNew);
     }
 
     /** Endpoint to get the number of rent witch has the status "IN PROGRESS"
