@@ -8,7 +8,7 @@
 package com.alucontrol.backendv1.Controllers.Index;
 
 
-import com.alucontrol.backendv1.Controllers.Expections.ResourceNotFoundException;
+import com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

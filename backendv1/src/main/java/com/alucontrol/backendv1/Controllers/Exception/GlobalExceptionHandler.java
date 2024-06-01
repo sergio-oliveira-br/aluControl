@@ -6,7 +6,7 @@
  * Version 1.0
  */
 
-package com.alucontrol.backendv1.Controllers.Expections;
+package com.alucontrol.backendv1.Controllers.Exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
