@@ -2,10 +2,10 @@
   <html lang="en">
     <head>
       <meta charset="UTF-8">
-      <meta charset="UTF-8">
-      <meta name="description" content="Descrição da página">
+      <meta name="description" content="Allows the user create and edit rents">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="keywords" content="Palavra-chave1, Palavra-chave2, ...">
+      <meta name="keywords" content="rental management, rental tracking, rent, table">
+      <meta name="author" content="Sergio Oliveira">
 
       <title>AluControl | Rent</title>
 
@@ -19,7 +19,8 @@
 
       <body>
         <div class="container">
-          <!-- Starts Menu for small screen -->
+          <!-- Starts Dropdown - The user can access the other page through this -->
+          <!-- This will be displayed when the screen is not large enough to display the sidebar -->
           <div class="btn-group">
             <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
@@ -36,7 +37,8 @@
           </div>
           <!-- Ends Menu for small screen -->
 
-          <!-- Starts Sidebar - Menu -->
+          <!-- Starts Sidebar - The user can access the other page through this -->
+          <!-- This will be displayed when the screen is large enough to display it -->
           <div class="sidebar">
             <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
               <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -83,6 +85,8 @@
                 </li>
               </ul>
               <hr>
+
+              <!-- Checking the usability of this -->
               <div class="dropdown">
                 <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -104,7 +108,7 @@
           <div class="content">
             <h1> AluControl Version 1.0 | RENT</h1>
 
-            <!-- Starts the Customer’s Form -->
+            <!-- Starts the Rent’s Form - Through this the user will create new rents and edit rents already created -->
             <div class="form-floating">
               <form id="rentForm" action="/saveRent" method="post" enctype="" class="row g-1 needs-validation" novalidate>
 
@@ -205,7 +209,7 @@
             </div>
             <!-- Ends the Customer’s Form -->
 
-            <!-- Starts Table -->
+            <!-- Starts Table - Display the rentals in our database -->
             <div class="table-responsive">
               <table id="contentRentTable" class="table">
                 <thead>
@@ -230,18 +234,12 @@
               </table>
             </div> <!-- Ends Table -->
 
-            <!-- Features -->
-            <div>
-              <button> Button </button>
-              <button> Button </button>
-            </div>
-
           </div> <!-- Main Content -->
         </div> <!-- Container -->
 
 
 
-        <!-- Edit Modal -->
+        <!-- Edit Modal  - This modal make possible the user edit data already created -->
         <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -333,6 +331,8 @@
             </div>
           </div>
         </div>
+
+        
       <!-- JS has to be at the end of the body, to ensure a fast and efficient rendering of your web page -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
