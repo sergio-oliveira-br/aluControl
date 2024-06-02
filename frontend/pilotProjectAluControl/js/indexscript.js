@@ -39,7 +39,16 @@ function loadNumRentUnpaid ()
         type: "GET", //HTTP request methods used to retrieve data from the server (backend), indicating by the endpoint specified by the URL
         success: function(data)
         {
-            $('#loadRentUnpaid').text('Number of rents Unpaid is: ' + data);
+            if(data == 0)
+            {
+                $('#loadRentUnpaid').text("That's Good! All your rentals have been paid");
+            }
+
+            else
+            {
+                $('#loadRentUnpaid').text('You have ' + data + 'rentals unpaid.');
+                alert("You have " + data + "rentals unpaid.");
+            }
         },
         error: function(xhr, status, error)
         {
