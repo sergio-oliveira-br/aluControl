@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta charset="UTF-8">
-        <meta name="description" content="Descrição da página">
+        <meta name="description" content="Make possible the user add new customer for new rent">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="Palavra-chave1, Palavra-chave2, ...">
+        <meta name="keywords" content="rental management, rental tracking, new customer">
+        <meta name="author" content="Sergio Oliveira">
 
         <title>AluControl | Customers</title>
 
@@ -19,151 +19,153 @@
     </head>
 
     <body>
-
-
-    <div class="container">
-        <!-- Starts Menu for small screen -->
-        <div class="btn-group">
-            <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Menu
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Home</a></li>
-                <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                <li><a class="dropdown-item" href="#">Rent</a></li>
-                <li><a class="dropdown-item" href="#">Products</a></li>
-                <li><a class="dropdown-item" href="#">Customers</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-            </ul>
-        </div>
-        <!-- Ends Menu for small screen -->
-
-        <!-- Starts Sidebar - Menu -->
-        <div class="sidebar">
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                    <span class="fs-4">Sidebar</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="dashboard.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="rent.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-                            Rent
-                        </a>
-                    </li>
-                    <li>
-                        <a href="products.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="customers.html" class="nav-link active" aria-current="page">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                            Customers
-                        </a>
-                    </li>
+        <div class="container">
+            <!-- Starts Dropdown - The user can access the other page through this -->
+            <!-- This will be displayed when the screen is not large enough to display the sidebar -->
+            <div class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Home</a></li>
+                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="#">Rent</a></li>
+                    <li><a class="dropdown-item" href="#">Products</a></li>
+                    <li><a class="dropdown-item" href="#">Customers</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
-                <hr>
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
+            </div>
+            <!-- Ends Menu for small screen -->
+
+            <!-- Starts Sidebar - The user can access the other page through this -->
+            <!-- This will be displayed when the screen is large enough to display it -->
+            <div class="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                        <span class="fs-4">Sidebar</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="dashboard.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="rent.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+                                Rent
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="customers.html" class="nav-link active" aria-current="page">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                                Customers
+                            </a>
+                        </li>
                     </ul>
+                    <hr>
+
+                    <!-- Checking the usability of this  -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <strong>mdo</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Ends Sidebar - Menu -->
+            <!-- Ends Sidebar - Menu -->
 
-        <!-- Starts Main Content -->
-        <div class="content">
-            <h1> AluControl Version 1.0 | CUSTOMERS</h1>
+            <!-- Starts Main Content -->
+            <div class="content">
+                <h1> AluControl Version 1.0 | CUSTOMERS</h1>
 
-            <!-- Starts the Customer’s Form -->
-            <div class="form-floating">
-                <form id="customerForm"  action="/saveCustomer" method="post" enctype="application/json" class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-4">
-                        <label for="customerFirstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="customerFirstName" name="firstName" value="John" required>
-                    </div>
-
-                    <div class="col-md-4">
-                        <label for="customerLastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="customerLastName" name="lastName" value="Otto">
-                    </div>
-
-                    <div class="col-md-4">
-                        <label for="customerPhoneNumber" class="form-label">Phone Number</label>
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="customerPhoneNumber" name="phoneNumber" value="34998055902" aria-describedby="inputGroupPrepend">
+                <!-- Starts the Customer’s Form -  Through this the user will creat new customers to associate with the rent -->
+                <div class="form-floating">
+                    <form id="customerForm"  action="/saveCustomer" method="post" enctype="application/json" class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                            <label for="customerFirstName" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="customerFirstName" name="firstName" value="John" required>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <label for="additionalInformation" class="form-label">Additional Information</label>
-                        <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="additionalInformation" name="additionalInfo" value="Irmão do José" aria-describedby="inputGroupPrepend">
+                        <div class="col-md-4">
+                            <label for="customerLastName" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="customerLastName" name="lastName" value="Otto">
                         </div>
-                    </div>
 
-                    <div class="col-md-3">
-                        <label for="customerCity" class="form-label">City</label>
-                        <select class="form-select" id="customerCity" name="city">
-                            <option selected disabled value="">Choose...</option>
-                            <option>Capinópolis - MG</option>
-                            <option>Uberlândia - MG</option>
-                            <option>Cachoeira Dourada - MG</option>
-                            <option>Ipiaçu - MG </option>
-                        </select>
-                    </div>
+                        <div class="col-md-4">
+                            <label for="customerPhoneNumber" class="form-label">Phone Number</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" id="customerPhoneNumber" name="phoneNumber" value="34998055902" aria-describedby="inputGroupPrepend">
+                            </div>
+                        </div>
 
-                    <!-- Button -->
-                    <div class="col-12">
-                        <button  id="submitButton" class="btn btn-primary" type="submit">Submit Customer</button>
-                    </div>
-                </form>
-            </div> <br>
-            <!-- Ends the Customer’s Form -->
+                        <div class="col-md-4">
+                            <label for="additionalInformation" class="form-label">Additional Information</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" id="additionalInformation" name="additionalInfo" value="Irmão do José" aria-describedby="inputGroupPrepend">
+                            </div>
+                        </div>
 
-            <!-- Starts Table -->
-            <div class="table-responsive">
-                <table id="customerTable" class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID </th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">City</th>
-                        </tr>
-                    </thead>
-                    <!-- Table Body  -->
-                    <tbody id="customerList"><!-- Display the items from the List --></tbody>
-                </table>
-            </div> <!-- Ends Table -->
-        </div> <!-- Main Content -->
-    </div> <!-- Container -->
+                        <div class="col-md-3">
+                            <label for="customerCity" class="form-label">City</label>
+                            <select class="form-select" id="customerCity" name="city">
+                                <option selected disabled value="">Choose...</option>
+                                <option>Capinópolis - MG</option>
+                                <option>Uberlândia - MG</option>
+                                <option>Cachoeira Dourada - MG</option>
+                                <option>Ipiaçu - MG </option>
+                            </select>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="col-12">
+                            <button  id="submitButton" class="btn btn-primary" type="submit">Submit Customer</button>
+                        </div>
+                    </form>
+                </div> <br>
+                <!-- Ends the Customer’s Form -->
+
+                <!-- Starts Table - Display the customers in our database -->
+                <div class="table-responsive">
+                    <table id="customerTable" class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID </th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">City</th>
+                            </tr>
+                        </thead>
+                        <!-- Table Body  -->
+                        <tbody id="customerList"><!-- Display the items from the List --></tbody>
+                    </table>
+                </div> <!-- Ends Table -->
+            </div> <!-- Main Content -->
+        </div> <!-- Container -->
 
 
     <!-- JS has to be at the end of the body, to ensure a fast and efficient rendering of your web page -->
