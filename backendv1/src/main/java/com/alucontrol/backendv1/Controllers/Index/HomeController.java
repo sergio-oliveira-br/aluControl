@@ -51,10 +51,6 @@ public class HomeController
         {
             throw new ResourceNotFoundException("Oops! There are no Rents in the database");
         }
-        else if (qtyRentUnpaid == 0)
-        {
-            throw new ResourceNotFoundException("This is Good! All rents have been paid");
-        }
 
         return ResponseEntity.ok(qtyRentUnpaid);
     }
