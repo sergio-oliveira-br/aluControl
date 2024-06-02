@@ -18,11 +18,8 @@
     </head>
 
     <body>
-
-
-
-
-        <!-- Starts Sidebar - Menu -->
+        <!-- Starts Sidebar/Dropdown - The user can access the other page through this -->
+        <!-- This will be displayed when the screen is large enough to display it -->
         <div class="sidebar">
             <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
@@ -69,6 +66,10 @@
                     </li>
                 </ul>
                 <hr>
+                <!-- Ends Sidebar - Menu -->
+
+                <!-- Starts Dropdown - The user can access the other page through this -->
+                <!-- This will be displayed when the screen is not large enough to display the sidebar -->
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -84,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <!-- Ends Sidebar - Menu -->
+        <!-- Ends Sidebar/Dropdown - Menu -->
 
 
 
@@ -92,7 +93,7 @@
         <div class="content">
             <br><h3> Welcome to RentControl v1</h3>
 
-            <!-- Rent Unpaid -->
+            <!-- Rent Unpaid - Display a summary of the rentals opened  -->
             <div class="card">
                 <h5 class="card-header">Rent Unpaid</h5>
                 <div class="card-body">
@@ -102,7 +103,7 @@
                 </div>
             </div>
 
-            <!-- Stock -->
+            <!-- Stock - Display a summary of the items available to rent -->
             <div class="row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <div class="card">
@@ -113,6 +114,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Expenses - This make possible the user get access to expenses, and add new record -->
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
@@ -124,7 +127,7 @@
                 </div>
             </div>
 
-            <!-- Rent In Progress -->
+            <!-- Rent In Progress - Display a summary of the number of rentals is "in progress" -->
             <div class="row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
                     <div class="card">
@@ -137,7 +140,7 @@
                     </div>
                 </div>
 
-                <!-- New Rents -->
+                <!-- New Rents - Display a summary of the number of rentals that didn't start yet-->
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
