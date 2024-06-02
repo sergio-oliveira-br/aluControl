@@ -18,144 +18,162 @@
     </head>
 
     <body>
-        <!-- Starts Sidebar/Dropdown - The user can access the other page through this -->
-        <!-- This will be displayed when the screen is large enough to display it -->
-        <div class="sidebar">
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                    <span class="fs-4">Sidebar</span>
-                </a>
-                <hr>
-                <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active" aria-current="page">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="dashboard.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="rent.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-                            Rent
-                        </a>
-                    </li>
-                    <li>
-                        <a href="products.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-                            Products
-                        </a>
-                    </li>
-                    <li>
-                        <a href="customers.html" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                            Customers
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="nav-link text-white">
-                            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
-                            Expenses
-                        </a>
-                    </li>
+        <div class="container">
+            <!-- Starts Dropdown - The user can access the other page through this -->
+            <!-- This will be displayed when the screen is not large enough to display the sidebar -->
+            <div class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Home</a></li>
+                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="#">Rent</a></li>
+                    <li><a class="dropdown-item" href="#">Products</a></li>
+                    <li><a class="dropdown-item" href="#">Customers</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
                 </ul>
-                <hr>
-                <!-- Ends Sidebar - Menu -->
+            </div>
+            <!-- Ends Menu for small screen -->
 
-                <!-- Starts Dropdown - The user can access the other page through this -->
-                <!-- This will be displayed when the screen is not large enough to display the sidebar -->
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
-                        <strong>mdo</strong>
+            <!-- Starts Sidebar/Dropdown - The user can access the other page through this -->
+            <!-- This will be displayed when the screen is large enough to display it -->
+            <div class="sidebar">
+                <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px; height: 100vh">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                        <span class="fs-4">Sidebar</span>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                        <li><a class="dropdown-item" href="#">New project...</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active" aria-current="page">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="dashboard.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="rent.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+                                Rent
+                            </a>
+                        </li>
+                        <li>
+                            <a href="products.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+                                Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="customers.html" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                                Customers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="nav-link text-white">
+                                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+                                Expenses
+                            </a>
+                        </li>
                     </ul>
+                    <hr>
+                    <!-- Ends Sidebar - Menu -->
+
+                    <!-- Checking the usability of this  -->
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="" alt="" width="32" height="32" class="rounded-circle me-2">
+                            <strong>mdo</strong>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="dropdown-item" href="#">New project...</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Ends Sidebar/Dropdown - Menu -->
+            <!-- Ends Sidebar/Dropdown - Menu -->
 
 
 
-        <!-- Starts Main Content -->
-        <div class="content">
-            <br><h3> Welcome to RentControl v1</h3>
+            <!-- Starts Main Content -->
+            <div class="content">
+                <br><h3> Welcome to RentControl v1</h3>
 
-            <!-- Rent Unpaid - Display a summary of the rentals opened  -->
-            <div class="card">
-                <h5 class="card-header">Rent Unpaid</h5>
-                <div class="card-body">
-                    <h5 class="card-title">Track your unpaid rentals</h5>
-                    <p class="card-text" id="loadRentUnpaid">That's Good! All yours Rentals have been paid</p>
-                    <a href="#" class="btn btn-primary">More Information</a>
+                <!-- Rent Unpaid - Display a summary of the rentals opened  -->
+                <div class="card">
+                    <h5 class="card-header">Rent Unpaid</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Track your unpaid rentals</h5>
+                        <p class="card-text" id="loadRentUnpaid">That's Good! All yours Rentals have been paid</p>
+                        <a href="#" class="btn btn-primary">More Information</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Stock - Display a summary of the items available to rent -->
-            <div class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Stock</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- Stock - Display a summary of the items available to rent -->
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Stock</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expenses - This make possible the user get access to expenses, and add new record -->
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Expenses</h5>
+                                <p class="card-text">Is there anything else you need to add? </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Expenses - This make possible the user get access to expenses, and add new record -->
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Expenses</h5>
-                            <p class="card-text">Is there anything else you need to add? </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                <!-- Rent In Progress - Display a summary of the number of rentals is "in progress" -->
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Rent Status: In Progress</h5>
+                                <p class="card-text">Monitor your rentals that are in progress.</p>
+                                <p id="loadRentStatusInProgress"> There is no Rent In Progress so far</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Rent In Progress - Display a summary of the number of rentals is "in progress" -->
-            <div class="row">
-                <div class="col-sm-6 mb-3 mb-sm-0">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rent Status: In Progress</h5>
-                            <p class="card-text">Monitor your rentals that are in progress.</p>
-                            <p id="loadRentStatusInProgress"> There is no Rent In Progress so far</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <!-- New Rents - Display a summary of the number of rentals that didn't start yet-->
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Rent Status: New</h5>
+                                <p class="card-text">The rentals that haven't begun yet.</p>
+                                <p id="loadRentStatusNew"> There is no New Rent </p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- Ends Cards-->
 
-                <!-- New Rents - Display a summary of the number of rentals that didn't start yet-->
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Rent Status: New</h5>
-                            <p class="card-text">The rentals that haven't begun yet.</p>
-                            <p id="loadRentStatusNew"> There is no New Rent </p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Ends Cards-->
-
-            </div>
-        </div> <!-- content -->
-        <!-- Ends Main Content -->
+                </div> <!-- content -->
+            </div> <!-- Ends Main Content -->
+        </div> <!-- Container -->
 
         <!-- JS has to be at the end of the body, to ensure a fast and efficient rendering of your web page -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
