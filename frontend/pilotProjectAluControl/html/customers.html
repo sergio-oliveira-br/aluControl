@@ -108,25 +108,27 @@
                     <form id="customerForm"  action="/saveCustomer" method="post" enctype="application/json" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-4">
                             <label for="customerFirstName" class="form-label">First name</label>
-                            <input type="text" class="form-control" id="customerFirstName" name="firstName" value="John" required>
+                            <input type="text" class="form-control" id="customerFirstName" name="firstName" value="" required>
+                            <div class="invalid-feedback">Please enter the customer's name</div>
                         </div>
 
                         <div class="col-md-4">
                             <label for="customerLastName" class="form-label">Last name</label>
-                            <input type="text" class="form-control" id="customerLastName" name="lastName" value="Otto">
+                            <input type="text" class="form-control" id="customerLastName" name="lastName" value="">
                         </div>
 
                         <div class="col-md-4">
                             <label for="customerPhoneNumber" class="form-label">Phone Number</label>
                             <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="customerPhoneNumber" name="phoneNumber" value="34998055902" aria-describedby="inputGroupPrepend">
+                                <input type="text" class="form-control" id="customerPhoneNumber" name="phoneNumber" value="" aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">Please inform a mobile number</div>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <label for="additionalInformation" class="form-label">Additional Information</label>
                             <div class="input-group has-validation">
-                                <input type="text" class="form-control" id="additionalInformation" name="additionalInfo" value="Irmão do José" aria-describedby="inputGroupPrepend">
+                                <input type="text" class="form-control" id="additionalInformation" name="additionalInfo" value="" aria-describedby="inputGroupPrepend">
                             </div>
                         </div>
 
