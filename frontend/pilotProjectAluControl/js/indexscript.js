@@ -47,8 +47,8 @@ function loadNumRentUnpaid ()
 
             else
             {
-                $('#loadRentUnpaid').text('You have ' + data + 'rentals unpaid.');
-                alert("You have " + data + "rentals unpaid.");
+                $('#loadRentUnpaid').text('You have ' + data + ' rentals unpaid.');
+                alert("You have " + data + " rentals unpaid.");
             }
         },
         error: function(xhr, status, error)
