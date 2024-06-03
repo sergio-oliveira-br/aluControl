@@ -37,7 +37,7 @@ public class GlobalExceptionHandler
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ResponseEntity<String> handleGenericException(Exception ex) {
-        return new ResponseEntity<>("Oops Something, there are something wrong ", HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>("Oops! There are something wrong =[", HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }
