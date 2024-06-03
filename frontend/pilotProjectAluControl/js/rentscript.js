@@ -29,10 +29,8 @@ $(document).ready(function()
     //The script will load the available items in the rental form when the page loads
     loadItemsForRentForm();
 
-
     //(Modal)The script will load the available items in the rental form when the page loads
     updateLoadCustomerForRentForm();
-
 
     //(Modal)Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('change', function() {
@@ -54,59 +52,17 @@ $(document).ready(function()
     });
 })
 
-
-//!Important (this additional features)
-//The script will load the available customers in the rental form when the page loads
-function loadCustomerForRentForm() {
-    $.ajax({
-        url: "/customers",
-        type: "GET",
-        success: function(data) {
-            var rentCustomerSelect = $('#rentFirstName');
-
-            rentCustomerSelect.empty();
-
-            data.forEach(function(customer) {
-                rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
-                    customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
-            });
-            console.log("customers has been load to the form");
-        },
-        error: function(xhr, status, error) {
-            console.error("Error loading items for rent form: ", error);
-        }
-    });
-}
-
-
-
-//The script will load the available items in the rental form when the page loads
-function loadItemsForRentForm() {
-    $.ajax({
-        url: "/product",
-        type: "GET",
-        success: function(data) {
-            var rentItemSelect = $('#rentItem');
-            rentItemSelect.empty();
-            data.forEach(function(product) {
-                rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error("Error loading items for rent form: ", error);
-        }
-    });
-}
-
-
 /**
  Page: Rent
  Item: Table
  Method: The script will load all items in a table
-*/
+ */
 function loadRent()
 {
-    $.ajax({url: "/rent", type: "GET", success: function(data)
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/rent", //indicates the endpoint
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+        success: function(data)
         {
             //first clean
             $('#rentList').empty();
@@ -137,12 +93,65 @@ function loadRent()
     });
 }
 
+
+/**
+ Page: Rent
+ Item: Form - Customer field
+ Method: The script will load the available CUSTOMERS in the rental form when the page loads
+ */
+function loadCustomerForRentForm() {
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/customers", //indicates the endpoint
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+        success: function(data) {
+            var rentCustomerSelect = $('#rentFirstName');
+
+            rentCustomerSelect.empty();
+
+            data.forEach(function(customer) {
+                rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
+                    customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
+            });
+            console.log("customers has been load to the form");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading items for rent form: ", error);
+        }
+    });
+}
+
+
+
+/**
+ Page: Rent
+ Item: Form - Customer field
+ Method: The script will load the available ITEMS in the rental form when the page loads
+ */
+function loadItemsForRentForm() {
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/product", //indicates the endpoint
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+        success: function(data) {
+            var rentItemSelect = $('#rentItem');
+            rentItemSelect.empty();
+            data.forEach(function(product) {
+                rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
+            });
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading items for rent form: ", error);
+        }
+    });
+}
+
+
+
+
 /**
  Page: Rent
  Item: Form -> Days = (End - Start)
  Method: Simple math to calculate the days
  */
-//Making the Math
 function mathDays(end, start)
 {
     let start_Date = new Date(start);
@@ -155,7 +164,11 @@ function mathDays(end, start)
 
 
 
-//Using the Method
+/**
+ Page: Rent
+ Item: Form -> Days = (End - Start)
+ Method: applying the mathDays method
+ */
 function loadRentDays()
 {
     //Variables
@@ -168,6 +181,11 @@ function loadRentDays()
     //Write in the field
     document.getElementById('rentTotalDays').value = rentTotalDays;
     console.log("The days has been calculated", rentTotalDays);
+
+    //update the rentTotalPrice every time that any date has been changed
+    loadTotalPrice();
+
+
 }
 
 
@@ -191,11 +209,11 @@ function loadTotalPrice()
     console.log("The Rent Total Price was calculated by loadTotalPrice(). Result: " + newRentTotalPrice.toFixed(2));
 }
 
+//Update everytime that one of these five field is changed
+document.getElementById('rentTotalDays').addEventListener('change', loadTotalPrice);
+document.getElementById('rentQtyItem').addEventListener('change', loadTotalPrice);
+document.getElementById('rentPrice').addEventListener('change', loadTotalPrice);
 
-//Update everytime that one of these three field is changed
-document.getElementById('rentTotalDays').addEventListener('change', loadTotalPrice)
-document.getElementById('rentQtyItem').addEventListener('change', loadTotalPrice)
-document.getElementById('rentPrice').addEventListener('change', loadTotalPrice)
 document.getElementById('rentStarts').addEventListener('change',loadRentDays);
 document.getElementById('rentEnds').addEventListener('change',loadRentDays);
 
@@ -209,9 +227,9 @@ document.getElementById('rentEnds').addEventListener('change',loadRentDays);
  */
 
 function openEditModal(rentId) {
-    $.ajax({
-        url: '/rent/' + rentId,
-        type: 'GET',
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: '/rent/' + rentId, //indicates the endpoint
+        type: 'GET', //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
         success: function(rent)
         {
             //Fill in the form fields in the modal using Selectors $() to select HTML elements based on their IDs.
@@ -256,9 +274,9 @@ function openEditModal(rentId) {
  Method: The script will load the available customers in the rental form when the page loads
  */
 function updateLoadCustomerForRentForm() {
-    $.ajax({
-        url: "/customers",
-        type: "GET",
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/customers", //indicates the endpoint
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
         success: function(data) {
             var rentCustomerSelect = $('#editRentFirstName');
 
@@ -345,9 +363,9 @@ function submitEditForm() {
         rentStatus: $('#editRentStatus').val()
     };
 
-    $.ajax({
-        url: '/rent/' + rentData.id,
-        type: 'PUT',
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: '/rent/' + rentData.id, //indicates the endpoint
+        type: 'PUT', //HTTP request methods used to INSERT data to the server (backend), indicating by the endpoint specified by the URL
         contentType: 'application/json',
         data: JSON.stringify(rentData),
         success: function(response) {
