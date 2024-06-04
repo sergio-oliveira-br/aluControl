@@ -111,7 +111,7 @@ $(document).ready(function ()
             // Graphs
             const ctx3 = document.getElementById('myPaymentChart')
             const myRentChart = new Chart(ctx3,{
-                type: 'bar',
+                type: 'pie',
                 data: {
                     labels: status,
                     datasets: [{
@@ -123,9 +123,11 @@ $(document).ready(function ()
                     }],
                 },
                 options:{
+                    responsive: true,
+                    maintainAspectRatio: false,
                     plugins:{
                         legend:{
-                            display: false,
+                            display: true,
                         },
                         tooltip:{
                             boxPadding: '5px',
