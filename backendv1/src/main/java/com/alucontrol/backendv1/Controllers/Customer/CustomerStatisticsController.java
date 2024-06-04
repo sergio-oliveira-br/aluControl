@@ -10,6 +10,7 @@
  */
 package com.alucontrol.backendv1.Controllers.Customer;
 
+import com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException;
 import com.alucontrol.backendv1.Model.Customer;
 import com.alucontrol.backendv1.Repository.CustomerRepository;
 import org.springframework.http.ResponseEntity;
@@ -32,11 +33,20 @@ public class CustomerStatisticsController
     }
 
     /**
-     * Endpoint to get back the Number of Unpaid Rents
+     * Endpoint to get back the list of all customer, it will display on Customer.html
+     * Pointing to customerScript.js
      */
     @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAllCustomers() {
+    public ResponseEntity<List<Customer>> getAllCustomers()
+    {
+        //call the repository method, witch has the info about the Customer
         List<Customer> customers = customerRepository.findAll();
+
+        //handle exception
+        if(customerRepository.findAll().isEmpty())
+        {
+            throw new ResourceNotFoundException("From: Customer Controller: I couldn't find any customers in the database");
+        }
         return ResponseEntity.ok(customers);
     }
 }
