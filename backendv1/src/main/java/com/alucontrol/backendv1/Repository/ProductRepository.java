@@ -11,9 +11,12 @@
 package com.alucontrol.backendv1.Repository;
 
 import com.alucontrol.backendv1.Model.Product;
+import com.alucontrol.backendv1.Projection.ItemQtyDateProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long>
@@ -22,13 +25,5 @@ public interface ProductRepository extends JpaRepository<Product, Long>
     //Display on Product Page via ProductController
     @Query(value = "SELECT SUM(item_quantity) FROM AluControlV1.products WHERE item_description = 'Scaffolds'", nativeQuery = true)
     Long getSumScaffolds();
-
-
-    //Method for display the qty of item Scaffolds RENTED
-    //Display on Product Page via ProductController
-
-
-
-
 
 }

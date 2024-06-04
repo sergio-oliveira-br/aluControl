@@ -11,6 +11,7 @@
 package com.alucontrol.backendv1.Repository;
 
 import com.alucontrol.backendv1.Model.Rent;
+import com.alucontrol.backendv1.Projection.ItemQtyDateProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -77,6 +78,20 @@ public interface RentRepository extends JpaRepository<Rent, Long>
             "WHERE item_description = 'Scaffolds'",
             nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
     Long getSumScaffolds();
+
+
+
+
+    /** Display: on Stock.html via RentStatisticsController
+     * Item: SCAFFOLDS
+     * Method: To construct a graph that will display each rented has been done
+     * */
+    @Query(value = "SELECT RentStockProjection.rentQtyItem AS rentQtyItem, " +
+            "RentStockProjection.rentItem AS rentItem, " +
+            "RentStockProjection.rentStarts AS rentStarts " +
+            "FROM Rent RentStockProjection " +
+            "WHERE rentItem = 'Scaffolds'")
+    List<ItemQtyDateProjection> getScaffoldsQtyRented();
 }
 
 

@@ -10,10 +10,13 @@
  */
 package com.alucontrol.backendv1.Controllers.Rent;
 
+import com.alucontrol.backendv1.Projection.ItemQtyDateProjection;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /** This controller contains specific methods for custom operations */
 @RestController
@@ -48,7 +51,15 @@ public class RentStatisticsController
         Long scaffoldsAvailable = sumScaffolds - totalScaffoldsRented;
 
         return ResponseEntity.ok(scaffoldsAvailable);
+    }
 
+
+    /** Endpoint to get back the rentals "Scaffolds "has been done
+     *  Pointing to stockScript.js and stock.html */
+    @GetMapping("/scaffoldsRentals")
+    public List<ItemQtyDateProjection> getScaffoldsRented()
+    {
+        return rentRepository.getScaffoldsQtyRented();
     }
 
 

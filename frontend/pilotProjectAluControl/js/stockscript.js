@@ -18,22 +18,49 @@
 $(document).ready(function ()
 {
     //each product in our database
-    $.ajax({url: '',
+    $.ajax({
+        url: '/scaffoldsRentals',
         method: 'GET',
         dataType: 'json',
         success: function (data)
         {
             //variables
-
+            let scaffold = data.map(function(rent){return rent.rentItem});
+            let qty = data.map(function(rent){return rent.rentQtyItem});
+            let date = data.map(function(rent){return rent.rentStarts});
+            //IMPORTANT! I NEED TO CONVERT THE DATE TO WEEK 
 
             //graph
-            const ctx = document.getElementById('myStockChart');
+            const ctx = document.getElementById('myStockChart')
 
             //config
-            const config = new Chart(ctx2,{})
-
+            const config = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: date,
+                    datasets: [{
+                        data: qty,
+                        label: 'Scaffolds',
+                        lineTension: 0,
+                        borderWidth: 4,
+                        pointBackgroundColor: '#007bff',
+                        backgroundColor: '#007bff' ,
+                    }],
+                },
+                options:{
+                    responsive: true,
+                    plugins:{
+                        legend:{
+                            display: true,
+                        },
+                        tooltip:{
+                            trigger: 'item',
+                            boxPadding: '5px',
+                        },
+                    }
+                }
+            });
             //setup
-
         }
     });
-}
+})
