@@ -28,7 +28,7 @@ $(document).ready(function ()
             let scaffold = data.map(function(rent){return rent.rentItem});
             let qty = data.map(function(rent){return rent.rentQtyItem});
             let date = data.map(function(rent){return rent.rentStarts});
-            //IMPORTANT! I NEED TO CONVERT THE DATE TO WEEK 
+            //IMPORTANT! I NEED TO CONVERT THE DATE TO WEEK
 
             //graph
             const ctx = document.getElementById('myStockChart')
