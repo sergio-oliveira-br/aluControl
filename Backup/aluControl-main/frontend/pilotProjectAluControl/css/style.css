@@ -1,0 +1,214 @@
+/*
+ * Page: All
+ * Topic:
+ * Details:
+ */
+html, body
+{
+    height: 50%;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+/*
+ * Page: All
+ * Topic: Menu
+ * Details: This set the position of the sidebar
+ */
+.sidebar
+{
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    left: 0;
+    top: 0; /*Overlap the Menu button*/
+}
+
+/*
+ * Page: All
+ * Topic: Content
+ * Details: All pages will be display ate the same point
+ */
+.content
+{
+    margin-left: 300px;
+}
+
+.btn-group
+{
+    left: 70px;
+    top: 3px;
+}
+
+
+/* ---------------------------------------------
+ * Page: Index
+ * Topic: Card
+ * Details: Set the responsive
+*/
+.card
+{
+    margin-bottom: 20px;
+    flex: 0 0 calc(33.333% - 20px); /* Display 3 cards per line */
+}
+
+
+
+/* ---------------------------------------------
+ * Page: Rent
+ * Topic: Table
+ * Details:
+*/
+
+.table-responsive
+{
+    height: 400px; /*The size of the list on screen*/
+    box-sizing: border-box;
+}
+
+.table-responsive th
+{
+    top: 0;
+    position: sticky;
+}
+
+
+/* ---------------------------------------------
+ * Page: Product
+ * Topic: Main Content
+ * Details:
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------- */
+
+
+
+
+
+
+
+
+/* Page: All  */
+/*The styles defined within the @media (max-width: 'X' px)
+* rule will only be applied when the viewport
+* width is 1200 pixels or less.
+* This is a common technique used in responsive web design
+* to apply different styles depending on the device or screen size.*/
+@media (max-width: 992px)
+{
+    /*Index*/
+    .content
+    {
+        margin-left: 10%; /* Remove left margin when screen is small */
+        flex-direction: column; /* Align cards in a single column */
+        align-items: center; /* Align the cards in the center */
+    }
+
+    .card
+    {
+        flex: 0 0 calc(100% - 20px); /* Adjust to show 1 card per line */
+        max-width: calc(100% - 20px); /* Adjust to show 1 card per line */
+    }
+
+    .sidebar
+    {
+        display: none; /*hides the side menu */
+        overflow-y: scroll;
+        width: 30%;
+    }
+
+}
+
+@media (min-width: 991px)
+{
+
+
+}
+
+
+
+
+
+
+
+
+/* Page: Products -> Main Content */
+
+
+
+
+
+/* Page: Products -> Table */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page: Customers -> Form */
+
+
+
+
+
+/* Page: Customers -> Table */
+
+
+/* Page: Customers -> Table */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Page: Dashboard -> Chart */
