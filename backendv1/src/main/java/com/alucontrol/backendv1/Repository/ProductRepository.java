@@ -17,10 +17,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long>
 {
+    //Method to find a product by description
+    Optional<Product> findByItemDescription(String itemDescription);
+
     //Method for SUM the item SCAFFOLDS
     //Display on Product Page via ProductController
     @Query(value = "SELECT SUM(item_quantity) FROM AluControlV1.products WHERE item_description = 'Scaffolds'", nativeQuery = true)

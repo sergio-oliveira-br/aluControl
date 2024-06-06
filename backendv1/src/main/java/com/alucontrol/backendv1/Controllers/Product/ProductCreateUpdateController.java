@@ -38,10 +38,10 @@ public class ProductCreateUpdateController
         product.setItemDescription(itemDescription);
         product.setItemQuantity(itemQuantity);
 
-        Product savedProduct = productRepository.save(product);
+        //Initialize itemAvailableQty with the same itemQuantity value
+        product.setItemAvailableQty(itemQuantity);
 
-        //Double Check
-        System.out.println("Received:" + "\n" + itemDescription);
+        Product savedProduct = productRepository.save(product);
 
         return ResponseEntity.ok(savedProduct);
     }

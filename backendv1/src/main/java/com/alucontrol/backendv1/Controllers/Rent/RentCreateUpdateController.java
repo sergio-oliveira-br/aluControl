@@ -12,9 +12,13 @@ package com.alucontrol.backendv1.Controllers.Rent;
 
 import com.alucontrol.backendv1.Model.Rent;
 import com.alucontrol.backendv1.Repository.RentRepository;
+import com.alucontrol.backendv1.Service.RentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 /**This controller is dedicated to endpoints that create and update records*/
@@ -24,10 +28,13 @@ public class RentCreateUpdateController
     //Repository for access to product data
     private final RentRepository rentRepository;
 
+    private final RentService rentService;
+
     //Constructor responsible for injecting the repository
-    public RentCreateUpdateController(RentRepository rentRepository)
+    public RentCreateUpdateController(RentRepository rentRepository, RentService rentService)
     {
         this.rentRepository = rentRepository;
+        this.rentService = rentService;
     }
 
     /** Endpoint to send rent */
@@ -62,8 +69,29 @@ public class RentCreateUpdateController
         rent.setRentPaymentStatus(rentPaymentStatus);
         rent.setRentStatus(rentStatus);
 
+
+        //Converting data strings into Data objects
+        Date startDate;
+        Date endDate;
+        try
+        {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            startDate = dateFormat.parse(rentStarts);
+            endDate = dateFormat.parse(rentEnds);
+        }
+        catch (ParseException e) {
+            System.out.println("error");
+            return ResponseEntity.badRequest().build();
+
+        }
+
+        //When a rental is created, make a call to subtract inventory
+        rentService.subtractStockByRentalDates(rentItem, rentQtyItem, startDate, endDate);
+
         Rent savedRent = rentRepository.save(rent);
+        System.out.println("Save Rent endpoint accessed.");
         return ResponseEntity.ok(savedRent);
+
     }
 
 

@@ -52,11 +52,11 @@ public class RentService
 
     /** Used: Product Create Update Controller
      *  Method: Subtracting (item) stock when starting a rental.*/
-    private void subtractStockByRentalDates(Long productId, int quantity, Date rentStarts, Date rentEnds)
+    public void subtractStockByRentalDates(String itemDescription, int quantity, Date rentStarts, Date rentEnds)
     {
         //Search the product by ID
         //Optional: Used to imply that a value may be present or absent in a given circumstance
-        Optional<Product> productOptional = productRepository.findById(productId);
+        Optional<Product> productOptional = productRepository.findByItemDescription(itemDescription);
 
         //Check if the product was found
         if(productOptional.isPresent())
@@ -67,6 +67,11 @@ public class RentService
             //Check if the product is available in stock
             if(product.getItemAvailableQty() >= quantity)
             {
+                // Adding log messages to debug
+                System.out.println("Current Date: " + new Date());
+                System.out.println("Rental Start Date: " + rentStarts);
+                System.out.println("Rental End Date: " + rentEnds);
+
                 //Check if the current date is between the start and end date of the rental
                 if(isCurrentDateIsWithinRentalDate(rentStarts, rentEnds))
                 {
@@ -77,20 +82,20 @@ public class RentService
                 //Exception: current date is out off start and end date of the rental
                 else
                 {
-                    throw new ResourceNotFoundException("The product with ID " + productId+ " cannot be rented." +
+                    throw new ResourceNotFoundException("The product '" + itemDescription + "' cannot be rented." +
                             "\nCurrent date is out off start and end date of the rental");
                 }
             }
             //Exception: out off stock
             else
             {
-                throw new ResourceNotFoundException("The product with ID " + productId+ " does not have enough in stock.");
+                throw new ResourceNotFoundException("The product '" + itemDescription + "' does not have enough in stock.");
             }
         }
         //Exception: ID incorrect, product was not found
         else
         {
-            throw new ResourceNotFoundException("The product with ID " + productId+ " does not exist.");
+            throw new ResourceNotFoundException("The product '" + itemDescription + "' does not exist.");
         }
     }
 
