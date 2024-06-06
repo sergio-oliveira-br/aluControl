@@ -343,8 +343,6 @@ function updateTotalPrice()
  Item: Form (modal)
  Method: Send the data to update my database
  */
-
-
 function submitEditForm() {
     let rentData = {
         id: $('#editRentId').val(),
@@ -376,6 +374,53 @@ function submitEditForm() {
         error: function(xhr, status, error) {
             console.error(error);
             alert('Oops, something went wrong!');
+        }
+    });
+}
+
+/**
+ Page: Rent
+ Item: Form (modal) -> Edit Rent Status
+ Method: This function is triggered when the rental status is changed in the form, updating the stock
+ */
+document.addEventListener('DOMContentLoaded', function()
+{
+    //Select the rent status dropdown
+    let editRentStatusDropdown = document.getElementById('editRentStatus');
+
+    //Add the event listener for change event
+    editRentStatusDropdown.addEventListener('change', updateRentStatus);
+});
+
+/**
+ Page: Rent
+ Item: Form (modal) -> Edit Rent Status
+ Method: This update the stock, adding the qty in to stock available
+ */
+function updateRentStatus(event)
+{
+    //Get the rent ID from the hidden input field in the form
+    let rentId = $('#editRentId').val();
+    console.log(rentId);
+    //I NEED TO CHECK THE BUG 
+
+    //Get the new status value from the dropdown menu
+    let status = event.target.value;
+
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/rent/status/" + rentId, //indicates the endpoint
+        type: 'PUT', //HTTP request methods used to INSERT/UPDATE data to the server (backend)
+        contentType: 'application/json',
+        data: {status: status}, //The data to send in the request, here we're sending the new status
+        //Callback function to execute if the request is successful
+        success: function(response)
+        {
+            alert('Rent updated successfully');
+            console.log("Rent status has benn updated successfully", response);
+        },
+        //Callback function to execute if there's an error with the request
+        error: function(xhr, status, error) {
+            console.error("Error updating rent status" + error);
         }
     });
 }

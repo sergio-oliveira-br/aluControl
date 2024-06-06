@@ -92,6 +92,38 @@ public class RentCreateUpdateController
     }
 
 
+
+    /** Endpoint to update rent status (by selecting the option "Finished" on Rent.html)*/
+    @PutMapping("/rent/status/{id}")
+    public ResponseEntity<Rent> updateRentStatus(@PathVariable Long id,
+                                                 @RequestParam("rentStatus") String rentStatus)
+    {
+        //Search the product by ID
+        //Optional: Used to imply that a value may be present or absent in a given circumstance
+        Optional<Rent> rentOptional = rentRepository.findById(id);
+
+        //Check if the product was found
+        if(rentOptional.isPresent())
+        {
+            Rent rent = rentOptional.get();
+            rent.setRentStatus(rentStatus);
+            Rent savedRent = rentRepository.save(rent);
+
+            if("Finished".equals(rentStatus))
+            {
+                rentService.addStockByRentalDates(rent.getRentItem(), rent.getRentQtyItem());
+            }
+
+            return ResponseEntity.ok(savedRent);
+        }
+        //Exception: ID incorrect, product was not found
+        else
+        {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
     /** Endpoint to get a specific rent by ID (by clicking on Edit into the table)*/
     @GetMapping("/rent/{id}")
     public ResponseEntity<Rent> getRentById(@PathVariable Long id) {

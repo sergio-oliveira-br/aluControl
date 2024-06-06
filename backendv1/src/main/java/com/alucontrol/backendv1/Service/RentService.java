@@ -97,11 +97,11 @@ public class RentService
 
     /** Used: Product Create Update Controller
      *  Method: Adding (item) stock when closing a rental.*/
-    private void addStockByRentalDates(Long productId, int quantity)
+    public void addStockByRentalDates(String itemDescription, int quantity)
     {
         //Search the product by ID
         //Optional: Used to imply that a value may be present or absent in a given circumstance
-        Optional<Product> productOptional = productRepository.findById(productId);
+        Optional<Product> productOptional = productRepository.findByItemDescription(itemDescription);
 
         //Check if the product was found
         if(productOptional.isPresent())
@@ -116,7 +116,7 @@ public class RentService
         //Exception: ID incorrect, product was not found
         else
         {
-            throw new ResourceNotFoundException("The product with ID " + productId+ " was not found");
+            throw new ResourceNotFoundException("The product '" + itemDescription+ "' was not found");
         }
     }
 }
