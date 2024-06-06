@@ -29,6 +29,9 @@ public class Product
     @Column(nullable = false)
     private int itemQuantity;
 
+    @Column(nullable = false)
+    private double itemAvailableQty;
+
     //Getters and Setters
 
     public long getId() {
@@ -54,4 +57,8 @@ public class Product
     public void setItemQuantity(int itemQuantity) {
         this.itemQuantity = itemQuantity;
     }
+
+    public double getItemAvailableQty() {return itemAvailableQty;}
+
+    public void setItemAvailableQty(double itemAvailableQty) {this.itemAvailableQty = itemAvailableQty;}
 }
