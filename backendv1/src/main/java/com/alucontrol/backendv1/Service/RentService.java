@@ -67,11 +67,6 @@ public class RentService
             //Check if the product is available in stock
             if(product.getItemAvailableQty() >= quantity)
             {
-                // Adding log messages to debug
-                System.out.println("Current Date: " + new Date());
-                System.out.println("Rental Start Date: " + rentStarts);
-                System.out.println("Rental End Date: " + rentEnds);
-
                 //Check if the current date is between the start and end date of the rental
                 if(isCurrentDateIsWithinRentalDate(rentStarts, rentEnds))
                 {

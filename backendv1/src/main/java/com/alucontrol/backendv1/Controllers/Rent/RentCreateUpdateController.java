@@ -80,11 +80,8 @@ public class RentCreateUpdateController
             endDate = dateFormat.parse(rentEnds);
         }
         catch (ParseException e) {
-            System.out.println("error");
-            return ResponseEntity.badRequest().build();
-
+            return ResponseEntity.internalServerError().build();
         }
-
         //When a rental is created, make a call to subtract inventory
         rentService.subtractStockByRentalDates(rentItem, rentQtyItem, startDate, endDate);
 
