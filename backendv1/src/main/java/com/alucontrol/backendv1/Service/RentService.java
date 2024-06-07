@@ -35,20 +35,6 @@ public class RentService
     }
 
 
-    /** Used: removeItemByDate() and
-     *  Method: This method checks if the current date is within the rental period */
-    //Parameters rentStarts and rentEnds, indicating that they are the start and end dates of the rental, respectively
-    private boolean isCurrentDateIsWithinRentalDate(Date rentStarts, Date rentEnds)
-    {
-
-        Date currentDate = new Date(); //get the current date
-
-        //Verify that the current date is between the start and end date of the rental
-        return (currentDate.after(rentStarts) || currentDate.equals(rentStarts)) &&
-                (currentDate.before(rentEnds) || currentDate.equals(rentEnds));
-    }
-
-
     /** Used: Product Create Update Controller
      *  Method: Subtracting (item) stock when starting a rental.*/
     public void subtractStockByRentalDates(String itemDescription, int quantity, Date rentStarts, Date rentEnds)
@@ -66,20 +52,11 @@ public class RentService
             //Check if the product is available in stock
             if(product.getItemAvailableQty() >= quantity)
             {
-                //Check if the current date is between the start and end date of the rental
-                if(isCurrentDateIsWithinRentalDate(rentStarts, rentEnds))
-                {
-                    //Take the quantity out of the stock
-                    product.setItemAvailableQty(product.getItemAvailableQty() - quantity);
-                    productRepository.save(product);
-                }
-                //Exception: current date is out off start and end date of the rental
-                else
-                {
-                    throw new ResourceNotFoundException("The product '" + itemDescription + "' cannot be rented." +
-                            "\nCurrent date is out off start and end date of the rental");
-                }
+                //Take the quantity out of the stock
+                product.setItemAvailableQty(product.getItemAvailableQty() - quantity);
+                productRepository.save(product);
             }
+            
             //Exception: out off stock
             else
             {
