@@ -12,7 +12,6 @@ package com.alucontrol.backendv1.Service;
 
 import com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException;
 import com.alucontrol.backendv1.Model.Product;
-import com.alucontrol.backendv1.Model.Rent;
 import com.alucontrol.backendv1.Repository.ProductRepository;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import org.springframework.stereotype.Service;
@@ -97,8 +96,9 @@ public class RentService
 
     /** Used: Product Create Update Controller
      *  Method: Adding (item) stock when closing a rental.*/
-    public void addStockByRentalDates(String itemDescription, int quantity)
+    public void addStockByRentalStatusFinished(String itemDescription, int quantity)
     {
+        System.out.println("Received parameters: itemDescription={}, quantity={}" + itemDescription + quantity);
         //Search the product by ID
         //Optional: Used to imply that a value may be present or absent in a given circumstance
         Optional<Product> productOptional = productRepository.findByItemDescription(itemDescription);
@@ -118,5 +118,6 @@ public class RentService
         {
             throw new ResourceNotFoundException("The product '" + itemDescription+ "' was not found");
         }
+
     }
 }

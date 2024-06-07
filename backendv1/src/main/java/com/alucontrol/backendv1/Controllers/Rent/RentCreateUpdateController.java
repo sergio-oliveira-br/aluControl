@@ -20,11 +20,16 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
+import java.util.logging.Logger;
 
 /**This controller is dedicated to endpoints that create and update records*/
 @RestController
 public class RentCreateUpdateController
 {
+    //LOG
+    private static final Logger LOGGER = Logger.getLogger(RentCreateUpdateController.class.getName());
+
+
     //Repository for access to product data
     private final RentRepository rentRepository;
 
@@ -111,7 +116,21 @@ public class RentCreateUpdateController
 
             if("Finished".equals(rentStatus))
             {
-                rentService.addStockByRentalDates(rent.getRentItem(), rent.getRentQtyItem());
+                System.out.println("Rent object: " + rent);
+                //Local Variable:
+                //These variables take the values passed as parameters.
+                //The values are copied, which means that if the Rent object is modified, the values of the local variables are not affected.
+                int quantityReturned = rent.getRentQtyItem();
+                String itemDescription = rent.getRentItem();
+
+                //Execute the method
+                rentService.addStockByRentalStatusFinished(itemDescription, quantityReturned);
+            }
+
+            try {
+                rentService.addStockByRentalStatusFinished(rent.getRentItem(), rent.getRentQtyItem());
+            } catch (Exception e) {
+                System.out.println("Error calling addStockByRentalStatusFinished: {}" + e.getMessage() + e);
             }
 
             return ResponseEntity.ok(savedRent);
@@ -121,6 +140,7 @@ public class RentCreateUpdateController
         {
             return ResponseEntity.notFound().build();
         }
+
     }
 
 

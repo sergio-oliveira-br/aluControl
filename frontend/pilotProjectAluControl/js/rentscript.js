@@ -32,6 +32,13 @@ $(document).ready(function()
     //(Modal)The script will load the available items in the rental form when the page loads
     updateLoadCustomerForRentForm();
 
+    //(Modal)Update the rent status, if is "Finished", the item stock will return to total available
+    $('#editRentStatus').on('change', function() {
+        console.log('Rent Status Changed');
+        updateRentStatus()
+    });
+
+
     //(Modal)Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('change', function() {
         console.log('Price or Quantity input changed');
@@ -383,29 +390,29 @@ function submitEditForm() {
  Item: Form (modal) -> Edit Rent Status
  Method: This function is triggered when the rental status is changed in the form, updating the stock
  */
-document.addEventListener('DOMContentLoaded', function()
-{
-    //Select the rent status dropdown
-    let editRentStatusDropdown = document.getElementById('editRentStatus');
-
-    //Add the event listener for change event
-    editRentStatusDropdown.addEventListener('change', updateRentStatus);
-});
+// document.addEventListener('DOMContentLoaded', function()
+// {
+//     //Select the rent status dropdown
+//     let editRentStatusDropdown = document.getElementById('editRentStatus');
+//
+//     //Add the event listener for change event
+//     editRentStatusDropdown.addEventListener('change', updateRentStatus);
+// });
 
 /**
  Page: Rent
  Item: Form (modal) -> Edit Rent Status
  Method: This update the stock, adding the qty in to stock available
  */
-function updateRentStatus(event)
+function updateRentStatus()
 {
     //Get the rent ID from the hidden input field in the form
     let rentId = $('#editRentId').val();
     console.log(rentId);
-    //I NEED TO CHECK THE BUG 
+    //I NEED TO CHECK THE BUG
 
     //Get the new status value from the dropdown menu
-    let status = event.target.value;
+    let status = $('#editRentStatus').val();
 
     $.ajax({ //allows updating parts of a web page without reloading the entire page
         url: "/rent/status/" + rentId, //indicates the endpoint
