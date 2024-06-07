@@ -66,6 +66,7 @@ function loadProduct()
                     '<td>' + product.id + '</td>' +
                     '<td>' + product.itemDescription + '</td>' +
                     '<td>' + product.itemQuantity +'</td>' +
+                    '<td>' + product.itemAvailableQty + '</td>' +
                     '<td><button class="btn btn-primary" onclick="openEditModal(' + product.id + ')">Edit</button></td>'
                 );
             });
