@@ -11,6 +11,7 @@
 package com.alucontrol.backendv1.Service;
 
 import com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException;
+import com.alucontrol.backendv1.Controllers.Util.LoggerUtil;
 import com.alucontrol.backendv1.Model.Product;
 import com.alucontrol.backendv1.Repository.ProductRepository;
 import com.alucontrol.backendv1.Repository.RentRepository;
@@ -52,11 +53,21 @@ public class RentService
             //Check if the product is available in stock
             if(product.getItemAvailableQty() >= quantity)
             {
+                //Create a log
+                LoggerUtil.info("Renting Item: " + product.getItemDescription());
+                LoggerUtil.info("Getting the Item Available Qty: " + product.getItemAvailableQty());
+                LoggerUtil.info("Getting the quantity: " + quantity);
+
+
                 //Take the quantity out of the stock
                 product.setItemAvailableQty(product.getItemAvailableQty() - quantity);
+
+                //Create a log
+                LoggerUtil.info("The new Qty Available is:  " + product.getItemAvailableQty());
+
                 productRepository.save(product);
             }
-            
+
             //Exception: out off stock
             else
             {
