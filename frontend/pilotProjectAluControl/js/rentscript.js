@@ -24,10 +24,11 @@ $(document).ready(function()
     loadRentDays();
 
     //The script will load the available customers in the rental form when the page loads
-    loadCustomerForRentForm(); //!Important (this additional features)
+    loadCustomerForRentForm(); //This is for original form
 
     //The script will load the available items in the rental form when the page loads
     loadItemsForRentForm();
+    loadEditItemsForRentFormModal(); //This is for edit modal
 
     //(Modal)The script will load the available items in the rental form when the page loads
     updateLoadCustomerForRentForm();
@@ -35,9 +36,9 @@ $(document).ready(function()
     //(Modal)Update the rent status, if is "Finished", the item stock will return to total available
     $('#editRentStatus').on('change', function() {
         console.log('Rent Status Changed');
-        updateRentStatus()
+        updateRentStatus();
     });
-    
+
     //(Modal)Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('change', function() {
         console.log('Price or Quantity input changed');
@@ -296,6 +297,28 @@ function updateLoadCustomerForRentForm() {
                     customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
             });
             console.log("customers has been load to the form on (modal)");
+        },
+        error: function(xhr, status, error) {
+            console.error("Error loading items for rent form: ", error);
+        }
+    });
+}
+
+/**
+ Page: Rent
+ Item: Form - Customer field
+ Method: The script will load the available ITEMS in the rental form when the page loads
+ */
+function loadEditItemsForRentFormModal() {
+    $.ajax({ //allows updating parts of a web page without reloading the entire page
+        url: "/product", //indicates the endpoint
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+        success: function(data) {
+            var rentItemSelect = $('#editRentItem');
+            rentItemSelect.empty();
+            data.forEach(function(product) {
+                rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
+            });
         },
         error: function(xhr, status, error) {
             console.error("Error loading items for rent form: ", error);
