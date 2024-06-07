@@ -177,3 +177,6 @@
 2024-06-07 11:30:48 INFO  c.a.b.Controllers.Util.LoggerUtil - Updating rent status for ID: 31
 2024-06-07 11:30:48 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent Status: Finished
 2024-06-07 11:30:48 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent status updated successfully. ID: 31
+2024-06-07 12:07:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-07 12:07:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-07 12:07:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
