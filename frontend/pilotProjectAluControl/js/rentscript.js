@@ -37,8 +37,7 @@ $(document).ready(function()
         console.log('Rent Status Changed');
         updateRentStatus()
     });
-
-
+    
     //(Modal)Update total price when price or quantity change
     $('#editRentPrice, #editRentQtyItem').on('change', function() {
         console.log('Price or Quantity input changed');
@@ -69,6 +68,7 @@ function loadRent()
     $.ajax({ //allows updating parts of a web page without reloading the entire page
         url: "/rent", //indicates the endpoint
         type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+
         success: function(data)
         {
             //first clean
@@ -237,6 +237,7 @@ function openEditModal(rentId) {
     $.ajax({ //allows updating parts of a web page without reloading the entire page
         url: '/rent/' + rentId, //indicates the endpoint
         type: 'GET', //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+
         success: function(rent)
         {
             //Fill in the form fields in the modal using Selectors $() to select HTML elements based on their IDs.
@@ -284,6 +285,7 @@ function updateLoadCustomerForRentForm() {
     $.ajax({ //allows updating parts of a web page without reloading the entire page
         url: "/customers", //indicates the endpoint
         type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+
         success: function(data) {
             var rentCustomerSelect = $('#editRentFirstName');
 
@@ -326,6 +328,7 @@ document.getElementById('editRentStarts').addEventListener('change',updateRentDa
 document.getElementById('editRentEnds').addEventListener('change',updateRentDays);
 
 
+
 /**
  Page: Rent
  Item: Form (modal)
@@ -344,6 +347,7 @@ function updateTotalPrice()
     //Writing
     $('#editRentTotalPrice').val(newRentTotalPriceModal.toFixed(2));
 }
+
 
 /**
  Page: Rent
@@ -373,6 +377,7 @@ function submitEditForm() {
         type: 'PUT', //HTTP request methods used to INSERT data to the server (backend), indicating by the endpoint specified by the URL
         contentType: 'application/json',
         data: JSON.stringify(rentData),
+
         success: function(response) {
             alert('Rent updated successfully');
             $('#editModal').modal('hide');
@@ -385,19 +390,7 @@ function submitEditForm() {
     });
 }
 
-/**
- Page: Rent
- Item: Form (modal) -> Edit Rent Status
- Method: This function is triggered when the rental status is changed in the form, updating the stock
- */
-// document.addEventListener('DOMContentLoaded', function()
-// {
-//     //Select the rent status dropdown
-//     let editRentStatusDropdown = document.getElementById('editRentStatus');
-//
-//     //Add the event listener for change event
-//     editRentStatusDropdown.addEventListener('change', updateRentStatus);
-// });
+
 
 /**
  Page: Rent
