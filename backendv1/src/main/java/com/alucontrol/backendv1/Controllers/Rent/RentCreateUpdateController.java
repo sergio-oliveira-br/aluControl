@@ -117,14 +117,15 @@ public class RentCreateUpdateController
 
             if("Finished".equals(rentStatus))
             {
-                //Create a log
-                LoggerUtil.info("Rent status updated successfully. ID: " + id);
-
-                //Local Variable:
-                //These variables take the values passed as parameters.
+                //Local Variable: These take the values passed as parameters.
                 //The values are copied, which means that if the Rent object is modified, the values of the local variables are not affected.
                 int quantityReturned = rent.getRentQtyItem();
                 String itemDescription = rent.getRentItem();
+
+                //Create a log
+                LoggerUtil.info("Rent status updated successfully. ID: " + id);
+                LoggerUtil.info("Rent Item: " + rent.getRentItem());
+                LoggerUtil.info("Quantity Returned to the stock: " + quantityReturned);
 
                 //Execute the method
                 rentService.addStockByRentalStatusFinished(itemDescription, quantityReturned);
