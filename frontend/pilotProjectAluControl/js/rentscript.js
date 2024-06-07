@@ -413,17 +413,17 @@ function updateRentStatus()
 
     //Get the new status value from the dropdown menu
     let status = $('#editRentStatus').val();
+    console.log(status);
 
     $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: "/rent/status/" + rentId, //indicates the endpoint
+        url: "/rent/status/" + rentId + "?rentStatus=" + status, //indicates the endpoint
         type: 'PUT', //HTTP request methods used to INSERT/UPDATE data to the server (backend)
-        contentType: 'application/json',
         data: {status: status}, //The data to send in the request, here we're sending the new status
         //Callback function to execute if the request is successful
         success: function(response)
         {
-            alert('Rent updated successfully');
-            console.log("Rent status has benn updated successfully", response);
+            alert('Rent status has been changed');
+            console.log("Rent status has been changed", response);
         },
         //Callback function to execute if there's an error with the request
         error: function(xhr, status, error) {

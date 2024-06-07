@@ -10,6 +10,7 @@
  */
 package com.alucontrol.backendv1.Controllers.Rent;
 
+import com.alucontrol.backendv1.Controllers.Util.LoggerUtil;
 import com.alucontrol.backendv1.Model.Rent;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import com.alucontrol.backendv1.Service.RentService;
@@ -26,10 +27,6 @@ import java.util.logging.Logger;
 @RestController
 public class RentCreateUpdateController
 {
-    //LOG
-    private static final Logger LOGGER = Logger.getLogger(RentCreateUpdateController.class.getName());
-
-
     //Repository for access to product data
     private final RentRepository rentRepository;
 
@@ -103,6 +100,10 @@ public class RentCreateUpdateController
     public ResponseEntity<Rent> updateRentStatus(@PathVariable Long id,
                                                  @RequestParam("rentStatus") String rentStatus)
     {
+        //Create a log
+        LoggerUtil.info("Updating rent status for ID: " + id);
+        LoggerUtil.info("Rent Status: " + rentStatus);
+
         //Search the product by ID
         //Optional: Used to imply that a value may be present or absent in a given circumstance
         Optional<Rent> rentOptional = rentRepository.findById(id);
@@ -116,7 +117,9 @@ public class RentCreateUpdateController
 
             if("Finished".equals(rentStatus))
             {
-                System.out.println("Rent object: " + rent);
+                //Create a log
+                LoggerUtil.info("Rent status updated successfully. ID: " + id);
+
                 //Local Variable:
                 //These variables take the values passed as parameters.
                 //The values are copied, which means that if the Rent object is modified, the values of the local variables are not affected.
@@ -127,17 +130,12 @@ public class RentCreateUpdateController
                 rentService.addStockByRentalStatusFinished(itemDescription, quantityReturned);
             }
 
-            try {
-                rentService.addStockByRentalStatusFinished(rent.getRentItem(), rent.getRentQtyItem());
-            } catch (Exception e) {
-                System.out.println("Error calling addStockByRentalStatusFinished: {}" + e.getMessage() + e);
-            }
-
             return ResponseEntity.ok(savedRent);
         }
         //Exception: ID incorrect, product was not found
         else
         {
+            LoggerUtil.error("Rent not found for ID: " + id);
             return ResponseEntity.notFound().build();
         }
 
