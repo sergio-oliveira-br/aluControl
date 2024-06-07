@@ -419,10 +419,12 @@ function updateRentStatus()
         url: "/rent/status/" + rentId + "?rentStatus=" + status, //indicates the endpoint
         type: 'PUT', //HTTP request methods used to INSERT/UPDATE data to the server (backend)
         data: {status: status}, //The data to send in the request, here we're sending the new status
+
         //Callback function to execute if the request is successful
         success: function(response)
         {
-            alert('Rent status has been changed');
+            alert('Rent status has been changed.' +
+                '\nEnsure that you choose the correct option!');
             console.log("Rent status has been changed", response);
         },
         //Callback function to execute if there's an error with the request
