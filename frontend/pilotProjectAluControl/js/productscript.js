@@ -21,9 +21,7 @@ $(document).ready(function()
 {
     //Load the table
     loadProduct();
-
-    //Load in the card the sum of Scaffolds
-    loadSumScaffolds();
+    
 
     //(Modal)The script will load the available items in the Product form when the page loads
     updateLoadProductForm();
@@ -72,24 +70,6 @@ function loadProduct()
     });
 }
 
-
-/**
- Page: Products
- Item: Card
- Method: Display the sum of ALL item "Scaffolds" from ProductController
- */
-function loadSumScaffolds() {
-    $.ajax({url: "/sumScaffolds", type: "GET", success: function(data)
-        {
-            $('#sumScaffolds').text('Total Items ' + data); //this will display the sum
-            console.log("Data loaded - This is the sum of all Scaffolds")
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-        }
-    })
-}
 
 
 /**
