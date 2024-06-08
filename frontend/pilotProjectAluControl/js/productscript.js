@@ -24,7 +24,7 @@ $(document).ready(function()
 
     //Load in the card the sum of Scaffolds
     loadSumScaffolds();
-    
+
     //(Modal)The script will load the available items in the Product form when the page loads
     updateLoadProductForm();
 

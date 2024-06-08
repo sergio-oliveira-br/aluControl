@@ -32,28 +32,6 @@ public class RentStatisticsController
         this.rentRepository = rentRepository;
     }
 
-    /** Endpoint to get back the number of Scaffolds was Rented from DB
-     *  Pointing to productScript.js and product.html */
-//    @GetMapping("/sumScaffoldsRented")
-//    public ResponseEntity<Long> getItemScaffoldsRented()
-//    {
-//        Long totalScaffoldsRented = rentRepository.sumScaffoldsRented();
-//        return ResponseEntity.ok(totalScaffoldsRented);
-//    }
-
-    /** Endpoint to get back the number of Scaffolds AVAILABLE from DB
-     *  Pointing to productScript.js and product.html */
-//    @GetMapping("/qtyScaffoldsAvailable")
-//    public ResponseEntity<Long> getScaffoldsAvailable()
-//    {
-//        Long totalScaffoldsRented = rentRepository.sumScaffoldsRented();
-//        Long sumScaffolds = rentRepository.getSumScaffolds();
-//
-//        Long scaffoldsAvailable = sumScaffolds - totalScaffoldsRented;
-//
-//        return ResponseEntity.ok(scaffoldsAvailable);
-//    }
-
 
     /** Endpoint to get back the rentals "Scaffolds "has been done
      *  (CHART) Pointing to stockScript.js  and stock.html */
@@ -62,7 +40,5 @@ public class RentStatisticsController
     {
         return rentRepository.getScaffoldsQtyRented();
     }
-
-
-
+    
 }
