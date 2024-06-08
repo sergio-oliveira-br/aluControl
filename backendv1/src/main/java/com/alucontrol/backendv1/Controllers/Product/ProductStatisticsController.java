@@ -16,7 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/** This controller contains specific methods for custom operations */
+/** This controller contains specific methods for custom operations
+ *  It is the responsibility of this layer to receive requests, call methods from the service layer, and return HTTP responses */
 @RestController
 public class ProductStatisticsController
 {
@@ -29,18 +30,6 @@ public class ProductStatisticsController
         this.productRepository = productRepository;
     }
 
-
-//    /** Endpoint to get back the sum of Scaffolds from DB */
-//    @GetMapping("/sumScaffolds")
-//    public ResponseEntity<Long> getSumScaffolds()
-//    {
-//        Long sumScaffolds = productRepository.getSumScaffolds();
-//        return ResponseEntity.ok(sumScaffolds);
-//    }
-
-
-
-
-
+    
 
 }
