@@ -12,12 +12,15 @@ package com.alucontrol.backendv1.Controllers.Product;
 
 import com.alucontrol.backendv1.Model.Product;
 import com.alucontrol.backendv1.Repository.ProductRepository;
+import com.alucontrol.backendv1.Util.LoggerUtil;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-/**This controller is dedicated to endpoints that create and update records*/
+/**This controller is dedicated to endpoints that create and update records
+ * It is the responsibility of this layer to receive requests, call methods from the service layer, and return HTTP responses */
 @RestController
 public class ProductCreateUpdateController
 {
@@ -42,6 +45,7 @@ public class ProductCreateUpdateController
         product.setItemAvailableQty(itemQuantity);
 
         Product savedProduct = productRepository.save(product);
+        LoggerUtil.info("Saving product: " + product.getItemDescription()); //create a log
 
         return ResponseEntity.ok(savedProduct);
     }
@@ -50,15 +54,22 @@ public class ProductCreateUpdateController
     @GetMapping("/product/{id}")
     public ResponseEntity<Product> getProductByID(@PathVariable Long id)
     {
-        Optional<Product> productOptional = productRepository.findById(id);
-        if(productOptional.isPresent())
+        try
         {
-            return ResponseEntity.ok(productOptional.get());
-        }
+            Optional<Product> productOptional = productRepository.findById(id);
+            if(productOptional.isPresent())
+            {
+                return ResponseEntity.ok(productOptional.get());
+            }
 
-        else
+            else
+            {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception e)
         {
-            return ResponseEntity.notFound().build();
+            LoggerUtil.error("Error occurred while fetching product by ID: " + id, e); //create a log
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
@@ -75,10 +86,14 @@ public class ProductCreateUpdateController
             product.setItemQuantity(updatedProduct.getItemQuantity());
 
             Product savedProduct = productRepository.save(product);
+
+            LoggerUtil.info("Updating product: " + product.getItemDescription()); //create a log
+
             return ResponseEntity.ok(savedProduct);
         }
         else
         {
+            LoggerUtil.error("Product with ID: " + id + " not found"); //create a log
             return ResponseEntity.notFound().build();
         }
     }

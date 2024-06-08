@@ -40,5 +40,5 @@ public class RentStatisticsController
     {
         return rentRepository.getScaffoldsQtyRented();
     }
-    
+
 }
