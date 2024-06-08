@@ -115,23 +115,6 @@ function loadSumScaffoldsRented() {
     })
 }
 
-/**
- Page: Products
- Item: Card
- Method: Display the QTY AVAILABLE of "Scaffolds" from RentStatisticsController
- */
-function loadQtyScaffoldsAvailable() {
-    $.ajax({url: "/qtyScaffoldsAvailable", type: "GET", success: function(data)
-        {
-            $('#qtyScaffoldsAvailable').text('Total Items Available ' + data);
-            console.log("Data loaded - This is the sum of all Scaffolds AVAILABLE")
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-        }
-    })
-}
 
 
 /**
