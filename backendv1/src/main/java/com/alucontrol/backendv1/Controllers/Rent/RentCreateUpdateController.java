@@ -10,7 +10,7 @@
  */
 package com.alucontrol.backendv1.Controllers.Rent;
 
-import com.alucontrol.backendv1.Controllers.Util.LoggerUtil;
+import com.alucontrol.backendv1.Util.LoggerUtil;
 import com.alucontrol.backendv1.Model.Rent;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import com.alucontrol.backendv1.Service.RentService;
@@ -21,7 +21,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 /**This controller is dedicated to endpoints that create and update records*/
 @RestController

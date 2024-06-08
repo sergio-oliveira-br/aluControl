@@ -8,7 +8,7 @@
  * Project Commencing May 2024
  * Version: 1.0
  */
-package com.alucontrol.backendv1.Controllers.Exception;
+package com.alucontrol.backendv1.Exception;
 
 /** This class represents a custom exception that can be thrown when a resource is not found */
 public class ResourceNotFoundException extends RuntimeException

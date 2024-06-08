@@ -216,19 +216,19 @@
 2024-06-07 12:13:19 INFO  c.a.b.Controllers.Util.LoggerUtil - Updating rent status for ID: 29
 2024-06-07 12:13:19 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent Status: Finished
 2024-06-07 12:13:19 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent status updated successfully. ID: 29
-2024-06-07 12:13:19 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException: The product '10' was not found]
+2024-06-07 12:13:19 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: The product '10' was not found]
 2024-06-07 12:13:22 INFO  c.a.b.Controllers.Util.LoggerUtil - Updating rent status for ID: 29
 2024-06-07 12:13:22 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent Status: In Progress
 2024-06-07 12:13:27 INFO  c.a.b.Controllers.Util.LoggerUtil - Updating rent status for ID: 29
 2024-06-07 12:13:27 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent Status: Finished
 2024-06-07 12:13:27 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent status updated successfully. ID: 29
-2024-06-07 12:13:27 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException: The product '10' was not found]
+2024-06-07 12:13:27 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: The product '10' was not found]
 2024-06-07 12:13:30 INFO  c.a.b.Controllers.Util.LoggerUtil - Updating rent status for ID: 29
 2024-06-07 12:13:30 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent Status: New
 2024-06-07 12:13:33 INFO  c.a.b.Controllers.Util.LoggerUtil - Updating rent status for ID: 29
 2024-06-07 12:13:33 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent Status: Finished
 2024-06-07 12:13:33 INFO  c.a.b.Controllers.Util.LoggerUtil - Rent status updated successfully. ID: 29
-2024-06-07 12:13:33 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException: The product '10' was not found]
+2024-06-07 12:13:33 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: The product '10' was not found]
 2024-06-07 12:13:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-07 12:13:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-06-07 12:13:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
@@ -400,7 +400,7 @@
 2024-06-07 13:48:50 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 13:49:20 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 13:50:18 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
-2024-06-07 13:51:03 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException: The product 'Drills Bosch' cannot be rented.<EOL>Current date is out off start and end date of the rental]
+2024-06-07 13:51:03 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: The product 'Drills Bosch' cannot be rented.<EOL>Current date is out off start and end date of the rental]
 2024-06-07 13:51:29 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 13:51:47 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 13:51:51 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
@@ -438,7 +438,7 @@
 2024-06-07 13:55:56 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2024-06-07 13:55:56 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
 2024-06-07 13:55:56 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
-2024-06-07 13:56:40 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException: The product 'Concrete mixer' does not have enough in stock.]
+2024-06-07 13:56:40 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: The product 'Concrete mixer' does not have enough in stock.]
 2024-06-07 13:58:02 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 13:59:43 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
 2024-06-07 13:59:43 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
@@ -654,7 +654,7 @@
 2024-06-07 14:20:00 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 14:20:41 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
 2024-06-07 14:21:25 INFO  c.a.b.Controllers.Util.LoggerUtil - User attempt to rent Concrete mixer , but it does not have enough in stock.
-2024-06-07 14:21:25 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException: The product 'Concrete mixer' does not have enough in stock.]
+2024-06-07 14:21:25 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: The product 'Concrete mixer' does not have enough in stock.]
 2024-06-07 14:22:36 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
 2024-06-07 14:22:36 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
 2024-06-07 14:22:36 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

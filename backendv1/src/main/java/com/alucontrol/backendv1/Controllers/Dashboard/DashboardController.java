@@ -10,12 +10,10 @@
  */
 package com.alucontrol.backendv1.Controllers.Dashboard;
 
-import com.alucontrol.backendv1.Controllers.Exception.ResourceNotFoundException;
-import com.alucontrol.backendv1.Model.Rent;
+import com.alucontrol.backendv1.Exception.ResourceNotFoundException;
 import com.alucontrol.backendv1.Projection.ItemsTPriceProjection;
 import com.alucontrol.backendv1.Projection.TotalRentProjection;
 import com.alucontrol.backendv1.Repository.DashboardRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

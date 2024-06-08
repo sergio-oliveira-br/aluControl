@@ -8,7 +8,7 @@
  * Project Commencing May 2024
  * Version: 1.0
  */
-package com.alucontrol.backendv1.Controllers.Util;
+package com.alucontrol.backendv1.Util;
 
 
 import org.apache.logging.log4j.LogManager;
