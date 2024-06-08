@@ -22,7 +22,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
-/**This controller is dedicated to endpoints that create and update records*/
+/**This controller is dedicated to endpoints that create and update records
+ * It is the responsibility of this layer to receive requests, call methods from the service layer, and return HTTP responses.*/
 @RestController
 public class RentCreateUpdateController
 {
@@ -55,41 +56,17 @@ public class RentCreateUpdateController
                                          @RequestParam("rentStatus") String rentStatus)
 
     {
-        Rent rent = new Rent();
-        rent.setRentFirstName(rentFirstName);
-        //rent.setRentLastName(rentLastName);
-        rent.setRentAddress(rentAddress);
-        rent.setRentItem(rentItem);
-        rent.setRentPrice(rentPrice);
-        rent.setRentQtyItem(rentQtyItem);
-        rent.setRentStarts(rentStarts);
-        rent.setRentEnds(rentEnds);
-        rent.setRentTotalDays(rentTotalDays);
-        rent.setRentTotalPrice(rentTotalPrice);
-        rent.setRentDetails(rentDetails);
-        rent.setRentPaymentStatus(rentPaymentStatus);
-        rent.setRentStatus(rentStatus);
-
-
-        //Converting data strings into Data objects
-        Date startDate;
-        Date endDate;
         try
         {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            startDate = dateFormat.parse(rentStarts);
-            endDate = dateFormat.parse(rentEnds);
+            Rent savedRent = rentService.createRent(rentFirstName, rentAddress, rentItem, rentPrice, rentQtyItem, rentStarts, rentEnds, rentTotalDays, rentTotalPrice, rentDetails, rentPaymentStatus, rentStatus);
+            LoggerUtil.info("Save Rent endpoint accessed for rent: " + savedRent.getId());
+            return ResponseEntity.ok(savedRent);
+
         }
         catch (ParseException e) {
+            LoggerUtil.error("Error parsing dates: " + rentStarts + " or " + rentEnds, e);
             return ResponseEntity.internalServerError().build();
         }
-        //When a rental is created, make a call to subtract inventory
-        rentService.subtractStockByRentalDates(rentItem, rentQtyItem, startDate, endDate);
-
-        Rent savedRent = rentRepository.save(rent);
-        System.out.println("Save Rent endpoint accessed.");
-        return ResponseEntity.ok(savedRent);
-
     }
 
 
