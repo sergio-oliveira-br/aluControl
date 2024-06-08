@@ -1352,3 +1352,6 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2024-06-08 10:11:13 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource qtyScaffoldsAvailable.]
 2024-06-08 10:11:13 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffoldsRented.]
 2024-06-08 10:11:13 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource sumScaffolds.]
+2024-06-08 10:17:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-08 10:17:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2024-06-08 10:17:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.

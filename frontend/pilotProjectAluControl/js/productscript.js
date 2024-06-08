@@ -24,13 +24,7 @@ $(document).ready(function()
 
     //Load in the card the sum of Scaffolds
     loadSumScaffolds();
-
-    //Display the sum of the item "Scaffolds" from ProductController
-    loadSumScaffoldsRented();
-
-    //Display the QTY AVAILABLE of "Scaffolds" from RentStatisticsController
-    loadQtyScaffoldsAvailable();
-
+    
     //(Modal)The script will load the available items in the Product form when the page loads
     updateLoadProductForm();
 
@@ -96,25 +90,6 @@ function loadSumScaffolds() {
         }
     })
 }
-
-/**
- Page: Products
- Item: Card
- Method: Display the sum of the item RENTED "Scaffolds" from RentStatisticsController
- */
-function loadSumScaffoldsRented() {
-    $.ajax({url: "/sumScaffoldsRented", type: "GET", success: function(data)
-        {
-           $('#sumScaffoldsRented').text('Total Items Rented ' + data);
-           console.log("Data loaded - This is the sum of all Scaffolds RENTED")
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-        }
-    })
-}
-
 
 
 /**
