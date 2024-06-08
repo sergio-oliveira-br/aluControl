@@ -29,7 +29,4 @@ public class ProductStatisticsController
     {
         this.productRepository = productRepository;
     }
-
-    
-
 }
