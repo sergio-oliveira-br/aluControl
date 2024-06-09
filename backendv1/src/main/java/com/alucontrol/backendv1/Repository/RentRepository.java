@@ -12,6 +12,7 @@ package com.alucontrol.backendv1.Repository;
 
 import com.alucontrol.backendv1.Model.Rent;
 import com.alucontrol.backendv1.Projection.ItemQtyDateProjection;
+import com.alucontrol.backendv1.Projection.SummaryRentStatusProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -92,6 +93,22 @@ public interface RentRepository extends JpaRepository<Rent, Long>
             "FROM Rent RentStockProjection " +
             "WHERE rentItem = 'Scaffolds'")
     List<ItemQtyDateProjection> getScaffoldsQtyRented();
+
+
+
+    /** Display: on Index.html via HomeController
+     * Status: NEW
+     * Method: Display a table with ALL Rents witch status is NEW
+     * */
+    @Query(value = "SELECT RentStatusProjection.rentFirstName AS rentFirstName, " +
+            "RentStatusProjection.rentItem AS rentItem, " +
+            "RentStatusProjection.rentPaymentStatus AS rentPaymentStatus," +
+            "RentStatusProjection.rentTotalPrice AS rentTotalPrice, " +
+            "RentStatusProjection.rentStatus  AS rentStatus " +
+            "FROM Rent RentStatusProjection " + //This data came from Projection
+            "WHERE rentStatus = 'New'")
+    List<SummaryRentStatusProjection> getNewRentsList();
+
 }
 
 

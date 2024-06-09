@@ -88,6 +88,62 @@ function loadNumRentStatusNew()
     })
 }
 
+
+/**
+ Page: Index
+ Item: Card (RENT STATUS NEW) -> BUTTON -> Open Modal
+ Method: The modal display a table with ALL Rents witch status is new
+ */
+function displayAllRentStatusNew()
+{
+    alert("All rents have been paid");
+
+
+    <!-- Open the modal -->
+    let displayAllRentStatusNewModal = new bootstrap.Modal(document.getElementById('displayAllRentStatusNewModal'));
+    displayAllRentStatusNewModal.show();
+
+    //Display the table
+    loadRentStatusNew();
+}
+
+function loadRentStatusNew()
+{
+    $.ajax({
+        url: "listRentStatusNew", //indicates the endpoint
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend)
+
+        success: function(data)
+        {
+            //clean
+            $('#rentStatusNew').empty();
+
+            //Iteration
+            data.forEach(function(rent)
+            {
+                $('#rentStatusNew').append('<tr>' +
+                '<td>' + rent.rentFirstName + '</td>' +
+                '<td>' + rent.rentItem + '</td>' +
+                '<td>' + rent.rentPaymentStatus + '</td>' +
+                '<td>' + rent.rentTotalPrice  + '</td>' +
+                '<td>' + rent.rentStatus + '</td>');
+            });
+        },
+        error: function(xhr, status, error)
+        {
+            console.log(error);
+            let errorMessage = xhr.responseText;
+            alert("From the Server: " + errorMessage);
+        }
+    });
+}
+
+
+
+
+
+
+
 /**
  Page: Index
  Item: Card (Rent Status: IN PROGRESS)
@@ -112,3 +168,5 @@ function loadRentStatusInProgress()
         }
     })
 }
+
+

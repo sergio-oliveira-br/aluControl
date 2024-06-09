@@ -12,10 +12,15 @@ package com.alucontrol.backendv1.Controllers.Index;
 
 
 import com.alucontrol.backendv1.Exception.ResourceNotFoundException;
+import com.alucontrol.backendv1.Model.Rent;
+import com.alucontrol.backendv1.Projection.SummaryRentStatusProjection;
 import com.alucontrol.backendv1.Repository.RentRepository;
+import com.alucontrol.backendv1.Util.LoggerUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 
 @RestController
@@ -90,4 +95,35 @@ public class HomeController
         return ResponseEntity.ok(qtyRentStatusInProgress);
     }
 
+    /**                 ---
+     * These methods bellow, display summary information
+     * within the cards, by clicking on tge buttons
+     *                  ---
+     * */
+
+    /** Endpoint to get the all rents witch the status is "NEW"
+     *  Pointing to indexScript.js (CARD) */
+    @GetMapping("/listRentStatusNew") //GetMapping annotated methods handle the HTTP GET requests matched with the given URI expression
+    public List<SummaryRentStatusProjection> getListRentStatusNew()
+    {
+        try
+        {
+            LoggerUtil.info("Fetching list of new status rents");
+
+            if(rentRepository.getNewRentsList() == null)
+            {
+                throw new ResourceNotFoundException("Oops! The database does not contain any rentals with a new status");
+            }
+
+            LoggerUtil.info("Found " + rentRepository.getNewRentsList() + " new status rents");
+            return rentRepository.getNewRentsList();
+        }
+        catch (Exception e)
+        {
+            LoggerUtil.error("An error occurred while fetching rent witch status is new: " + e.getMessage());
+            throw new ResourceNotFoundException("Failed to fetch new status rents");
+        }
+
+
+    }
 }

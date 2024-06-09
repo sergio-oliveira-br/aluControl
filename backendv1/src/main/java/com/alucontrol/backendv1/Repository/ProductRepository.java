@@ -24,5 +24,5 @@ public interface ProductRepository extends JpaRepository<Product, Long>
 {
     //Method to find a product by description
     Optional<Product> findByItemDescription(String itemDescription);
-    
+
 }
