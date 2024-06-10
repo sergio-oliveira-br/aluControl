@@ -22,37 +22,6 @@ $(document).ready(function ()
 })
 
 
-
-/**
- Method: Generic function to perform an AJAX request and handle success and error responses
- Type: GET
- */
-function ajaxRequest(url, successCallback)
-{
-    $.ajax({
-        url: url,     //indicates the endpoint from the argument to the ajaxRequest function
-        type: "GET",  //HTTP request methods used to RETRIEVE data from the server (backend)
-
-        //If the request is successful, a callback function will be called from the argument to the ajaxRequest function
-        success: successCallback,
-
-        //If there is any error
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-            let errorMessage = xhr.responseText;
-            alert("From the Server: " + errorMessage);
-        }
-    });
-}
-
-/** Function: Handle errors, showing the error message to the user */
-function handleError(errorMessage)
-{
-    alert(errorMessage);
-}
-
-
 /**
  Item: Card (UNPAID)
  Method: Obtain the number of rent witch the status is UNPAID
