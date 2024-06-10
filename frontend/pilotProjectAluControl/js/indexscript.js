@@ -15,11 +15,10 @@ $(document).ready(function ()
     //This card display the num of rent is "Unpaid"
     loadNumRentUnpaid();
 
-    //This card display the num of rent is witch Status is "New"
-    loadNumRentStatusNew();
+    //This card display the num of rent is witch Status is :
+    loadNumRentByStatus('New');
+    loadNumRentByStatus('InProgress');
 
-    //This card display the num of rent is witch Status is "In Progress"
-    loadRentStatusInProgress();
 })
 
 
@@ -79,33 +78,30 @@ function loadNumRentUnpaid ()
 
 
 /**
- Item: Card (RENT STATUS NEW)
  Method: Obtain the number of rent witch the status is NEW
  */
-function loadNumRentStatusNew()
+function loadNumRentByStatus(status)
 {
-    //Call the generic function, that perform an AJAX request
-    ajaxRequest("/qtyRentStatusNew", function (data)
+    //local variable
+    let url = "/qtyRentStatus" + status; //indicates the endpoint
+    let selector;
+
+    if (status === 'New')
     {
-        $('#loadRentStatusNew').text('You have ' + data + ' New Rents')
+        selector = '#loadRentStatusNew';
+    }
+
+    else if (status === 'InProgress')
+    {
+        selector = '#loadRentStatusInProgress';
+    }
+
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest(url, function (data)
+    {
+        $(selector).text('You have ' + data + ' Rents')
     });
 }
-
-
-
-/**
- Item: Card (Rent Status: IN PROGRESS)
- Method: Obtain the number of rent witch the status is "In Progress"
- */
-function loadRentStatusInProgress()
-{
-    //Call the generic function, that perform an AJAX request
-    ajaxRequest("/qtyRentStatusInProgress", function (data)
-    {
-        $('#loadRentStatusInProgress').text('You have ' + data + ' Rents In Progress');
-    });
-}
-
 
 
 
