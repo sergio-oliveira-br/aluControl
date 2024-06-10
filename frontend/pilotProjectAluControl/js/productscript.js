@@ -44,29 +44,23 @@ $(document).ready(function()
  */
 function loadProduct()
 {
-    $.ajax({url: "/product",
-        type: "GET",
-        success: function(data)
-        {
-            //first clean
-            $('#productList').empty();
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/product", function(data)
+    {
+        //first clean
+        $('#productList').empty();
 
-            //Iteration
-            data.forEach(function(product)
-            {
-                $('#productList').append('<tr>' +
-                    '<td>' + product.id + '</td>' +
-                    '<td>' + product.itemDescription + '</td>' +
-                    '<td>' + product.itemQuantity +'</td>' +
-                    '<td>' + product.itemAvailableQty + '</td>' +
-                    '<td><button class="btn btn-primary" onclick="openEditModal(' + product.id + ')">Edit</button></td>'
-                );
-            });
-        },
-        error: function(xhr, status, error)
+        //Iteration
+        data.forEach(function(product)
         {
-            console.error(error);
-        }
+            $('#productList').append('<tr>' +
+                '<td>' + product.id + '</td>' +
+                '<td>' + product.itemDescription + '</td>' +
+                '<td>' + product.itemQuantity +'</td>' +
+                '<td>' + product.itemAvailableQty + '</td>' +
+                '<td><button class="btn btn-primary" onclick="openEditModal(' + product.id + ')">Edit</button></td>'
+            );
+        });
     });
 }
 
@@ -82,23 +76,16 @@ function loadProduct()
 */
 function openEditModal(productId)
 {
-    //Remember: GET -> Request data from a specified resource on the server.
-    $.ajax({url: "/product/" + productId,
-        type: "GET",
-        success: function(product)
-        {
-            $('#editProductId').val(productId);
-            $('#editItemDescription').val(product.itemDescription);
-            $('#editItemQty').val(product.itemQuantity);
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/product/" + productId, function(product)
+    {
+        $('#editProductId').val(productId);
+        $('#editItemDescription').val(product.itemDescription);
+        $('#editItemQty').val(product.itemQuantity);
 
-            //Open the modal
-            let editModal = new bootstrap.Modal(document.getElementById('editModal'));
-            editModal.show();
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-        }
+        //Open the modal
+        let editModal = new bootstrap.Modal(document.getElementById('editModal'));
+        editModal.show();
     });
 }
 
@@ -143,24 +130,21 @@ document.getElementById('editModal').addEventListener('submit', function(event) 
 //Update
 function updateLoadProductForm()
 {
-    $.ajax({url: "/product",
-        type: "GET",
-        success: function(data)
-        {
-            var productSelect = $('#editItemQty');
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/product", function(data)
+    {
+        //Local variable
+        let productSelect = $('#editItemQty');
 
-            productSelect.empty();
+        //First clean
+        productSelect.empty();
 
-            data.forEach(function(product)
-            {
-                productSelect.append('<option value="' + product.id + '">' + product.name + '</option>');
-            });
-        },
-        error: function(xhr, status, error)
+        //Iteration
+        data.forEach(function(product)
         {
-            console.error(error);
-        }
-    })
+            productSelect.append('<option value="' + product.id + '">' + product.name + '</option>');
+        });
+    });
 }
 
 
