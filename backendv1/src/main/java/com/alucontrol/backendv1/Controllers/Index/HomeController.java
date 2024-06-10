@@ -108,11 +108,11 @@ public class HomeController
     {
         try
         {
-            LoggerUtil.info("Fetching list of new status rents");
+            LoggerUtil.info("Search for rentals that have a new status.");
 
             if(rentRepository.getNewRentsList() == null)
             {
-                throw new ResourceNotFoundException("Oops! The database does not contain any rentals with a new status");
+                throw new ResourceNotFoundException("Oops! The database does not contain any rentals with a 'new' status");
             }
 
             LoggerUtil.info("Found " + rentRepository.getNewRentsList() + " new status rents");
@@ -120,10 +120,32 @@ public class HomeController
         }
         catch (Exception e)
         {
-            LoggerUtil.error("An error occurred while fetching rent witch status is new: " + e.getMessage());
-            throw new ResourceNotFoundException("Failed to fetch new status rents");
+            LoggerUtil.error("Attempting to obtain rentals with new status resulted in an error. " + e.getMessage());
+            throw new ResourceNotFoundException("Could not find a list of rentals with a status new.");
         }
+    }
 
+    /** Endpoint to get the all rents witch the status is "IN PROGRESS"
+     *  Pointing to indexScript.js (CARD) */
+    @GetMapping("/listRentStatusInProgress") //GetMapping annotated methods handle the HTTP GET requests matched with the given URI expression
+    public List<SummaryRentStatusProjection> getListRentStatusInProgress()
+    {
+        try
+        {
+            LoggerUtil.info("Get a list of current rentals in progress.");
 
+            if(rentRepository.getInProgressRentsList() == null)
+            {
+                throw new ResourceNotFoundException("Oops! The database does not contain any rentals with a 'in progress' status");
+            }
+
+            LoggerUtil.info("Found " + rentRepository.getNewRentsList() + " rentals in progress.");
+            return rentRepository.getInProgressRentsList();
+        }
+        catch (Exception e)
+        {
+            LoggerUtil.error("While searching for rentals with an ongoing status, an error occurred. " + e.getMessage());
+            throw new ResourceNotFoundException("Could not find a list of rentals with a status in progress.");
+        }
     }
 }

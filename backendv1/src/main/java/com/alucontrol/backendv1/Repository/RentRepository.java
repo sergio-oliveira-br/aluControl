@@ -109,6 +109,21 @@ public interface RentRepository extends JpaRepository<Rent, Long>
             "WHERE rentStatus = 'New'")
     List<SummaryRentStatusProjection> getNewRentsList();
 
+
+
+    /** Display: on Index.html via HomeController
+     * Status: IN PROGRESS
+     * Method: Display a table with ALL Rents witch status is 'In Progress'
+     * */
+    @Query(value = "SELECT RentStatusProjection.rentFirstName AS rentFirstName, " +
+            "RentStatusProjection.rentItem AS rentItem, " +
+            "RentStatusProjection.rentPaymentStatus AS rentPaymentStatus," +
+            "RentStatusProjection.rentTotalPrice AS rentTotalPrice, " +
+            "RentStatusProjection.rentStatus  AS rentStatus " +
+            "FROM Rent RentStatusProjection " + //This data came from Projection
+            "WHERE rentStatus = 'In Progress'")
+    List<SummaryRentStatusProjection> getInProgressRentsList();
+
 }
 
 

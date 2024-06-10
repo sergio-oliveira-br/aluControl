@@ -161,7 +161,7 @@
                                 <h5 class="card-title">Rent Status: In Progress</h5>
                                 <p class="card-text">Monitor your rentals that are in progress.</p>
                                 <p id="loadRentStatusInProgress"> There is no Rent In Progress so far</p>
-                                <a href="#" class="btn btn-primary">See them</a>
+                                <button onclick="displayAllRentStatusInProgress()" class="btn btn-primary">See all them</button>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                                 <h5 class="card-title">Rent Status: New</h5>
                                 <p class="card-text">The rentals that haven't begun yet.</p>
                                 <p id="loadRentStatusNew"> There is no New Rent </p>
-                                <button onclick="displayAllRentStatusNew()" class="btn btn-primary">See them</button>
+                                <button onclick="displayAllRentStatusNew()" class="btn btn-primary">See all them</button>
                             </div>
                         </div>
                     </div>
@@ -202,13 +202,46 @@
                                                 <th scope="col"> Status </th>
                                             </tr>
                                         </thead>
-                                        <tbody id="rentStatusNew"> <!-- Display the items witch are "new" status --> </tbody>
+                                        <tbody id="rentListStatusNew"> <!-- Display the items witch are "new" status --> </tbody>
                                     </table>
                                 </div>
 
                             </div> <!--modal-content-->
                         </div> <!--modal-dialog-->
                     </div> <!--modal fade-->
+
+                    <!-- MODAL (table) - This modal make possible the user see what they have about Rents witch status is new -->
+                    <div class="modal fade" id="displayAllRentStatusInProgressModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!--- Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title"> Your Rents In Progress </h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div> <!--modal-header-->
+
+                                <!-- Body -->
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"> Customer </th>
+                                            <th scope="col"> Item </th>
+                                            <th scope="col"> Payment </th>
+                                            <th scope="col"> Total Price </th>
+                                            <th scope="col"> Status </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="rentListStatusInProgress"> <!-- Display the items witch are "In Progress" status --> </tbody>
+                                    </table>
+                                </div>
+
+                            </div> <!--modal-content-->
+                        </div> <!--modal-dialog-->
+                    </div> <!--modal fade-->
+
+
 
                 </div> <!-- content -->
             </div> <!-- Ends Main Content -->

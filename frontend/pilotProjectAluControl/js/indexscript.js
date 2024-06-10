@@ -89,60 +89,6 @@ function loadNumRentStatusNew()
 }
 
 
-/**
- Page: Index
- Item: Card (RENT STATUS NEW) -> BUTTON -> Open Modal
- Method: The modal display a table with ALL Rents witch status is new
- */
-function displayAllRentStatusNew()
-{
-    alert("All rents have been paid");
-
-
-    <!-- Open the modal -->
-    let displayAllRentStatusNewModal = new bootstrap.Modal(document.getElementById('displayAllRentStatusNewModal'));
-    displayAllRentStatusNewModal.show();
-
-    //Display the table
-    loadRentStatusNew();
-}
-
-function loadRentStatusNew()
-{
-    $.ajax({
-        url: "listRentStatusNew", //indicates the endpoint
-        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend)
-
-        success: function(data)
-        {
-            //clean
-            $('#rentStatusNew').empty();
-
-            //Iteration
-            data.forEach(function(rent)
-            {
-                $('#rentStatusNew').append('<tr>' +
-                '<td>' + rent.rentFirstName + '</td>' +
-                '<td>' + rent.rentItem + '</td>' +
-                '<td>' + rent.rentPaymentStatus + '</td>' +
-                '<td>' + rent.rentTotalPrice  + '</td>' +
-                '<td>' + rent.rentStatus + '</td>');
-            });
-        },
-        error: function(xhr, status, error)
-        {
-            console.log(error);
-            let errorMessage = xhr.responseText;
-            alert("From the Server: " + errorMessage);
-        }
-    });
-}
-
-
-
-
-
-
 
 /**
  Page: Index
@@ -168,5 +114,119 @@ function loadRentStatusInProgress()
         }
     })
 }
+
+
+/**
+ Page: Index
+ Item: Card (RENT STATUS NEW) -> BUTTON -> Open Modal
+ Method: The modal display a table with ALL Rents witch status is new
+ */
+function displayAllRentStatusNew()
+{
+    alert("All rents have been paid");
+
+
+    <!-- Open the modal -->
+    let displayAllRentStatusNewModal = new bootstrap.Modal(document.getElementById('displayAllRentStatusNewModal'));
+    displayAllRentStatusNewModal.show();
+
+    //Display the table
+    loadRentListStatusNew();
+}
+
+/**                                     ------------
+ Page: Index
+ Item: Card (RENT STATUS NEW) -> BUTTON -> Open Modal
+ Method: The modal display a table with ALL Rents witch status is new
+ */
+
+function loadRentListStatusNew()
+{
+    $.ajax({
+        url: "/listRentStatusNew", //indicates the endpoint, (HomeController)
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend)
+
+        success: function(data)
+        {
+            //clean
+            $('#rentListStatusNew').empty();
+
+            //Iteration
+            data.forEach(function(rent)
+            {
+                $('#rentListStatusNew').append('<tr>' +
+                '<td>' + rent.rentFirstName + '</td>' +
+                '<td>' + rent.rentItem + '</td>' +
+                '<td>' + rent.rentPaymentStatus + '</td>' +
+                '<td>' + rent.rentTotalPrice  + '</td>' +
+                '<td>' + rent.rentStatus + '</td>');
+            });
+        },
+        error: function(xhr, status, error)
+        {
+            console.log(error);
+            let errorMessage = xhr.responseText;
+            alert("From the Server: " + errorMessage);
+        }
+    });
+}
+
+
+/**
+ Page: Index
+ Item: Card (RENT STATUS IN PROGRESS) -> BUTTON -> Open Modal
+ Method: The modal display a table with ALL Rents witch status is IN PROGRESS
+ */
+function displayAllRentStatusInProgress()
+{
+    alert("All rents have been paid");
+
+
+    <!-- Open the modal -->
+    let displayAllRentStatusInProgressModal = new bootstrap.Modal(document.getElementById('displayAllRentStatusInProgressModal'));
+    displayAllRentStatusInProgressModal.show();
+
+    //Display the table
+    loadRentListStatusInProgress();
+}
+
+function loadRentListStatusInProgress()
+{
+    $.ajax({
+        url: "/listRentStatusInProgress", //indicates the endpoint, (HomeController)
+        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend)
+
+        success: function(data)
+        {
+            //clean
+            $('#rentListStatusInProgress').empty();
+
+            //Iteration
+            data.forEach(function(rent)
+            {
+                $('#rentListStatusInProgress').append('<tr>' +
+                    '<td>' + rent.rentFirstName + '</td>' +
+                    '<td>' + rent.rentItem + '</td>' +
+                    '<td>' + rent.rentPaymentStatus + '</td>' +
+                    '<td>' + rent.rentTotalPrice  + '</td>' +
+                    '<td>' + rent.rentStatus + '</td>');
+            });
+        },
+        error: function(xhr, status, error)
+        {
+            console.log(error);
+            let errorMessage = xhr.responseText;
+            alert("From the Server: " + errorMessage);
+        }
+    });
+}
+
+
+
+
+
+
+
+
 
 
