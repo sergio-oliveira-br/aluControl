@@ -66,38 +66,30 @@ $(document).ready(function()
  */
 function loadRent()
 {
-    $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: "/rent", //indicates the endpoint
-        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/rent", function(data)
+    {
+        //first clean
+        $('#rentList').empty();
 
-        success: function(data)
+        //Iteration
+        data.forEach(function(rent)
         {
-            //first clean
-            $('#rentList').empty();
-
-            //Iteration
-            data.forEach(function(rent)
-            {
-                $('#rentList').append('<tr>' +
-                    '<td>' + rent.id + '</td>' +
-                    '<td>' + rent.rentFirstName + '</td>' +
-                    /** '<td>' + rent.rentLastName + '</td>' + */
-                    '<td>' + rent.rentAddress + '</td>' +
-                    '<td>' + rent.rentItem + '</td>' +
-                    '<td>' + rent.rentPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
-                    '<td>' + rent.rentStarts + '</td>' +
-                    '<td>' + rent.rentEnds + '</td>' +
-                    '<td>' + rent.rentTotalPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
-                    '<td>' + rent.rentPaymentStatus + '</td>' +
-                    '<td>' + rent.rentStatus+ '</td>' +
-                    '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
-                );
-            });
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-        }
+            $('#rentList').append('<tr>' +
+                '<td>' + rent.id + '</td>' +
+                '<td>' + rent.rentFirstName + '</td>' +
+                /** '<td>' + rent.rentLastName + '</td>' + */
+                '<td>' + rent.rentAddress + '</td>' +
+                '<td>' + rent.rentItem + '</td>' +
+                '<td>' + rent.rentPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
+                '<td>' + rent.rentStarts + '</td>' +
+                '<td>' + rent.rentEnds + '</td>' +
+                '<td>' + rent.rentTotalPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
+                '<td>' + rent.rentPaymentStatus + '</td>' +
+                '<td>' + rent.rentStatus+ '</td>' +
+                '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
+            );
+        });
     });
 }
 
@@ -107,24 +99,22 @@ function loadRent()
  Item: Form - Customer field
  Method: The script will load the available CUSTOMERS in the rental form when the page loads
  */
-function loadCustomerForRentForm() {
-    $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: "/customers", //indicates the endpoint
-        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
-        success: function(data) {
-            var rentCustomerSelect = $('#rentFirstName');
+function loadCustomerForRentForm()
+{
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/customers", function(data)
+    {
+        //Local variable
+        var rentCustomerSelect = $('#rentFirstName');
 
-            rentCustomerSelect.empty();
+        //cleaning
+        rentCustomerSelect.empty();
 
-            data.forEach(function(customer) {
-                rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
-                    customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
-            });
-            console.log("customers has been load to the form");
-        },
-        error: function(xhr, status, error) {
-            console.error("Error loading items for rent form: ", error);
-        }
+        //Iteration
+        data.forEach(function(customer) {
+            rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
+                customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
+        });
     });
 }
 
@@ -135,20 +125,21 @@ function loadCustomerForRentForm() {
  Item: Form - Customer field
  Method: The script will load the available ITEMS in the rental form when the page loads
  */
-function loadItemsForRentForm() {
-    $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: "/product", //indicates the endpoint
-        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
-        success: function(data) {
-            var rentItemSelect = $('#rentItem');
-            rentItemSelect.empty();
-            data.forEach(function(product) {
-                rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error("Error loading items for rent form: ", error);
-        }
+function loadItemsForRentForm()
+{
+    ajaxRequest("/product", function(data)
+    {
+        //Local Variable
+        var rentItemSelect = $('#rentItem');
+
+        //Cleaning
+        rentItemSelect.empty();
+
+        //Iteration
+        data.forEach(function(product)
+        {
+            rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
+        });
     });
 }
 
@@ -234,44 +225,30 @@ document.getElementById('rentEnds').addEventListener('change',loadRentDays);
  to send or receive data without having to reload the page.
  */
 
-function openEditModal(rentId) {
-    $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: '/rent/' + rentId, //indicates the endpoint
-        type: 'GET', //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+function openEditModal(rentId)
+{
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/rent/" + rentId, function(rent)
+    {
+        //Fill in the form fields in the modal using Selectors $() to select HTML elements based on their IDs.
+        $('#editRentId').val(rent.id);
+        $('#editRentFirstName').val(rent.rentFirstName);
+        $('#editRentLastName').val(rent.rentLastName);
+        $('#editRentAddress').val(rent.rentAddress);
+        $('#editRentItem').val(rent.rentItem);
+        $('#editRentQtyItem').val(rent.rentQtyItem);
+        $('#editRentPrice').val(rent.rentPrice);
+        $('#editRentStarts').val(rent.rentStarts);
+        $('#editRentEnds').val(rent.rentEnds);
+        $('#editRentTotalDays').val(rent.rentTotalDays);
+        $('#editRentTotalPrice').val(rent.rentTotalPrice.toFixed(2));
+        $('#editRentPaymentStatus').val(rent.rentPaymentStatus);
+        $('#editRentDetails').val(rent.rentDetails);
+        $('#editRentStatus').val(rent.rentStatus);
 
-        success: function(rent)
-        {
-            //Fill in the form fields in the modal using Selectors $() to select HTML elements based on their IDs.
-            $('#editRentId').val(rent.id);
-            $('#editRentFirstName').val(rent.rentFirstName);
-            $('#editRentLastName').val(rent.rentLastName);
-            $('#editRentAddress').val(rent.rentAddress);
-            $('#editRentItem').val(rent.rentItem);
-            $('#editRentQtyItem').val(rent.rentQtyItem);
-            $('#editRentPrice').val(rent.rentPrice);
-            $('#editRentStarts').val(rent.rentStarts);
-            $('#editRentEnds').val(rent.rentEnds);
-            $('#editRentTotalDays').val(rent.rentTotalDays);
-            $('#editRentTotalPrice').val(rent.rentTotalPrice.toFixed(2));
-            $('#editRentPaymentStatus').val(rent.rentPaymentStatus);
-            $('#editRentDetails').val(rent.rentDetails);
-            $('#editRentStatus').val(rent.rentStatus);
-
-            //Open the modal
-            let editModal = new bootstrap.Modal(document.getElementById('editModal'));
-            editModal.show();
-
-            //Update the total price when opening the modal
-            //loadTotalPrice()
-            //updateTotalPrice();
-            console.log("updated the total price");
-        },
-        error: function(xhr, status, error)
-        {
-            console.error(error);
-            console.status = error;
-            console.log(status);
-        }
+        //Open the modal
+        let editModal = new bootstrap.Modal(document.getElementById('editModal'));
+        editModal.show();
     });
 }
 
@@ -282,25 +259,23 @@ function openEditModal(rentId) {
  Item: Form (modal) - > Field Customer
  Method: The script will load the available customers in the rental form when the page loads
  */
-function updateLoadCustomerForRentForm() {
-    $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: "/customers", //indicates the endpoint
-        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
+function updateLoadCustomerForRentForm()
+{
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/customers", function(data)
+    {
+        //Local variable
+        var rentCustomerSelect = $('#editRentFirstName');
 
-        success: function(data) {
-            var rentCustomerSelect = $('#editRentFirstName');
+        //Cleaning
+        rentCustomerSelect.empty();
 
-            rentCustomerSelect.empty();
-
-            data.forEach(function(customer) {
-                rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
-                    customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
-            });
-            console.log("customers has been load to the form on (modal)");
-        },
-        error: function(xhr, status, error) {
-            console.error("Error loading items for rent form: ", error);
-        }
+        //Iteration
+        data.forEach(function(customer)
+        {
+            rentCustomerSelect.append('<option value="' + customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'">' +
+                customer.firstName + " "+ customer.lastName + " - " + customer.phoneNumber +'</option>');
+        });
     });
 }
 
@@ -309,20 +284,22 @@ function updateLoadCustomerForRentForm() {
  Item: Form - Customer field
  Method: The script will load the available ITEMS in the rental form when the page loads
  */
-function loadEditItemsForRentFormModal() {
-    $.ajax({ //allows updating parts of a web page without reloading the entire page
-        url: "/product", //indicates the endpoint
-        type: "GET", //HTTP request methods used to RETRIEVE data from the server (backend), indicating by the endpoint specified by the URL
-        success: function(data) {
-            var rentItemSelect = $('#editRentItem');
-            rentItemSelect.empty();
-            data.forEach(function(product) {
-                rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
-            });
-        },
-        error: function(xhr, status, error) {
-            console.error("Error loading items for rent form: ", error);
-        }
+function loadEditItemsForRentFormModal()
+{
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/product", function(data)
+    {
+        //local variable
+        var rentItemSelect = $('#editRentItem');
+
+        //cleaning
+        rentItemSelect.empty();
+
+        //Iteration
+        data.forEach(function(product)
+        {
+            rentItemSelect.append('<option value="' + product.itemDescription + '">' + product.itemDescription + '</option>');
+        });
     });
 }
 
@@ -425,7 +402,6 @@ function updateRentStatus()
     //Get the rent ID from the hidden input field in the form
     let rentId = $('#editRentId').val();
     console.log(rentId);
-    //I NEED TO CHECK THE BUG
 
     //Get the new status value from the dropdown menu
     let status = $('#editRentStatus').val();
