@@ -133,6 +133,12 @@ function displayAllRentStatusInProgress()
     displayRentStatusModal('displayAllRentStatusInProgressModal', 'InProgress', '#rentListStatusInProgress');
 }
 
+//Rent Payment Status: Unpaid
+function displayListAllRentStatusUnpaid()
+{
+    displayRentStatusModal('displayListAllRentStatusUnpaidModal', 'Unpaid', '#rentListStatusUnpaid');
+}
+
 
 
 

@@ -146,6 +146,12 @@ public class IndexService
                 return rentsList;
             }
 
+            else if(status.equals("Unpaid"))
+            {
+                rentsList = rentRepository.getUnpaidRentsList();
+                return rentsList;
+            }
+
             else {
                 throw new ResourceNotFoundException("Invalid status: " + status);
             }

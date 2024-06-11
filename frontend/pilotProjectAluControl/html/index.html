@@ -125,7 +125,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Track your unpaid rentals</h5>
                         <p class="card-text" id="loadRentUnpaid">That's Good! All yours Rentals have been paid</p>
-                        <a href="#" class="btn btn-primary">More Information</a>
+                        <button onclick="displayListAllRentStatusUnpaid()" class="btn btn-primary">More Information</button>
                     </div>
                 </div>
 
@@ -178,6 +178,38 @@
                         </div>
                     </div>
                     <!-- Ends Cards-->
+
+
+                    <!-- MODAL (table) - This modal make possible the user see what they have about Rents witch status is new -->
+                    <div class="modal fade" id="displayListAllRentStatusUnpaidModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!--- Header -->
+                                <div class="modal-header">
+                                    <h3 class="modal-title"> Your Unpaid </h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div> <!--modal-header-->
+
+                                <!-- Body -->
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col"> Customer </th>
+                                            <th scope="col"> Item </th>
+                                            <th scope="col"> Payment </th>
+                                            <th scope="col"> Total Price </th>
+                                            <th scope="col"> Status </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="rentListStatusUnpaid"> <!-- Display the items witch are "new" status --> </tbody>
+                                    </table>
+                                </div>
+
+                            </div> <!--modal-content-->
+                        </div> <!--modal-dialog-->
+                    </div> <!--modal fade-->
 
                     <!-- MODAL (table) - This modal make possible the user see what they have about Rents witch status is new -->
                     <div class="modal fade" id="displayAllRentStatusNewModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
