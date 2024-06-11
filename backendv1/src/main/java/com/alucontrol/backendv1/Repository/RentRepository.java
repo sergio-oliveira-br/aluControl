@@ -27,12 +27,11 @@ public interface RentRepository extends JpaRepository<Rent, Long>
 {
     /** Display: on Index.html via HomeController
      *  Item: UNPAID RENT
-     *  Method: Counting of unpaid rented records
+     *  Method: Counting of unpaid rented records and display on the card
      * */
-    @Query(value = "SELECT COUNT(*) " +
-            "FROM AluControlV1.rent " +
-            "WHERE rent_payment_status = 'UnPaid'",
-            nativeQuery = true) //Native query allows to perform mySQL queries directly, exactly the same on workbench
+    @Query(value = "SELECT COUNT(QtyRentStatusUnpaidProjection.rentPaymentStatus) AS rentPaymentStatus " +
+            "FROM Rent QtyRentStatusUnpaidProjection " +
+            "WHERE rentPaymentStatus = 'UnPaid'")
     Long countUnpaidRents();
 
 

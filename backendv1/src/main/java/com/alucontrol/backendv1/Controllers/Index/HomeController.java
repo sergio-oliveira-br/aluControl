@@ -13,9 +13,11 @@ package com.alucontrol.backendv1.Controllers.Index;
 
 import com.alucontrol.backendv1.Exception.ResourceNotFoundException;
 import com.alucontrol.backendv1.Model.Rent;
+import com.alucontrol.backendv1.Projection.QtyRentStatusUnpaidProjection;
 import com.alucontrol.backendv1.Projection.SummaryRentStatusProjection;
 import com.alucontrol.backendv1.Repository.RentRepository;
 import com.alucontrol.backendv1.Util.LoggerUtil;
+import org.apache.commons.logging.Log;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -46,18 +48,27 @@ public class HomeController
     /** Endpoint to get back the number of rent UNPAID from DB
      *  Pointing to indexScript.js*/
     @GetMapping("/qtyRentUnpaid")
-    public ResponseEntity<Long> getQtyRentUnpaid()
+    public Long getQtyRentUnpaid()
     {
-        //call the repository method, witch has the info about the RENT
-        Long qtyRentUnpaid = rentRepository.countUnpaidRents();
-
-        //exception handling
-        if (qtyRentUnpaid == null)
+        try
         {
-            throw new ResourceNotFoundException("Oops! There are no Rents in the database");
-        }
+            //Log
+            LoggerUtil.info("Searching for all rents Unpaid");
 
-        return ResponseEntity.ok(qtyRentUnpaid);
+            //call the repository method, witch has the info about the RENT
+            Long qtyRentUnpaid = rentRepository.countUnpaidRents();
+
+            if(qtyRentUnpaid == null)
+            {
+                throw new ResourceNotFoundException("Oops! The database does not contain any Unpaid Rent");
+            }
+            return qtyRentUnpaid;
+        }
+        catch (Exception e)
+        {
+            LoggerUtil.error("While searching for unpaid rentals, an error occurred. " + e.getMessage());
+            throw new ResourceNotFoundException("Could not find a number of unpaid rentals");
+        }
     }
 
 
