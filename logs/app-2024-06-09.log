@@ -280,7 +280,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2024-06-09 10:24:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
 2024-06-09 10:24:56 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2024-06-09 10:24:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-09 10:24:56 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeController': Resolution of declared constructors on bean Class [com.alucontrol.backendv1.Controllers.Index.HomeController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@45c7533] failed
+2024-06-09 10:24:56 WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeController': Resolution of declared constructors on bean Class [com.alucontrol.backendv1.Controllers.Index.IndexController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@45c7533] failed
 2024-06-09 10:24:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-09 10:24:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
 2024-06-09 10:24:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
@@ -289,7 +289,7 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2024-06-09 10:24:56 ERROR o.s.boot.SpringApplication - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeController': Resolution of declared constructors on bean Class [com.alucontrol.backendv1.Controllers.Index.HomeController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@45c7533] failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'homeController': Resolution of declared constructors on bean Class [com.alucontrol.backendv1.Controllers.Index.IndexController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@45c7533] failed
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:383)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1294)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
@@ -377,7 +377,7 @@ org.springframework.dao.InvalidDataAccessResourceUsageException: Unable to find 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy4/jdk.proxy4.$Proxy119.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -497,7 +497,7 @@ org.springframework.dao.InvalidDataAccessResourceUsageException: Unable to find 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy4/jdk.proxy4.$Proxy119.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -650,7 +650,7 @@ org.springframework.dao.InvalidDataAccessResourceUsageException: Unable to find 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy5/jdk.proxy5.$Proxy131.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -770,7 +770,7 @@ org.springframework.dao.InvalidDataAccessResourceUsageException: Unable to find 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy5/jdk.proxy5.$Proxy131.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -953,7 +953,7 @@ org.springframework.dao.InvalidDataAccessResourceUsageException: Unable to find 
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy7/jdk.proxy7.$Proxy145.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -1120,7 +1120,7 @@ org.springframework.core.convert.ConversionFailedException: Failed to convert fr
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy4/jdk.proxy4.$Proxy119.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -1203,7 +1203,7 @@ org.springframework.core.convert.ConversionFailedException: Failed to convert fr
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy4/jdk.proxy4.$Proxy119.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -1286,7 +1286,7 @@ org.springframework.core.convert.ConversionFailedException: Failed to convert fr
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy4/jdk.proxy4.$Proxy119.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
@@ -1369,7 +1369,7 @@ org.springframework.core.convert.ConversionFailedException: Failed to convert fr
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy4/jdk.proxy4.$Proxy119.getNewRentsList(Unknown Source)
-	at com.alucontrol.backendv1.Controllers.Index.HomeController.getListRentStatusNew(HomeController.java:111)
+	at com.alucontrol.backendv1.Controllers.Index.IndexController.getListRentStatusNew(HomeController.java:111)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)

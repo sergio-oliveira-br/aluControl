@@ -80,10 +80,10 @@ function loadNumRentByStatus(status)
  Page: Index
  Method: To load rent lists into a table within a modal.
  */
-function loadRentList(url, tableSelector)
+function loadRentList(url, status, tableSelector)
 {
     //Call the generic function, that perform an AJAX request
-    ajaxRequest(url, function(data)
+    ajaxRequest(url + '?status=' + status, function(data)
     {
         //first clean
         $(tableSelector).empty();
@@ -106,13 +106,13 @@ function loadRentList(url, tableSelector)
  Page: Index
  Method: To display a modal and load the rent list
  */
-function displayRentStatusModal(modalId, url, tableSelector)
+function displayRentStatusModal(modalId, status, tableSelector)
 {
     let modal = new bootstrap.Modal(document.getElementById(modalId));
     modal.show();
 
     //Call the generic function to load rent lists, then display into a table within a modal.
-    loadRentList(url, tableSelector);
+    loadRentList('/listRentStatus', status, tableSelector);
 }
 
 
@@ -124,13 +124,13 @@ function displayRentStatusModal(modalId, url, tableSelector)
 //Rent Status: New
 function displayAllRentStatusNew()
 {
-    displayRentStatusModal('displayAllRentStatusNewModal', '/listRentStatusNew', '#rentListStatusNew');
+    displayRentStatusModal('displayAllRentStatusNewModal', 'New', '#rentListStatusNew');
 }
 
 //Rent Status: In Progress
 function displayAllRentStatusInProgress()
 {
-    displayRentStatusModal('displayAllRentStatusInProgressModal', '/listRentStatusInProgress', '#rentListStatusInProgress');
+    displayRentStatusModal('displayAllRentStatusInProgressModal', 'InProgress', '#rentListStatusInProgress');
 }
 
 
