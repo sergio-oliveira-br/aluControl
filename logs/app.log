@@ -226,3 +226,21 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2024-06-13 10:32:12 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
 2024-06-13 10:35:18 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
 2024-06-13 10:35:18 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-13 10:36:36 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-13 10:36:36 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-13 10:36:36 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-13 10:36:42 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-13 10:36:42 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-13 10:36:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-13 10:36:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-13 10:36:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-13 10:36:51 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-13 10:37:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-13 10:37:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-13 10:37:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-13 10:37:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-13 10:38:13 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-13 10:38:13 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-13 10:38:13 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-13 10:38:14 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: InProgress
+2024-06-13 10:38:17 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: New
