@@ -227,6 +227,8 @@ document.getElementById('rentEnds').addEventListener('change',loadRentDays);
 
 function openEditModal(rentId)
 {
+    console.log(rentId);
+
     //Call the generic function, that perform an AJAX request
     ajaxRequest("/rent/" + rentId, function(rent)
     {

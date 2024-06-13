@@ -128,7 +128,8 @@ public interface RentRepository extends JpaRepository<Rent, Long>
      * Status: UNPAID
      * Method: Display a table with ALL Rents witch status is 'In Progress'
      * */
-    @Query(value = "SELECT RentStatusProjection.rentFirstName AS rentFirstName, " +
+    @Query(value = "SELECT RentStatusProjection.id AS id, " +
+            "RentStatusProjection.rentFirstName AS rentFirstName, " +
             "RentStatusProjection.rentItem AS rentItem, " +
             "RentStatusProjection.rentPaymentStatus AS rentPaymentStatus," +
             "RentStatusProjection.rentTotalPrice AS rentTotalPrice, " +

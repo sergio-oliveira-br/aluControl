@@ -15,6 +15,7 @@ package com.alucontrol.backendv1.Projection;
  * are to be selected or projected during a query.*/
 public interface SummaryRentStatusProjection
 {
+    Long getId();
     String getRentFirstName();
     String getRentItem();
     Double getRentTotalPrice();

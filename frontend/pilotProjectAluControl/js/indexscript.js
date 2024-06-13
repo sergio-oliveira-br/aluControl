@@ -19,6 +19,12 @@ $(document).ready(function ()
     loadNumRentByStatus('New');
     loadNumRentByStatus('InProgress');
 
+    //(Modal)
+    $('#editRentForm').on('submit', function(e) {
+        e.preventDefault();
+        submitEditForm();
+    });
+
 })
 
 
@@ -82,6 +88,7 @@ function loadNumRentByStatus(status)
  */
 function loadRentList(url, status, tableSelector)
 {
+
     //Call the generic function, that perform an AJAX request
     ajaxRequest(url + '?status=' + status, function(data)
     {
@@ -92,7 +99,6 @@ function loadRentList(url, status, tableSelector)
         data.forEach(function(rent)
         {
             $(tableSelector).append('<tr>' +
-                '<td>' + rent.id + '</td>' +
                 '<td>' + rent.rentFirstName + '</td>' +
                 '<td>' + rent.rentItem + '</td>' +
                 '<td>' + rent.rentPaymentStatus + '</td>' +
@@ -100,9 +106,11 @@ function loadRentList(url, status, tableSelector)
                 '<td>' + rent.rentStatus + '</td>' +
                 '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>' +
             '</tr>');
+            console.log(rent.id);
         });
     });
 }
+
 
 
 /**                                  ------------ Generic Function ------------
