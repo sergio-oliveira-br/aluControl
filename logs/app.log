@@ -224,3 +224,5 @@ org.springframework.web.servlet.resource.NoResourceFoundException: No static res
 2024-06-13 10:31:43 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
 2024-06-13 10:32:12 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
 2024-06-13 10:32:12 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-13 10:35:18 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-13 10:35:18 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
