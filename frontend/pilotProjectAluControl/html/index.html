@@ -182,7 +182,7 @@
 
                     <!-- MODAL (table) - This modal make possible the user see what they have about Rents witch status is new -->
                     <div class="modal fade" id="displayListAllRentStatusUnpaidModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
 
                                 <!--- Header -->
@@ -273,11 +273,109 @@
                         </div> <!--modal-dialog-->
                     </div> <!--modal fade-->
 
-
-
                 </div> <!-- content -->
             </div> <!-- Ends Main Content -->
         </div> <!-- Container -->
+
+
+        <!-- Edit Modal  - This modal make possible the user edit data already created -->
+        <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Rent</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="editRentForm" class="row g-1 needs-validation">
+                            <input type="hidden" id="editRentId" name="id">
+
+                            <div class="mb-3">
+                                <label for="editRentFirstName" class="form-label">First Name</label>
+                                <select class="form-control" id="editRentFirstName" name="rentFirstName" required></select>
+                            </div>
+
+                            <!-- <div class="mb-3">
+                              <label for="editRentLastName" class="form-label">Second Name</label>
+                              <input type="text" class="form-control" id="editRentLastName" name="rentLastName" required>
+                            </div> -->
+
+                            <div class="mb-3">
+                                <label for="editRentAddress" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="editRentAddress" name="rentAddress" required>
+                                <div class="invalid-feedback">This rental requires address information</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentItem" class="form-label">Item</label>
+                                <select class="form-control" id="editRentItem" name="rentItem" required></select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentQtyItem" class="form-label">Qty Item</label>
+                                <input type="number" class="form-control" id="editRentQtyItem" name="rentQtyItem" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentPrice" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="editRentPrice" name="rentPrice" required>
+                                <div class="invalid-feedback">Please enter the price (format: #.##)</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentStarts" class="form-label">Start Date</label>
+                                <input type="date" class="form-control" id="editRentStarts" name="rentStarts" required>
+                                <div class="invalid-feedback">When this rentals will start?</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentEnds" class="form-label">End Date</label>
+                                <input type="date" class="form-control" id="editRentEnds" name="rentEnds" required>
+                                <div class="invalid-feedback">When this rentals will end?</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentTotalDays" class="form-label">Total Days</label>
+                                <input type="text" class="form-control" id="editRentTotalDays" name="rentTotalDays" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentTotalPrice" class="form-label">Total Price</label>
+                                <input type="text" class="form-control" id="editRentTotalPrice" name="rentTotalPrice" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentDetails" class="form-label">Details</label>
+                                <input type="text" class="form-control" id="editRentDetails" name="rentDetails">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="editRentPaymentStatus" class="form-label">Status</label>
+                                <select type="text" class="form-control" id="editRentPaymentStatus" name="editRentPaymentStatus" required>
+                                    <option>Paid</option>
+                                    <option>Unpaid</option>
+                                </select>
+                                <div class="invalid-feedback">What about the payment status?</div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="editRentStatus" class="">Rent Status</label>
+                                <select class="form-select" id="editRentStatus" name="editRentStatus" required>
+                                    <option selected disabled value="" ></option>
+                                    <option>New</option>
+                                    <option>In Progress</option>
+                                    <option>Finished</option>
+                                </select>
+                                <div class="invalid-feedback">Could you tell me what the status of this rent is?</div>
+                            </div><br>
+
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- JS has to be at the end of the body, to ensure a fast and efficient rendering of your web page -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -92,11 +92,14 @@ function loadRentList(url, status, tableSelector)
         data.forEach(function(rent)
         {
             $(tableSelector).append('<tr>' +
+                '<td>' + rent.id + '</td>' +
                 '<td>' + rent.rentFirstName + '</td>' +
                 '<td>' + rent.rentItem + '</td>' +
                 '<td>' + rent.rentPaymentStatus + '</td>' +
                 '<td>' + rent.rentTotalPrice  + '</td>' +
-                '<td>' + rent.rentStatus + '</td></tr>');
+                '<td>' + rent.rentStatus + '</td>' +
+                '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>' +
+            '</tr>');
         });
     });
 }
