@@ -114,7 +114,6 @@
 
           <!-- Starts Main Content -->
           <div class="content">
-            <h1> AluControl Version 1.0 | RENT</h1>
 
             <!-- Starts the Rent’s Form - Through this the user will create new rents and edit rents already created -->
             <div class="form-floating">
@@ -216,6 +215,30 @@
             </div>
             <!-- Ends the Customer’s Form -->
 
+            <!-- Set the table -->
+            <div style="display: flex; gap: 10px;" >
+
+              <!-- Display -->
+                <label> Display </label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">All Rents </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">All Unpaid </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                  <label class="form-check-label" for="flexRadioDefault3">Display All Paid</label>
+                </div>
+
+
+
+            </div>
+            <!-- Ends Set the table -->
+
+
             <!-- Starts Table - Display the rentals in our database -->
             <div class="table-responsive">
               <table id="contentRentTable" class="table table-striped">
@@ -236,10 +259,24 @@
                 </tr>
                 </thead>
                 <!-- Table Body  -->
-                <tbody id="rentList">
-                <!-- Display the items from the List --></tbody>
+                <tbody id="rentList"><!-- Display the items from the List --></tbody>
               </table>
             </div> <!-- Ends Table -->
+
+            <!-- Pagination of the Table -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                  <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>  <!-- Ends Pagination of the Table -->
 
           </div> <!-- Main Content -->
         </div> <!-- Container -->
