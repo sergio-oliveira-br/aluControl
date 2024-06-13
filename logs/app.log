@@ -4768,3 +4768,6 @@ Caused by: org.hibernate.PropertyValueException: not-null property references a 
 2024-06-13 15:45:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
 2024-06-13 15:45:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
 2024-06-13 15:45:49 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-13 15:46:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 15:46:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2024-06-13 15:46:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
