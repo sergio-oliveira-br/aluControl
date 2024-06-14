@@ -3255,3 +3255,13 @@ Caused by: java.lang.NumberFormatException: For input string: "null"
 2024-06-14 20:54:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
 2024-06-14 20:54:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
 2024-06-14 20:54:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:58:50 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:58:50 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:58:50 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:58:52 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 20:59:01 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: InProgress
+2024-06-14 20:59:05 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: New
+2024-06-14 20:59:09 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 20:59:15 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14 20:59:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-14 20:59:16 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
