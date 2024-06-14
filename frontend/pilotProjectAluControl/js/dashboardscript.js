@@ -95,7 +95,7 @@ $(document).ready(function ()
             //variables
             var status = data.map(function(rent){return rent.rentPaymentStatus});
             var price = data.map(function(rent){return rent.rentTotalPrice})
-
+            
             // Graphs
             const ctx3 = document.getElementById('myPaymentChart')
             const myRentChart = new Chart(ctx3,{
@@ -112,8 +112,9 @@ $(document).ready(function ()
                     }],
                 },
                 options:{
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    //responsive: true,           //allows responsiveness
+                    //maintainAspectRatio: false, //disables the maintenance of the aspect
+                    //aspectRatio: 1,             //ratio between width and height
                     plugins:{
                         legend:{
                             display: true,
