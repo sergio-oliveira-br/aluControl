@@ -3145,3 +3145,6 @@ Caused by: java.lang.NumberFormatException: For input string: "null"
 2024-06-14 12:34:18 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
 2024-06-14 12:34:18 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
 2024-06-14 12:34:18 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 13:04:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14 13:04:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-14 13:04:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
