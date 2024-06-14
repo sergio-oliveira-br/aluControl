@@ -119,6 +119,7 @@ $(document).ready(function ()
                         label: 'Values',
                         lineTension: 0,
                         borderWidth: 4,
+                        backgroundColor: ['#FF6384', 'rgba(62,198,104,0.66)'],
                         pointBackgroundColor: '#007bff'
                     }],
                 },
