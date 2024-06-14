@@ -2577,3 +2577,104 @@ Caused by: org.hibernate.PropertyValueException: not-null property references a 
 2024-06-14 10:35:11 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
 2024-06-14 10:35:11 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
 2024-06-14 10:35:11 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-14 10:38:43 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: New
+2024-06-14 10:38:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: InProgress
+2024-06-14 10:38:56 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:39:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: New
+2024-06-14 10:40:04 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-14 10:40:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 10:40:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 10:40:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 10:40:05 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-14 10:40:06 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:40:25 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 10:40:25 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-14 10:40:25 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 10:40:25 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 10:40:25 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-14 10:40:27 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:40:32 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:41:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:45:33 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:45:42 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: InProgress
+2024-06-14 10:49:21 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 10:49:21 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 10:49:21 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-14 10:49:21 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 10:49:21 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-14 10:49:23 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: InProgress
+2024-06-14 10:49:26 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: New
+2024-06-14 10:49:39 ERROR c.a.backendv1.Util.LoggerUtil - GenericException handled: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"
+org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.convertIfNecessary(AbstractNamedValueMethodArgumentResolver.java:302)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:137)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:224)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:178)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.lang.NumberFormatException: For input string: "null"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Long.parseLong(Long.java:618)
+	at java.base/java.lang.Long.valueOf(Long.java:974)
+	at org.springframework.util.NumberUtils.parseNumber(NumberUtils.java:206)
+	at org.springframework.beans.propertyeditors.CustomNumberEditor.setAsText(CustomNumberEditor.java:115)
+	at org.springframework.beans.TypeConverterDelegate.doConvertTextValue(TypeConverterDelegate.java:439)
+	at org.springframework.beans.TypeConverterDelegate.doConvertValue(TypeConverterDelegate.java:412)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:161)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:80)
+	at org.springframework.beans.TypeConverterSupport.convertIfNecessary(TypeConverterSupport.java:53)
+	at org.springframework.validation.DataBinder.convertIfNecessary(DataBinder.java:860)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.convertIfNecessary(AbstractNamedValueMethodArgumentResolver.java:294)
+	... 48 common frames omitted
+2024-06-14 10:49:39 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; For input string: "null"]
+2024-06-14 10:49:44 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Unpaid
+2024-06-14 10:50:24 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 10:50:24 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 10:50:24 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-14 10:50:24 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 10:50:24 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 10 rent records
+2024-06-14 10:50:25 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: New
+2024-06-14 10:50:27 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: InProgress
