@@ -17,10 +17,7 @@
 $(document).ready(function ()
 {
     //items x sum of total price, group by item
-    $.ajax({url: '/findItemsTotalPrice',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data)
+    function renderItemsChart(data)
         {
             //variables
             var items = data.map(function(rent){return rent.rentItem});
@@ -59,13 +56,8 @@ $(document).ready(function ()
                 },
             });
         }
-    });
 
-    //items x sum of total price, group by item
-    $.ajax({url: '/findRentItems',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data)
+    function renderRentChart(data)
         {
             //variables
             var item = data.map(function(rent){return rent.rentItem});
@@ -91,18 +83,14 @@ $(document).ready(function ()
                         },
                         tooltip:{
                             boxPadding: '5px',
-                        },
+                        }
                     }
                 }
             });
         }
-    });
 
     //relation unpaid x paid
-    $.ajax({url: '/findRentPaymentStatus',
-        method: 'GET',
-        dataType: 'json',
-        success: function (data)
+    function renderPaymentChart(data)
         {
             //variables
             var status = data.map(function(rent){return rent.rentPaymentStatus});
@@ -141,11 +129,25 @@ $(document).ready(function ()
                             enabled: true,
                         }
                     }
-                },
+                }
             });
         }
+
+    //AJAX calls to load data and render graphics
+    ajaxRequest('/findItemsTotalPrice', function (data) {
+        renderItemsChart(data);
     });
+
+    ajaxRequest('/findRentItems', function (data) {
+        renderRentChart(data);
+    });
+
+    ajaxRequest('/findRentPaymentStatus', function (data) {
+        renderPaymentChart(data);
+    });
+
 });
+
 
 
 

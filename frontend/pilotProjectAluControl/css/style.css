@@ -97,6 +97,12 @@ html, body
 
 
 
+/* ---------------------------------------------
+ * Page: Dashboard
+ * Topic:
+ * Details:
+*/
+
 
 
 
@@ -125,20 +131,6 @@ html, body
 * to apply different styles depending on the device or screen size.*/
 @media (max-width: 992px)
 {
-    /*Index*/
-    .content
-    {
-        margin-left: 10%; /* Remove left margin when screen is small */
-        flex-direction: column; /* Align cards in a single column */
-        align-items: center; /* Align the cards in the center */
-    }
-
-    .card
-    {
-        flex: 0 0 calc(100% - 20px); /* Adjust to show 1 card per line */
-        max-width: calc(100% - 20px); /* Adjust to show 1 card per line */
-    }
-
     .sidebar
     {
         display: none; /*hides the side menu */
@@ -147,79 +139,3 @@ html, body
     }
 
 }
-
-@media (min-width: 991px)
-{
-
-
-}
-
-
-
-
-
-
-
-
-/* Page: Products -> Main Content */
-
-
-
-
-
-/* Page: Products -> Table */
-
-
-
-
-
-
-
-
-
-
-
-
-/* Page: Customers -> Form */
-
-
-
-
-
-/* Page: Customers -> Table */
-
-
-/* Page: Customers -> Table */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Page: Dashboard -> Chart */
