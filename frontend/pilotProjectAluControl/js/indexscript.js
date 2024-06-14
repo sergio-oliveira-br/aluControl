@@ -19,6 +19,10 @@ $(document).ready(function ()
     loadNumRentByStatus('New');
     loadNumRentByStatus('InProgress');
 
+    //(MODAL)The script will load the available items and customers in the rental form when the page loads
+    loadEditItemsForRentFormModal();
+    updateLoadCustomerForRentForm();
+
     //(Modal)
     $('#editRentForm').on('submit', function(e) {
         e.preventDefault();

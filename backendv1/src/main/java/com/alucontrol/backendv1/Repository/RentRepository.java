@@ -130,13 +130,20 @@ public interface RentRepository extends JpaRepository<Rent, Long>
      * */
     @Query(value = "SELECT RentStatusProjection.id AS id, " +
             "RentStatusProjection.rentFirstName AS rentFirstName, " +
+            "RentStatusProjection.rentQtyItem AS rentQtyItem, " +
+            "RentStatusProjection.rentAddress AS rentAddress, " +
+            "RentStatusProjection.rentPrice AS rentPrice," +
+            "RentStatusProjection.rentStarts AS rentStarts," +
+            "RentStatusProjection.rentEnds AS rentEnds," +
+            "RentStatusProjection.rentDetails AS rentDetails," +
+            "RentStatusProjection.rentTotalDays AS rentTotalDays," +
             "RentStatusProjection.rentItem AS rentItem, " +
             "RentStatusProjection.rentPaymentStatus AS rentPaymentStatus," +
             "RentStatusProjection.rentTotalPrice AS rentTotalPrice, " +
             "RentStatusProjection.rentStatus  AS rentStatus " +
             "FROM Rent RentStatusProjection " + //This data came from Projection
-            "WHERE rentPaymentStatus = 'Unpaid'")
-    List<SummaryRentStatusProjection> getUnpaidRentsList();
+            "WHERE rentPaymentStatus = 'Unpaid'") //Filter
+    List<SummaryRentStatusProjection> getUnpaidRents();
 
 }
 

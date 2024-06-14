@@ -148,7 +148,7 @@ public class IndexService
 
             else if(status.equals("Unpaid"))
             {
-                rentsList = rentRepository.getUnpaidRentsList();
+                rentsList = rentRepository.getUnpaidRents();
                 return rentsList;
             }
 
