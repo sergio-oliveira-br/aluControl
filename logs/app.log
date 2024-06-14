@@ -3148,3 +3148,110 @@ Caused by: java.lang.NumberFormatException: For input string: "null"
 2024-06-14 13:04:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-14 13:04:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2024-06-14 13:04:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-14 20:16:35 INFO  c.a.backendv1.Backendv1Application - Starting Backendv1Application using Java 22.0.1 with PID 1517 (/Users/sergiovinicio/Documents/GitHub/aluControl/backendv1/target/classes started by sergiovinicio in /Users/sergiovinicio/Documents/GitHub/aluControl)
+2024-06-14 20:16:35 INFO  c.a.backendv1.Backendv1Application - No active profile set, falling back to 1 default profile: "default"
+2024-06-14 20:16:35 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-14 20:16:35 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-14 20:16:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14 20:16:35 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 4 JPA repository interfaces.
+2024-06-14 20:16:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-14 20:16:35 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-14 20:16:35 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-14 20:16:35 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-14 20:16:36 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-14 20:16:36 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 731 ms
+2024-06-14 20:16:36 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14 20:16:36 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-14 20:16:36 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-14 20:16:36 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14 20:16:36 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-06-14 20:16:36 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c167b4f
+2024-06-14 20:16:36 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-06-14 20:16:37 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14 20:16:37 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14 20:16:37 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14 20:16:37 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14 20:16:37 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: URL [file:/Users/sergiovinicio/Documents/GitHub/aluControl/frontend/pilotProjectAluControl/html/index.html]
+2024-06-14 20:16:37 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-06-14 20:16:37 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-14 20:16:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-06-14 20:16:38 INFO  c.a.backendv1.Backendv1Application - Started Backendv1Application in 2.988 seconds (process running for 3.755)
+2024-06-14 20:16:43 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14 20:16:43 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-14 20:16:43 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-06-14 20:16:46 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:16:46 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:16:46 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:25:37 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:25:37 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:25:37 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:26:26 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:26:26 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:26:26 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:26:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:26:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:26:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:27:46 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:27:46 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:27:46 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:28:17 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:28:17 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:28:17 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:30:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:30:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:30:49 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:31:11 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:31:11 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:31:11 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:35:45 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:35:45 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:35:45 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:39:03 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:39:03 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:39:03 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:40:51 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:40:51 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:40:51 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:41:33 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:41:33 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:41:33 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:42:16 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:42:16 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:42:16 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:42:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:42:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:42:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:44:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:44:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:44:38 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:45:39 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:45:39 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:45:39 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:46:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:46:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:46:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:49:16 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:49:16 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:49:16 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:50:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:50:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:50:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:50:21 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:50:21 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:50:21 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:51:43 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:51:43 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:51:43 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:53:34 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:53:34 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:53:34 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:54:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-14 20:54:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:54:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:54:02 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-14 20:54:02 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-14 20:54:30 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-14 20:54:30 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-14 20:54:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-14 20:54:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-14 20:54:31 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress

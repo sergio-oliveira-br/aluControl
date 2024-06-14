@@ -82,6 +82,36 @@ function loadNumRentByStatus(status)
     });
 }
 
+/**                                    ------------ Generic Function ------------
+ Page: Index
+ Method: Display the current stock by clicking in the card called "stock"
+*/
+function loadCurrentStock()
+{
+
+    //Open the modal
+    let stockModal = new bootstrap.Modal(document.getElementById('stockModal'));
+    stockModal.show();
+
+    //Call the generic function, that perform an AJAX request
+    ajaxRequest("/product", function(data)
+    {
+        //first cleaning: This makes sure that the list will appear only once
+        $('#productList').empty();
+
+        //Iteration
+        data.forEach(function(product)
+        {
+            $('#productList').append('<tr>' +
+                    '<td>' + product.itemDescription + '</td>' +
+                    '<td>' + product.itemAvailableQty + '</td>' +
+                '</tr>'
+            );
+        });
+    });
+}
+
+
 
 
 /**                   ------------ Functions for the cards Rent Status: In Progress & New ------------ */
