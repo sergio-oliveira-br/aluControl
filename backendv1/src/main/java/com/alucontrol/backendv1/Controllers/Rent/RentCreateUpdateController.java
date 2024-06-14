@@ -152,6 +152,10 @@ public class RentCreateUpdateController
             rent.setRentStatus(updatedRent.getRentStatus());
 
             Rent savedRent = rentRepository.save(rent);
+
+            //Log
+            LoggerUtil.info("Rent updated successfully. ID: " + id);
+
             return ResponseEntity.ok(savedRent);
         } else {
             return ResponseEntity.notFound().build();
