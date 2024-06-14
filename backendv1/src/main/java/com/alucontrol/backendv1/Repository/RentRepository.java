@@ -99,7 +99,15 @@ public interface RentRepository extends JpaRepository<Rent, Long>
      * Status: NEW
      * Method: Display a table with ALL Rents witch status is NEW
      * */
-    @Query(value = "SELECT RentStatusProjection.rentFirstName AS rentFirstName, " +
+    @Query(value = "SELECT RentStatusProjection.id AS id, " +
+            "RentStatusProjection.rentFirstName AS rentFirstName, " +
+            "RentStatusProjection.rentQtyItem AS rentQtyItem, " +
+            "RentStatusProjection.rentAddress AS rentAddress, " +
+            "RentStatusProjection.rentPrice AS rentPrice," +
+            "RentStatusProjection.rentStarts AS rentStarts," +
+            "RentStatusProjection.rentEnds AS rentEnds," +
+            "RentStatusProjection.rentDetails AS rentDetails," +
+            "RentStatusProjection.rentTotalDays AS rentTotalDays," +
             "RentStatusProjection.rentItem AS rentItem, " +
             "RentStatusProjection.rentPaymentStatus AS rentPaymentStatus," +
             "RentStatusProjection.rentTotalPrice AS rentTotalPrice, " +
