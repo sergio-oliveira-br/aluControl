@@ -37,17 +37,26 @@ public class ProductCreateUpdateController
     public ResponseEntity<Product> saveProduct(@RequestParam("itemDescription") String itemDescription,
                                                @RequestParam("itemQuantity") int itemQuantity)
     {
-        Product product = new Product();
-        product.setItemDescription(itemDescription);
-        product.setItemQuantity(itemQuantity);
+        try
+        {
+            //create a new product object and set its attributes
+            Product product = new Product();
+            product.setItemDescription(itemDescription);
+            product.setItemQuantity(itemQuantity);
 
-        //Initialize itemAvailableQty with the same itemQuantity value
-        product.setItemAvailableQty(itemQuantity);
+            //Initialize itemAvailableQty with the same itemQuantity value
+            product.setItemAvailableQty(itemQuantity);
 
-        Product savedProduct = productRepository.save(product);
-        LoggerUtil.info("Saving product: " + product.getItemDescription()); //create a log
+            Product savedProduct = productRepository.save(product);
+            LoggerUtil.info("Saving product: " + product.getItemDescription()); //create a log
 
-        return ResponseEntity.ok(savedProduct);
+            return ResponseEntity.ok(savedProduct);
+        }
+        catch (Exception e) {
+            LoggerUtil.error("An error occurred while saving product data: " + e.getMessage(), e); //create log
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null); //Return an internal error
+        }
+
     }
 
     /** Endpoint to get a specific rent by ID (by clicking on Edit into the table)*/
