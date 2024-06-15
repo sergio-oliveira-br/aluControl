@@ -34,8 +34,8 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.util.AssertionErrors.assertEquals;
 
 /** This test focuses on the "saveProduct" method by checking:
- *
- -> Whether the method correctly saves a client in the database.
+
+ -> Whether the method correctly saves a Product in the database.
  -> If the method returns a Customer object with the correct data.
  -> If the method throws an exception when an error occurs.
  -> Whether the method creates a correct log when the client is saved successfully or when an error occurs.*/

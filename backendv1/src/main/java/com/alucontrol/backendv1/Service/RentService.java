@@ -46,30 +46,37 @@ public class RentService
                            Integer rentQtyItem, String rentStarts, String rentEnds, Integer rentTotalDays,
                            double rentTotalPrice, String rentDetails, String rentPaymentStatus, String rentStatus) throws ParseException
     {
-        Rent rent = new Rent();
+        try {
+            Rent rent = new Rent();
 
-        rent.setRentFirstName(rentFirstName);
-        rent.setRentAddress(rentAddress);
-        rent.setRentItem(rentItem);
-        rent.setRentPrice(rentPrice);
-        rent.setRentQtyItem(rentQtyItem);
-        rent.setRentStarts(rentStarts);
-        rent.setRentEnds(rentEnds);
-        rent.setRentTotalDays(rentTotalDays);
-        rent.setRentTotalPrice(rentTotalPrice);
-        rent.setRentDetails(rentDetails);
-        rent.setRentPaymentStatus(rentPaymentStatus);
-        rent.setRentStatus(rentStatus);
+            rent.setRentFirstName(rentFirstName);
+            rent.setRentAddress(rentAddress);
+            rent.setRentItem(rentItem);
+            rent.setRentPrice(rentPrice);
+            rent.setRentQtyItem(rentQtyItem);
+            rent.setRentStarts(rentStarts);
+            rent.setRentEnds(rentEnds);
+            rent.setRentTotalDays(rentTotalDays);
+            rent.setRentTotalPrice(rentTotalPrice);
+            rent.setRentDetails(rentDetails);
+            rent.setRentPaymentStatus(rentPaymentStatus);
+            rent.setRentStatus(rentStatus);
 
-        //Calling the method DateUtil(), that's contain method to convert strings into date objects
-        Date startDate = DateUtil.convertStringToDate(rentStarts);
-        Date endDate = DateUtil.convertStringToDate(rentEnds);
+            //Calling the method DateUtil(), that's contain method to convert strings into date objects
+            Date startDate = DateUtil.convertStringToDate(rentStarts);
+            Date endDate = DateUtil.convertStringToDate(rentEnds);
 
-        //When a rental is created, make a call to subtract inventory
-        subtractStockByRentalDates(rentItem, rentQtyItem, startDate, endDate);
+            //When a rental is created, make a call to subtract inventory
+            subtractStockByRentalDates(rentItem, rentQtyItem, startDate, endDate);
 
-        LoggerUtil.info("Rent created");
-        return rentRepository.save(rent);
+            LoggerUtil.info("Rent created" + rent.getId());
+            return rentRepository.save(rent);
+
+        }catch (Exception e)
+        {
+            LoggerUtil.error("Error creating rent");
+            throw new ResourceNotFoundException(e.getMessage());
+        }
     }
 
 
