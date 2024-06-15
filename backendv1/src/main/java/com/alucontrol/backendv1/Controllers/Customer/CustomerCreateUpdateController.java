@@ -50,7 +50,7 @@ public class CustomerCreateUpdateController
 
             //Save the customer in the database
             Customer savedCustomer = customerRepository.save(customer);
-            LoggerUtil.info("Customer saved successfully" + customer.getFirstName()); //create a log
+            LoggerUtil.info("Customer saved successfully: " + customer.getFirstName()); //create a log
 
             return ResponseEntity.ok(savedCustomer); //return the saved customer data
 
