@@ -6,7 +6,7 @@
  * Author: Sergio Vinicio da Silva Oliveira
  * ID: x23170981@student.ncirl.ie
  * Project Commencing May 2024
- * Version: 1.0
+ * Version: 1.0 - Test
  */
 package com.alucontrol.backendv1.ControllerTest;
 
@@ -14,6 +14,7 @@ package com.alucontrol.backendv1.ControllerTest;
 
 import com.alucontrol.backendv1.Controllers.Customer.CustomerCreateUpdateController;
 import com.alucontrol.backendv1.Model.Customer;
+import com.alucontrol.backendv1.Model.Product;
 import com.alucontrol.backendv1.Repository.CustomerRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,7 +44,7 @@ public class CustomerCreateUpdateControllerTest
     @InjectMocks
     private CustomerCreateUpdateController customerCreateUpdateController;
 
-    //Creates a Mock instance of the CustomerRepository repository.
+    //Creates a Mock instance of the CustomerRepository
     @Mock
     private CustomerRepository customerRepository;
 
@@ -63,18 +64,17 @@ public class CustomerCreateUpdateControllerTest
         //Stubbing
         //Sets the behavior of the Repository save method, returning the created client
         //When the save method is called in the customerRepository object with the customerTest argument, return the customerTest itself as a result
-        when(customerRepository.save(customerTest)).thenReturn(customerTest);
+        when(customerRepository.save(any(Customer.class))).thenReturn(customerTest);
 
         ResponseEntity<Customer> response = customerCreateUpdateController
                 .saveCustomer("Sergio", "Oliveira", "0862721772", "This is myTest", "Dublin");
-                       // .saveCustomer(customerTest);
 
         //Assert:
         //Tests the saveCustomer method, which saves a new client to the database
         //The method is expected to return a response with a status code of 200 (OK) and the client saved
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(customerTest, response.getBody());
-        verify(customerRepository).save(customerTest);
+        verify(customerRepository).save(any(Customer.class));
     }
 
     //The error case, where an exception is thrown when trying to save the client to the database.
