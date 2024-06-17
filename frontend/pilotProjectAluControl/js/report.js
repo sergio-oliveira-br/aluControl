@@ -73,3 +73,10 @@ function displayListAllRentStatusUnpaid()
 {
     loadRentTable( 'Unpaid');
 }
+
+//Rent Payment Status: Paid
+function displayListAllRentStatusPaid()
+{
+    loadRentTable( 'Paid');
+    //alert("WIP");
+}

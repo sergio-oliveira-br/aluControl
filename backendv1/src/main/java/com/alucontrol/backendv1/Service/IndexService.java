@@ -133,6 +133,7 @@ public class IndexService
             //Call the repository method, witch has the info about the RENT from Projection
             List<SummaryRentStatusProjection> rentsList;
 
+            //get from rent repository the data filtered to display all information where the rent status is new
             if (status.equals("New"))
             {
                 rentsList = rentRepository.getNewRentsList(); //return
@@ -140,18 +141,28 @@ public class IndexService
 
             }
 
+            //get from rent repository the data filtered to display all information where the rent status is in progress
             else if (status.equals("InProgress"))
             {
                 rentsList = rentRepository.getInProgressRentsList();
                 return rentsList;
             }
 
+            //get from rent repository the data filtered to display all information where the rent status of the payment is Unpaid
             else if(status.equals("Unpaid"))
             {
                 rentsList = rentRepository.getUnpaidRents();
                 return rentsList;
             }
 
+            //get from rent repository the data filtered to display all information where the rent status of the payment is Paid
+            else if(status.equals("Paid"))
+            {
+                rentsList = rentRepository.getPaidRents();
+                return rentsList;
+            }
+
+            //in case where the status mismatched
             else {
                 throw new ResourceNotFoundException("Invalid status: " + status);
             }
