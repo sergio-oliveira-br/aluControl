@@ -40,18 +40,22 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">All Paid</a></li>
                   <li><a class="dropdown-item" href="#">All Unpaid</a></li>
-
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">All New</a></li>
                   <li><a class="dropdown-item" href="#">All In Progress</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="false">Disabled</a>
-              </li>
             </ul>
+
+            <!-- Search by Date -->
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Week" aria-label="Search">
+            </form>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Month" aria-label="Search">
+            </form>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Year" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
@@ -76,6 +80,7 @@
               <th scope="col">Total Price</th>
               <th scope="col">Rent Status</th>
               <th scope="col">Payment Status</th>
+              <th scope="col">Details</th>
               <th scope="col"></th>
             </tr>
             </thead>
@@ -96,9 +101,8 @@
     <!-- JS for all pages -->
     <script src="../js/script.js" type="text/javascript"></script>
 
-    <!-- JS exclusive to the Rent Page -->
-    <script src="../js/rentscript.js" type="text/javascript"></script>
-    <script src="" type="text/javascript"></script>
+    <!-- JS exclusive to the Report Page -->
+    <script src="../js/report.js" type="text/javascript"></script>
 
 
 
