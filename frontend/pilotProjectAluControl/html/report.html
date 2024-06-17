@@ -38,11 +38,11 @@
                   Filter by
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">All Paid</a></li>
-                  <li><a class="dropdown-item" href="#">All Unpaid</a></li>
+                  <li><button class="dropdown-item" onclick="">All Paid</button></li>
+                  <li><button class="dropdown-item" onclick="displayListAllRentStatusUnpaid()">All Unpaid</button></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">All New</a></li>
-                  <li><a class="dropdown-item" href="#">All In Progress</a></li>
+                  <li><button class="dropdown-item" onclick="displayAllRentStatusNew()">All New</button></li>
+                  <li><button class="dropdown-item" onclick="displayAllRentStatusInProgress()">All In Progress</button></li>
                 </ul>
               </li>
             </ul>
@@ -103,6 +103,7 @@
 
     <!-- JS exclusive to the Report Page -->
     <script src="../js/report.js" type="text/javascript"></script>
+
 
 
 

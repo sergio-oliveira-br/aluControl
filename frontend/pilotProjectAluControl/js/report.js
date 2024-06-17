@@ -9,20 +9,23 @@
  * Version: 1.0
  */
 
-
-$(document).ready(function () {
-    loadRentTable();
+$(document).ready(function ()
+{
+    //load the table with all information from rental database
+    //loadRentTable();
 })
 
+
 /**
- Page: Report
+ Page: Rent
  Item: Table
  Method: The script will load all items in a table
  */
-function loadRentTable()
+
+function loadRentTable(status)
 {
     //Call the generic function, that perform an AJAX request
-    ajaxRequest("/rent", function(data)
+    ajaxRequest("/listRentStatus" + '?status=' + status, function(data)
     {
         //first clean
         $('#rentList').empty();
@@ -43,8 +46,30 @@ function loadRentTable()
                 '<td>' + rent.rentPaymentStatus + '</td>' +
                 '<td>' + rent.rentStatus+ '</td>' +
                 '<td>' + rent.rentDetails + '</td>' +
-                '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
+                '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>' +
+                '</tr>'
             );
         });
     });
+}
+
+/**
+ Method: By clicking on the buttons on navbar" filter by", the table will load the info selected.
+ */
+//Rent Status: New
+function displayAllRentStatusNew()
+{
+    loadRentTable('New');
+}
+
+//Rent Status: New
+function displayAllRentStatusInProgress()
+{
+    loadRentTable('InProgress');
+}
+
+//Rent Payment Status: Unpaid
+function displayListAllRentStatusUnpaid()
+{
+    loadRentTable( 'Unpaid');
 }
