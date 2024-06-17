@@ -107,17 +107,11 @@ public class RentCreateUpdateControllerTest
     public void saveRentError() throws Exception
     {
 
+        //Mockito will throw an Exception instead of actually saving the rent in to the database
         when(rentService.createRent(any(String.class), any(String.class), any(String.class), anyDouble(),
                 anyInt(), any(String.class), any(String.class), anyInt(), anyDouble(),
                 any(String.class), any(String.class), any(String.class)))
-                .thenThrow(new RuntimeException("Error saving Rent"));
-//
-//        //Mockito will throw a RuntimeException exception instead of actually saving the client to the database
-//        doThrow(new RuntimeException("Error saving Rent")).when(rentService.createRent(any
-//                        (String.class), any(String.class), any(String.class), any(double.class),
-//                        any(Integer.class), any(String.class), any(String.class), any(Integer.class), any(double.class),
-//                        any(String.class), any(String.class), any(String.class)));
-
+                .thenThrow(new ParseException("Error parsing dates", 0));
 
 
         ResponseEntity<Rent> response;
