@@ -19,7 +19,7 @@ html, body
     height: 50%;
     margin: 0;
     padding: 0;
-
+    background-color: rgba(177, 181, 214, 0.42); /* set Environment Test */
 }
 
 
