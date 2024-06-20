@@ -162,6 +162,13 @@ public class IndexService
                 return rentsList;
             }
 
+            //get from rent repository the data filtered to display all information where is sold
+            else if(status.equals("Sold"))
+            {
+                rentsList = rentRepository.getPaidRents();
+                return rentsList;
+            }
+
             //in case where the status mismatched
             else {
                 throw new ResourceNotFoundException("Invalid status: " + status);
