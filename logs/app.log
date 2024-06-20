@@ -302,3 +302,6 @@
 2024-06-20 11:01:40 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
 2024-06-20 11:01:40 INFO  c.a.backendv1.Backendv1Application - Started Backendv1Application in 0.287 seconds (process running for 5227.137)
 2024-06-20 11:01:40 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2024-06-20 11:03:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-20 11:03:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2024-06-20 11:03:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
