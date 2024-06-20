@@ -165,7 +165,7 @@ public interface RentRepository extends JpaRepository<Rent, Long>
 
 
     /** Display: on Index.html via HomeController
-     * Status: UNPAID
+     * Status: SOLD
      * Method: Display a table with ALL Rents witch status is 'Unpaid'
      * */
     @Query(value = "SELECT RentStatusProjection.id AS id, " +
@@ -182,7 +182,7 @@ public interface RentRepository extends JpaRepository<Rent, Long>
             "RentStatusProjection.rentTotalPrice AS rentTotalPrice, " +
             "RentStatusProjection.rentStatus  AS rentStatus " +
             "FROM Rent RentStatusProjection " + //This data came from Projection
-            "WHERE rentPaymentStatus = 'Sold'") //Filter
+            "WHERE rentStatus = 'Sold'") //Filter
     List<SummaryRentStatusProjection> getSoldItems();
 
 

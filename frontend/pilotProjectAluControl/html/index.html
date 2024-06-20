@@ -146,7 +146,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Expenses</h5>
                                 <p class="card-text">Is there anything else you need to add? </p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <button onclick="WIP()" class="btn btn-primary">Go somewhere</button>
                             </div>
                         </div>
                     </div>
@@ -186,8 +186,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Manage Your Sales</h5>
                             <p> You have the option to either create or view what you have already sold. </p>
-                            <button class="btn btn-primary">New Sale</button>
-                            <button onclick="displayListAllRentStatusSold()" class="btn btn-secondary">See your sales</button>
+                            <button onclick="WIP()" class="btn btn-primary">New Sale</button>
+                            <button onclick="displayAllStatusSold()" class="btn btn-secondary">See your sales</button>
                         </div>
                     </div>
 
@@ -195,7 +195,7 @@
 
 
                     <!-- MODAL (table UNPAID) - This modal make possible the user see what they have about Rents witch status unpaid -->
-                    <div class="modal fade" id="displayListAllRentStatusUnpaidModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="displayListAllRentStatusUnpaidOrSoldModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
 
@@ -217,7 +217,7 @@
                                             <th scope="col"> Status </th>
                                         </tr>
                                         </thead>
-                                        <tbody id="rentListStatusUnpaid"> <!-- Display the items witch are "new" status --> </tbody>
+                                        <tbody id="rentListStatusUnpaidOrSold"> <!-- Display the items witch are "new" status --> </tbody>
                                     </table>
                                 </div>
 
@@ -332,6 +332,7 @@
                                     <option>New</option>
                                     <option>In Progress</option>
                                     <option>Finished</option>
+                                    <option>Sold</option>
                                 </select>
                                 <div class="invalid-feedback">Could you tell me what the status of this rent is?</div>
                             </div><br>

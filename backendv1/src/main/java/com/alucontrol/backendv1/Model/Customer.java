@@ -27,10 +27,10 @@ import jakarta.persistence.*;
         @Column(nullable = false)
         private String lastName;
 
-        @Column(nullable = false)
+        @Column(nullable = true) //This field is optional
         private String phoneNumber;
 
-        @Column(nullable = true)
+        @Column(nullable = true) //This field is optional
         private String additionalInfo;
 
         @Column(nullable = false)

@@ -72,7 +72,6 @@ function displayAllRentStatusInProgress()
 function displayListAllRentStatusSold()
 {
     loadRentTable( 'Sold');
-    alert("WIP");
 }
 
 //Rent Payment Status: Unpaid

@@ -165,7 +165,7 @@ public class IndexService
             //get from rent repository the data filtered to display all information where is sold
             else if(status.equals("Sold"))
             {
-                rentsList = rentRepository.getPaidRents();
+                rentsList = rentRepository.getSoldItems();
                 return rentsList;
             }
 

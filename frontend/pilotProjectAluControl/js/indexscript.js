@@ -29,7 +29,12 @@ $(document).ready(function ()
         submitEditForm();
     });
 
-})
+});
+
+function WIP()
+{
+    alert("Sorry! Working in Progress");
+}
 
 
 /**
@@ -181,9 +186,14 @@ function displayAllRentStatusInProgress()
 //Rent Payment Status: Unpaid
 function displayListAllRentStatusUnpaid()
 {
-    displayRentStatusModal('displayListAllRentStatusUnpaidModal', 'Unpaid', '#rentListStatusUnpaid');
+    displayRentStatusModal('displayListAllRentStatusUnpaidOrSoldModal', 'Unpaid', '#rentListStatusUnpaidOrSold');
 }
 
+//Rent Status: Sold
+function displayAllStatusSold()
+{
+    displayRentStatusModal('displayListAllRentStatusUnpaidOrSoldModal', 'Sold', '#rentListStatusUnpaidOrSold');
+}
 
 
 
