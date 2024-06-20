@@ -160,3 +160,36 @@
 2024-06-20 10:42:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
 2024-06-20 10:42:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
 2024-06-20 10:42:00 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-20 10:43:14 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-20 10:43:14 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-20 10:43:14 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-20 10:56:55 INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-06-20 10:56:55 INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-20 10:56:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-20 10:56:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-06-20 10:56:55 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-06-20 10:56:55 INFO  c.a.backendv1.Backendv1Application - Starting Backendv1Application using Java 22.0.1 with PID 32928 (/Users/sergiovinicio/Documents/GitHub/aluControl/backendv1/target/classes started by sergiovinicio in /Users/sergiovinicio/Documents/GitHub/aluControl)
+2024-06-20 10:56:55 INFO  c.a.backendv1.Backendv1Application - No active profile set, falling back to 1 default profile: "default"
+2024-06-20 10:56:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-20 10:56:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 4 JPA repository interfaces.
+2024-06-20 10:56:56 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2024-06-20 10:56:56 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-20 10:56:56 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-20 10:56:56 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+2024-06-20 10:56:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-20 10:56:56 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 799 ms
+2024-06-20 10:56:56 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-20 10:56:56 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-06-20 10:56:56 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-20 10:56:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2024-06-20 10:56:56 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@335b9b69
+2024-06-20 10:56:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2024-06-20 10:56:56 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-20 10:56:56 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-20 10:56:56 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-20 10:56:56 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: URL [file:/Users/sergiovinicio/Documents/GitHub/aluControl/frontend/pilotProjectAluControl/html/index.html]
+2024-06-20 10:56:57 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-06-20 10:56:57 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-20 10:56:57 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2024-06-20 10:56:57 INFO  c.a.backendv1.Backendv1Application - Started Backendv1Application in 1.362 seconds (process running for 4943.353)
+2024-06-20 10:56:57 INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
