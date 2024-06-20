@@ -81,12 +81,14 @@ function loadRent()
                 /** '<td>' + rent.rentLastName + '</td>' + */
                 '<td>' + rent.rentAddress + '</td>' +
                 '<td>' + rent.rentItem + '</td>' +
+                '<td>' + rent.rentQtyItem + '</td>' +
                 '<td>' + rent.rentPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
                 '<td>' + rent.rentStarts + '</td>' +
                 '<td>' + rent.rentEnds + '</td>' +
+                '<td>' + rent.rentTotalDays + '</td>' +
                 '<td>' + rent.rentTotalPrice.toFixed(2) + '</td>' + //Formatting to two decimal places
-                '<td>' + rent.rentPaymentStatus + '</td>' +
-                '<td>' + rent.rentStatus+ '</td>' +
+                // '<td>' + rent.rentPaymentStatus + '</td>' +
+                // '<td>' + rent.rentStatus+ '</td>' +
                 '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>'
             );
         });

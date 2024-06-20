@@ -41,3 +41,64 @@
 2024-06-20 09:38:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
 2024-06-20 09:38:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
 2024-06-20 09:38:04 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-20 09:42:12 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:42:12 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:42:21 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:42:21 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:44:01 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:44:01 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:44:37 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:44:37 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:45:00 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:45:00 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:45:45 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:45:45 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:45:53 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:45:53 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:53:36 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:53:36 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:54:13 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:54:13 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:54:36 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:54:36 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:55:11 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:55:11 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:55:25 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:55:25 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:55:37 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:55:37 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:56:03 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:56:03 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:57:48 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:57:48 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 09:59:46 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 09:59:46 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 10:00:37 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:00:37 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 10:01:00 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:01:00 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 10:01:23 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
+2024-06-20 10:01:41 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:01:41 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 10:03:07 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-20 10:03:07 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-20 10:03:07 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-20 10:03:09 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:03:09 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 11 rent records
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Date converted, from:2024-06-20 to: 2024-06-20
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Date converted, from:2024-06-27 to: 2024-06-20
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Renting Item: Scaffolds
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Getting the Item Available Qty: 8.0
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Getting the quantity: 3
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - The new Qty Available is:  5.0
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Rent created0
+2024-06-20 10:03:40 INFO  c.a.backendv1.Util.LoggerUtil - Save Rent endpoint accessed for rent: 47
+2024-06-20 10:03:48 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:03:48 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 12 rent records
+2024-06-20 10:04:20 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-20 10:04:20 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-20 10:04:20 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-20 10:04:23 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:04:23 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 12 rent records
+2024-06-20 10:05:34 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:05:34 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 12 rent records
