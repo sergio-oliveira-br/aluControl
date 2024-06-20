@@ -46,7 +46,7 @@ function loadRentTable(status)
                 '<td>' + rent.rentPaymentStatus + '</td>' +
                 '<td>' + rent.rentStatus+ '</td>' +
                 '<td>' + rent.rentDetails + '</td>' +
-                '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>' +
+                // '<td><button class="btn btn-primary" onclick="openEditModal(' + rent.id + ')">Edit</button></td>' +
                 '</tr>'
             );
         });
