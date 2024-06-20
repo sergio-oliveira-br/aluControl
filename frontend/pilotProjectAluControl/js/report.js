@@ -11,8 +11,8 @@
 
 $(document).ready(function ()
 {
-    //load the table with all information from rental database
-    //loadRentTable();
+    //load the table with all rent paid information from rental database
+    loadRentTable("Paid");
 })
 
 

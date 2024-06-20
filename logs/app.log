@@ -105,3 +105,10 @@
 2024-06-20 10:08:29 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
 2024-06-20 10:09:13 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
 2024-06-20 10:09:33 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
+2024-06-20 10:12:59 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
+2024-06-20 10:13:03 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents Unpaid
+2024-06-20 10:13:03 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents in progress
+2024-06-20 10:13:03 INFO  c.a.backendv1.Util.LoggerUtil - Searching for all rents with status NEW
+2024-06-20 10:13:16 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
+2024-06-20 10:13:16 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 12 rent records
+2024-06-20 10:13:17 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
