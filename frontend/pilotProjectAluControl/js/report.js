@@ -68,6 +68,13 @@ function displayAllRentStatusInProgress()
     loadRentTable('InProgress');
 }
 
+//Rent Status: Sold
+function displayListAllRentStatusSold()
+{
+    loadRentTable( 'Sold');
+    alert("WIP");
+}
+
 //Rent Payment Status: Unpaid
 function displayListAllRentStatusUnpaid()
 {
@@ -78,5 +85,5 @@ function displayListAllRentStatusUnpaid()
 function displayListAllRentStatusPaid()
 {
     loadRentTable( 'Paid');
-    //alert("WIP");
 }
+

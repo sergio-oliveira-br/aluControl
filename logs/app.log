@@ -118,3 +118,9 @@
 2024-06-20 10:17:48 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 12 rent records
 2024-06-20 10:18:26 INFO  c.a.backendv1.Util.LoggerUtil - Fetching all rent records
 2024-06-20 10:18:26 INFO  c.a.backendv1.Util.LoggerUtil - Fetched 12 rent records
+2024-06-20 10:23:50 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
+2024-06-20 10:24:54 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Paid
+2024-06-20 10:24:56 INFO  c.a.backendv1.Util.LoggerUtil - Searching for rentals with status: Sold
+2024-06-20 10:24:56 ERROR c.a.backendv1.Util.LoggerUtil - While searching for rentals with status Sold, an error occurred. Invalid status: Sold
+2024-06-20 10:24:56 ERROR c.a.backendv1.Util.LoggerUtil - ResourceNotFoundException handled: Could not find a list of rentals with status Sold
+2024-06-20 10:24:56 WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [com.alucontrol.backendv1.Exception.ResourceNotFoundException: Could not find a list of rentals with status Sold]
