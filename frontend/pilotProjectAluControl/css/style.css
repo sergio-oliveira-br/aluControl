@@ -137,5 +137,15 @@ html, body
         overflow-y: scroll;
         width: 30%;
     }
-
+    #menuBTN{
+        top: 10px;
+    }
 }
+
+@media (min-width: 991px)
+{
+    #menuBTN {
+        display: none;
+    }
+}
+

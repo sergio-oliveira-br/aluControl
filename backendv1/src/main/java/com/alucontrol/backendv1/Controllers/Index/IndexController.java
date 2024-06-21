@@ -35,12 +35,12 @@ public class IndexController
         this.indexService =  indexService;
     }
 
-    /** Main endpoint for the home page, indicating that the endpoint is active  */
-    @GetMapping("/")
-    public String home()
-    {
-        return "index";
-    }
+//    /** Main endpoint for the home page, indicating that the endpoint is active  */
+//    @GetMapping("/")
+//    public String home()
+//    {
+//        return "index";
+//    }
 
 
     /** Endpoint to get back the number of rent UNPAID from DB
